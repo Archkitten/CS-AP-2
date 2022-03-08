@@ -28,8 +28,10 @@
     </tr>
     <tr>
         <td>Week 0</td>
-        <td>5.1 + 5.2 [Response](test_prep_0)</td>
-        <td>[TT0](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3---TT0---Python-Menu,-Replit,-Github)</td>
+        <td>5.1 + 5.2
+            <a href="test_prep_0.md">Response</a>
+        </td>
+        <td></td>
         <td></td>
     </tr>
 </table>
