@@ -1,6 +1,6 @@
 {% include navigation.html %}
 
-# Hi!
+# Hi! Version 0.1
 
 ## CS-A-1
 
