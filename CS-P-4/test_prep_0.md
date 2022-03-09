@@ -13,7 +13,7 @@ layout: default
 
 ### [5.2 Digital Divide](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-0.2-related-to-Digital-Divide-Big-Idea-5.2)
 
-1. How does someone empower themself in a digital world?
+1. How does someone empower themselves in a digital world?
 
 2. How does someone that is empowered help someone that is not empowered? Describe something you could do at Del Norte HS.
 
