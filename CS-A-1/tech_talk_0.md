@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Tech Talk 0
 
 * Imperative Paradigm: Procedural Programming

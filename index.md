@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Hi!
 
 ## CS-A-1

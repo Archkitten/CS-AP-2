@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Test Prep 0
 
 ### [5.1 Beneficial and Harmful Effects of Computing](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-0.1-related-to-Beneficial-and-Harmful-Effects-of-Computing-Big-Idea-5.1)
