@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{% include navigation.html %}
 
 ## Tech Talk 0
 
