@@ -1,6 +1,12 @@
+---
+title: TITLE
+layout: template
+filename: index.md
+--- 
+
 {% include navigation.html %}
 
-# Hi! Version 0.2
+# Hi! Version 0.3
 
 ## CS-A-1
 
