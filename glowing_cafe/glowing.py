@@ -31,6 +31,8 @@ class Glowing:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         running = False
+            pygame.display.update()
+            self.CLOCK.tick(FPS)
 
 
 g = Glowing()
