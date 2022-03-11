@@ -13,4 +13,4 @@
 
 ### AP Prep 0: Study Group Challenges
 
-Link to code + runtime: [Google](https://www.google.com/)
+Link to code + runtime: [CS-AP-2 Java Repl.it](https://replit.com/@ArchHuang/CS-AP-2?lite=true)
