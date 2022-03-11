@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Option {
 
     protected String optionName = "Option";
@@ -6,7 +8,7 @@ public class Option {
         return optionName;
     }
 
-    public void process() {
+    public void process(Scanner scanObj) {
         System.out.println(optionName);
     }
 }
