@@ -1,22 +1,21 @@
 public class NumberSwap extends Option {
 
-    String optionName = "NumberSwap";
+    public NumberSwap() {
+        optionName = "NumberSwap";
+    }
 
     public String getOptionName() {
         return optionName;
     }
 
-    public static void swap() {
+    private void swap() {
         System.out.println("NumberSwap.swap");
     }
 
 
     public void process() {
-        System.out.println("NumberSwap");
-    }
-
-    public static void main(String[] args) {
-        Option testerObj = new NumberSwap();
-        testerObj.process();
+        // super.process() will just run the process() method from Option.java
+        super.process();
+        // Then run swap()
     }
 }

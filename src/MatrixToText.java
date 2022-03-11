@@ -1,26 +1,25 @@
 public class MatrixToText extends Option {
 
-    String optionName = "MatrixToText";
+    public MatrixToText() {
+        optionName = "MatrixToText";
+    }
 
     public String getOptionName() {
         return optionName;
     }
 
-    public static void numpad() {
+    private void numpad() {
         System.out.println("MatrixToText.numpad");
     }
 
-    public static void keyboard() {
+    private void keyboard() {
         System.out.println("MatrixToText.keyboard");
     }
 
 
     public void process() {
-        System.out.println("MatrixToText");
-    }
-
-    public static void main(String[] args) {
-        Option testerObj = new MatrixToText();
-        testerObj.process();
+        // super.process() will just run the process() method from Option.java
+        super.process();
+        // Ask user to run numpad or keyboard in the future
     }
 }
