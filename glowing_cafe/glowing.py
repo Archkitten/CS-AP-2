@@ -1,6 +1,8 @@
 import pygame
 import sys
 from config import *
+from drip import Drip
+from star import Star
 
 
 class Glowing:
@@ -12,12 +14,12 @@ class Glowing:
         self.SCREEN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.FONT = pygame.font.Font('font/PixelType.ttf', 32)
         # Dynamic Variables
-        self.click = False
         self.character = "Drip"
 
     def main_menu(self):
         # Local Variables
         running = True
+        click = False
 
         TEXT_TITLE = self.FONT.render("Glowing Cafe", False, 'Black')
 
@@ -42,54 +44,78 @@ class Glowing:
             pygame.draw.circle(self.SCREEN, 'Red', (mx, my), 5)
             # Conditionals
             if BUTTON_LEVEL_0.collidepoint((mx, my)):
-                if self.click:
+                if click:
                     self.level_0()
-            self.click = False
+            click = False
             # Event Loop
             for event in pygame.event.get():
-                # Close Button
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
                 # Keyboard Presses
                 if event.type == pygame.KEYDOWN:
                     # Escape Key
                     if event.key == pygame.K_ESCAPE:
                         running = False
+                # Close Button
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
                 # Click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
-                        self.click = True
+                        click = True
             pygame.display.update()
             self.CLOCK.tick(FPS)
 
     def level_0(self):
         # Local variables
         running = True
+        click = False
         BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
         TEXT_TITLE = self.FONT.render("Level 0", False, 'Black')
+        projectiles = []
+        # Character Select
+        if self.character == "Drip":
+            player = Drip(WIN_WIDTH / 8, WIN_HEIGHT / 2)
+        else:
+            player = Drip(WIN_WIDTH / 8, WIN_HEIGHT / 2)
         while running:
             # Redefine Variables
             mx, my = pygame.mouse.get_pos()
             # Drawing
             self.SCREEN.blit(BACKGROUND, (0, 0))
             self.SCREEN.blit(TEXT_TITLE, (20, 20))
+
+            player.main(self.SCREEN)
+
             pygame.draw.circle(self.SCREEN, 'Red', (mx, my), 5)
+
+            for projectile in projectiles:
+                if projectile.x < 0 - projectile.RADIUS or projectile.x > WIN_WIDTH + projectile.RADIUS:
+                    projectiles.remove(projectile)
+                elif projectile.y < 0 - projectile.RADIUS or projectile.y > WIN_HEIGHT + projectile.RADIUS:
+                    projectiles.remove(projectile)
+                projectile.main(self.SCREEN)
+
+            # Conditionals
+            if click:
+                projectiles.append(Star(player.x, player.y, mx, my))
             # Event Loop
             for event in pygame.event.get():
-                # Close Button
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
                 # Keyboard Presses
                 if event.type == pygame.KEYDOWN:
                     # Escape Key
                     if event.key == pygame.K_ESCAPE:
                         running = False
+                # Close Button
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
                 # Click
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 1:
-                        self.click = True
+                        click = True
+                elif event.type == pygame.MOUSEBUTTONUP:
+                    if event.button == 1:
+                        click = False
             pygame.display.update()
             self.CLOCK.tick(FPS)
 

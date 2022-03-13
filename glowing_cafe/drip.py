@@ -7,19 +7,15 @@ class Drip:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.RADIUS = 10
         self.SPEED = 7
-        self.rect = (self.x, self.y, PLAYER_HIT_BOX_WIDTH, PLAYER_HIT_BOX_HEIGHT)
-
-    def get_x(self):
-        return self.x
-
-    def get_y(self):
-        return self.y
+        self.circle = (self.x, self.y)
 
     # Main - Run all other functions.
     def main(self, screen):
         self.move()
-        pygame.draw.rect(screen, 'Yellow', self.rect)
+        self.circle = (self.x, self.y)
+        pygame.draw.circle(screen, 'Yellow', self.circle, self.RADIUS)
 
     # Move
     def move(self):
