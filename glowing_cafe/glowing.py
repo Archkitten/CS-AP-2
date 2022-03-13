@@ -12,15 +12,39 @@ class Glowing:
         self.SCREEN = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.FONT = pygame.font.Font('font/PixelType.ttf', 32)
         # Dynamic Variables
+        self.click = False
+        self.character = "Drip"
 
     def main_menu(self):
         # Local Variables
         running = True
-        title = self.FONT.render("Glowing Cafe", False, 'Black')
+
+        TEXT_TITLE = self.FONT.render("Glowing Cafe", False, 'Black')
+
+        BUTTON_LEVEL_0 = pygame.Rect(20, 50, 100, 25)
+        BUTTON_LEVEL_0_TEXT = self.FONT.render("Level 0", False, 'White')
+
+        TEXT_CHARACTER_SELECT = self.FONT.render("Character Select", False, 'Black')
+
         while running:
+            # Redefine Variables
+            mx, my = pygame.mouse.get_pos()
             # Drawing
-            self.SCREEN.fill('Black')
-            self.SCREEN.blit(title, (WIN_WIDTH / 2, WIN_HEIGHT / 2))
+            self.SCREEN.fill('White')
+
+            self.SCREEN.blit(TEXT_TITLE, (20, 20))
+
+            pygame.draw.rect(self.SCREEN, 'Black', BUTTON_LEVEL_0)
+            self.SCREEN.blit(BUTTON_LEVEL_0_TEXT, (BUTTON_LEVEL_0.x + 10, BUTTON_LEVEL_0.y + 5))
+
+            self.SCREEN.blit(TEXT_CHARACTER_SELECT, (WIN_WIDTH / 1.5, 20))
+
+            pygame.draw.circle(self.SCREEN, 'Red', (mx, my), 5)
+            # Conditionals
+            if BUTTON_LEVEL_0.collidepoint((mx, my)):
+                if self.click:
+                    self.level_0()
+            self.click = False
             # Event Loop
             for event in pygame.event.get():
                 # Close Button
@@ -29,8 +53,43 @@ class Glowing:
                     sys.exit()
                 # Keyboard Presses
                 if event.type == pygame.KEYDOWN:
+                    # Escape Key
                     if event.key == pygame.K_ESCAPE:
                         running = False
+                # Click
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        self.click = True
+            pygame.display.update()
+            self.CLOCK.tick(FPS)
+
+    def level_0(self):
+        # Local variables
+        running = True
+        BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
+        TEXT_TITLE = self.FONT.render("Level 0", False, 'Black')
+        while running:
+            # Redefine Variables
+            mx, my = pygame.mouse.get_pos()
+            # Drawing
+            self.SCREEN.blit(BACKGROUND, (0, 0))
+            self.SCREEN.blit(TEXT_TITLE, (20, 20))
+            pygame.draw.circle(self.SCREEN, 'Red', (mx, my), 5)
+            # Event Loop
+            for event in pygame.event.get():
+                # Close Button
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                # Keyboard Presses
+                if event.type == pygame.KEYDOWN:
+                    # Escape Key
+                    if event.key == pygame.K_ESCAPE:
+                        running = False
+                # Click
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        self.click = True
             pygame.display.update()
             self.CLOCK.tick(FPS)
 
