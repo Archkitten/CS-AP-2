@@ -2,7 +2,6 @@ import pygame
 import sys
 from config import *
 from drip import Drip
-from star import Star
 
 
 class Glowing:
@@ -71,7 +70,6 @@ class Glowing:
         click = False
         BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
         TEXT_TITLE = self.FONT.render("Level 0", False, 'Black')
-        projectiles = []
         # Character Select
         if self.character == "Drip":
             player = Drip(WIN_WIDTH / 8, WIN_HEIGHT / 2)
@@ -84,23 +82,13 @@ class Glowing:
             self.SCREEN.blit(BACKGROUND, (0, 0))
             self.SCREEN.blit(TEXT_TITLE, (20, 20))
 
-            player.main(self.SCREEN)
+            player.main(self.SCREEN, mx, my)
 
             if click:
                 pygame.draw.circle(self.SCREEN, 'Green', (mx, my), 5)
             else:
                 pygame.draw.circle(self.SCREEN, 'Red', (mx, my), 5)
 
-            for projectile in projectiles:
-                if projectile.x < 0 - projectile.RADIUS or projectile.x > WIN_WIDTH + projectile.RADIUS:
-                    projectiles.remove(projectile)
-                elif projectile.y < 0 - projectile.RADIUS or projectile.y > WIN_HEIGHT + projectile.RADIUS:
-                    projectiles.remove(projectile)
-                projectile.main(self.SCREEN)
-
-            # Conditionals
-            if click:
-                projectiles.append(Star(player.x, player.y, mx, my))
             # Event Loop
             for event in pygame.event.get():
                 # Keyboard Presses
