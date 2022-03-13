@@ -7,4 +7,5 @@ class Ro(Player):
     # Constructor
     def __init__(self, x, y):
         super().__init__(x, y)
-        self.COLOR = 'Orange'
+        self.COLOR = 'Gray'
+        self.PROJECTILE_COOLDOWN = 10
