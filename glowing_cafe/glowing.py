@@ -86,7 +86,10 @@ class Glowing:
 
             player.main(self.SCREEN)
 
-            pygame.draw.circle(self.SCREEN, 'Red', (mx, my), 5)
+            if click:
+                pygame.draw.circle(self.SCREEN, 'Green', (mx, my), 5)
+            else:
+                pygame.draw.circle(self.SCREEN, 'Red', (mx, my), 5)
 
             for projectile in projectiles:
                 if projectile.x < 0 - projectile.RADIUS or projectile.x > WIN_WIDTH + projectile.RADIUS:

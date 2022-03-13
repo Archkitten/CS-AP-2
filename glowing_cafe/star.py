@@ -26,5 +26,5 @@ class Star:
     def move(self):
         self.x += self.dx
         self.y += self.dy
-        self.x = int(self.x)
-        self.y = int(self.y)
+        # self.x = int(self.x)
+        # self.y = int(self.y)
