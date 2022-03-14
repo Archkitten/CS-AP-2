@@ -18,5 +18,5 @@ Plans for success:
 * Therefore, Inheritance and Late Binding is needed to store different object types into the same Array.
 
 Final Result:
-* Link to code + runtime: [CS-AP-2 Java Repl.it](https://replit.com/@ArchHuang/CS-AP-2?lite=true)
+* Link to code + runtime: [CS-AP-2 Java Replit](https://replit.com/@ArchHuang/CS-AP-2?lite=true)
 * Ticket: [Ticket](https://github.com/Archkitten/m221-nitro-code/issues/1)
