@@ -11,13 +11,14 @@ public class MatrixToText extends Option {
     }
 
     private void numpad() {
-        int[][] numpad_array = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] numpad_array = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
         for (int[] i : numpad_array) {
             for (int j : i) {
                 System.out.print(j + " ");
             }
             System.out.println();
         }
+        System.out.println("You want 0's? You can HAVE 0's.");
     }
 
     private void keyboard() {

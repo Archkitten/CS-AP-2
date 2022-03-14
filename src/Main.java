@@ -1,11 +1,16 @@
 import java.util.Scanner;
 
 public class Main {
+
+    private static boolean running = true;
+
     public static void main(String[] args) {
         Option numberSwap = new NumberSwap();
         Option matrixToText = new MatrixToText();
         Option[] option_array_editable = new Option[] {numberSwap, matrixToText};
-        menu("Hey!", option_array_editable);
+        while (running == true) {
+            menu("Choose an option!", option_array_editable);
+        }
     }
 
     public static void menu(String banner, Option[] options_array) {
@@ -14,6 +19,7 @@ public class Main {
         System.out.println(banner);
         // Iterator, prints out options of the menu.
         int i = 1;
+        System.out.println("0 - Exit");
         for (Option o : options_array) {
             System.out.print(i + " - ");
             i++;
@@ -21,20 +27,21 @@ public class Main {
         }
 
         String userInput = scanObj.nextLine();
-        // Checks if user input matches a menu option.
-        for (Option o : options_array) {
-            if (userInput.equals(o.getOptionName())) {
-                o.process(scanObj);
-            }
-        }
-
-        /*
+        int selection = 0;
         try {
-            int selection = Integer.parseInt(userInput);
+            selection = Integer.parseInt(userInput);
         }
         catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        */
+        // Checks if user input matches a menu option.
+        for (int o = 0; o < options_array.length; o++) {
+            if (selection == 0) {
+                running = false;
+            }
+            else if (selection == o + 1) {
+                options_array[o].process(scanObj);
+            }
+        }
     }
 }
