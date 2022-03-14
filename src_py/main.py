@@ -1,12 +1,12 @@
 from number_swap import NumberSwap
 from matrix_to_text import MatrixToText
-from christmas_tree import ChristmasTree
+from recursive_a import RecursiveA
 
 # List of options, easily editable. Let's go lazy programming!
 number_swap = NumberSwap()
 matrix_to_text = MatrixToText()
-christmas_tree = ChristmasTree()
-options_list_editable = [number_swap, matrix_to_text, christmas_tree]
+recursive_a = RecursiveA()
+options_list_editable = [number_swap, matrix_to_text, recursive_a]
 
 
 # Reusable menu() function.

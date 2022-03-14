@@ -10,8 +10,7 @@ class NumberSwap:
     def process(self):
         self.a = input("Input first integer: ")
         self.b = input("Input second integer: ")
-        # Wait what? Why? This shouldn't work...
-        if self.a < self.b:
+        if self.a > self.b:
             temp = self.a
             self.a = self.b
             self.b = temp
