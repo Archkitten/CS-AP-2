@@ -20,6 +20,7 @@ class Player:
     # Main - Run all other functions.
     def main(self, screen, target_x, target_y):
         self.move()
+        self.animate()
         self.shoot(target_x, target_y)
         self.display_projectiles(screen)
         self.circle = (self.x, self.y)
@@ -48,21 +49,27 @@ class Player:
             current_speed *= 0.5
         # If the character is trying to go out of bounds, don't move.
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
-            if self.x <= 0:
-                current_speed = 0
-            self.x -= current_speed
+            if self.x <= 0 + self.RADIUS:
+                self.x -= 0
+            else:
+                self.x -= current_speed
         if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
-            if self.x >= WIN_WIDTH:
-                current_speed = 0
-            self.x += current_speed
+            if self.x >= WIN_WIDTH - self.RADIUS:
+                self.x += 0
+            else:
+                self.x += current_speed
         if keys[pygame.K_UP] or keys[pygame.K_w]:
-            if self.y <= 0:
+            if self.y <= 0 + self.RADIUS:
                 current_speed = 0
             self.y -= current_speed
         if keys[pygame.K_DOWN] or keys[pygame.K_s]:
-            if self.y >= WIN_HEIGHT:
+            if self.y >= WIN_HEIGHT - self.RADIUS:
                 current_speed = 0
             self.y += current_speed
+
+    # Animate
+    def animate(self):
+        pass
 
     # Shoot
     def shoot(self, tx, ty):

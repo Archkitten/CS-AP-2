@@ -36,8 +36,8 @@ class Glowing:
         TEXT_CHARACTER_SELECT = self.FONT.render("Character Select", False, 'Black')
 
         BUTTON_BLOB = pygame.Rect(WIN_WIDTH / 1.5, 50, 150, 200)
-        BUTTON_DRIP = pygame.Rect(WIN_WIDTH / 1.5, 250, 150, 200)
-        BUTTON_RO = pygame.Rect(WIN_WIDTH / 1.5, 450, 150, 200)
+        BUTTON_DRIP = pygame.Rect(WIN_WIDTH / 1.5, 275, 150, 200)
+        BUTTON_RO = pygame.Rect(WIN_WIDTH / 1.5, 500, 150, 200)
 
         while running:
             # Redefine Variables
