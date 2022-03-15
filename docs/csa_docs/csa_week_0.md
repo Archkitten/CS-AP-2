@@ -1,4 +1,6 @@
-{% include_relative ../csa.md %}
+{% include navigation.html %}
+
+# CSA
 
 ## Week 0
 
