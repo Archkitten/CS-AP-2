@@ -1,4 +1,4 @@
-{% include_relative csa.md %}
+{% include_relative ../csa.md %}
 
 ## Week 0
 
