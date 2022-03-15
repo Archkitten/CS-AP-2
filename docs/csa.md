@@ -6,4 +6,4 @@
 
 ## Replit Runtime:
 
-<iframe src="https://replit.com/@ArchHuang/CS-AP-A?lite=true"></iframe>
+<iframe src="https://replit.com/@ArchHuang/CS-AP-A?lite=true" width="1280px" height="720px"></iframe>
