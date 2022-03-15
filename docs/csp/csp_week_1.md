@@ -4,17 +4,23 @@
 
 {% include csp_nav.html %}
 
-## Week 1 Notes and TPT
+## Week 1
 
 ### 5.3 Notes
 
+Notes
+
 ### [Tri 3 TPT 1.0 Computing Bias 5.3](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.0-Computing-Bias-5.3)
+
+GitHub Actions
 
 ### 5.4 Notes
 
+Notes
+
 ### [Tri 3 TPT 1.1 Crowdsourcing 5.4](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.1-Crowdsourcing--5.4)
 
-## Week 1 Tech Talk and Activities
+GitHub Actions
 
 ### [Tri 3 TT1 Data Structures](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT1---Data-Structures)
 
@@ -26,7 +32,11 @@ List:
 ```
 my_list = []
 my_list.append("Hello!")
-print(my_list)
+
+print(len(my_list))
+# Result: 1
+
+my_list.remove(0)
 ```
 
 Assignment:
