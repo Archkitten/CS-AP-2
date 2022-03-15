@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args) {
         Option numberSwap = new NumberSwap();
         Option matrixToText = new MatrixToText();
-        Option[] option_array_editable = new Option[] {numberSwap, matrixToText};
+        Option bestSongHackathon = new BestSongHackathon();
+
+        Option[] option_array_editable = new Option[] {numberSwap, matrixToText, bestSongHackathon};
         while (running == true) {
             menu("Choose an option!", option_array_editable);
         }
