@@ -1,4 +1,4 @@
-{% include csa_nav.html %}
+{% include docs/csp.md %}
 
 ## Week 0
 
