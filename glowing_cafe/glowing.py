@@ -57,7 +57,7 @@ class Glowing:
             self.SCREEN.blit(TEXT_CHARACTER_SELECT, (WIN_WIDTH / 1.5, 20))
 
             if self.BLOB == False:
-                pygame.draw.rect(self.SCREEN, 'Black', BUTTON_BLOB)
+                pygame.draw.rect(self.SCREEN, 'Purple', BUTTON_BLOB)
             else:
                 pygame.draw.rect(self.SCREEN, 'Green', BUTTON_BLOB)
             if self.DRIP == False:
