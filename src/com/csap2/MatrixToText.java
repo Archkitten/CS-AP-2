@@ -1,9 +1,11 @@
+package com.csap2;
+
 import java.util.Scanner;
 
 public class MatrixToText extends Option {
 
     public MatrixToText() {
-        optionName = "MatrixToText";
+        optionName = "Matrix To Text";
     }
 
     public String getOptionName() {
@@ -35,7 +37,7 @@ public class MatrixToText extends Option {
 
 
     public void process(Scanner scanObj) {
-        // super.process() will just run the process() method from Option.java
+        // super.process() will just run the process() method from com.csap2.Option.java
         super.process(scanObj);
         // Ask user to run numpad or keyboard in the future
         System.out.println("Numpad or Keyboard?");

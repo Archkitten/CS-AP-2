@@ -1,3 +1,5 @@
+package com.csap2;
+
 import java.util.Scanner;
 
 public class Option {
@@ -10,5 +12,9 @@ public class Option {
 
     public void process(Scanner scanObj) {
         System.out.println(optionName);
+    }
+
+    public void tester() {
+        System.out.println("Test\n");
     }
 }

@@ -1,9 +1,11 @@
+package com.csap2;
+
 import java.util.Scanner;
 
 public class BestSongHackathon extends Option {
 
     public BestSongHackathon() {
-        optionName = "BestSongHackathon";
+        optionName = "Best Song Hackathon";
     }
 
     public String getOptionName() {

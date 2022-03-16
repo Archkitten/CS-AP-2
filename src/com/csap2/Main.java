@@ -1,3 +1,5 @@
+package com.csap2;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +12,7 @@ public class Main {
         Option bestSongHackathon = new BestSongHackathon();
 
         Option[] option_array_editable = new Option[] {numberSwap, matrixToText, bestSongHackathon};
-        while (running == true) {
+        while (running) {
             menu("Choose an option!", option_array_editable);
         }
     }
@@ -43,6 +45,7 @@ public class Main {
             }
             else if (selection == o + 1) {
                 options_array[o].process(scanObj);
+                options_array[o].tester();
             }
         }
     }

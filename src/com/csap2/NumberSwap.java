@@ -1,9 +1,11 @@
+package com.csap2;
+
 import java.util.Scanner;
 
 public class NumberSwap extends Option {
 
     public NumberSwap() {
-        optionName = "NumberSwap";
+        optionName = "Number Swap";
     }
 
     public String getOptionName() {
