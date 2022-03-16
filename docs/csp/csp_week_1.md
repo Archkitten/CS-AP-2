@@ -39,8 +39,33 @@ print(len(my_list))
 my_list.remove(0)
 ```
 
-Assignment:
+InfoDB Lists:
+```
+InfoDB = []
+
+InfoDB.append({"P1": "Blob", 
+               "P2": "Drip", 
+               "P3": "Ro"})
+```
+
+Assignment (InfoDB Loops):
 * Iterate through a python list in three different ways:
 * For Loop
 * While Loop
 * Recursion
+```
+# for loop iterates on length of InfoDB
+def for_loop():
+    for n in range(len(InfoDB)):
+        print_data(n)
+# while loop contains an initial n and an index incrementing statement (n += 1)
+def while_loop(n):
+    while n < len(InfoDB):
+        print_data(n)
+        n += 1
+    return
+```
+
+Fibonacci:
+* Fibonacci is a process that requires iteration, as the following value requires the two previous values to appear.
+* Therefore, getting the next value in a Fibonacci sequence requires constant iteration.

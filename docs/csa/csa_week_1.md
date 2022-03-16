@@ -31,7 +31,7 @@ Generic T - Putting a Class inside an Array? {}
 Iterable Interface - For each loop through... a Linked List?
 
 Queue - Built on top of a List (FIRST IN FIRST OUT)
-* (processes this one ->) above -> blob -> cup -> drip -> leek -> nay -> ro -> wee -> null (<- add stuff here)
+* (processes this one ->) above -> blob -> cup -> drip -> john -> leek -> nay -> ro -> wee -> null (<- add stuff here)
 * To add elements, add to head (queuing)
 * To delete elements, remove from tail (dequeue)
 
@@ -40,6 +40,7 @@ Stack - Also built on top of a List (LAST IN FIRST OUT)
 * blob
 * cup
 * drip
+* john
 * leek
 * nay
 * ro

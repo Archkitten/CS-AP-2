@@ -9,7 +9,7 @@ class MatrixToText:
     def get_name(self):
         return self.name
 
-    def process(self):
+    def tester(self):
         for i in self.numpad:
             for j in i:
                 print(j, "", end="")

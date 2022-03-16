@@ -14,7 +14,7 @@ class Week1:
     def get_name(self):
         return self.name
 
-    def process(self):
+    def tester(self):
         print(self.name)
         m = Menu("Week 1 Options:", options_list)
         m.menu()

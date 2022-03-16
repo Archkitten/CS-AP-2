@@ -7,7 +7,7 @@ class NumberSwap:
     def get_name(self):
         return self.name
 
-    def process(self):
+    def tester(self):
         self.a = input("Input first integer: ")
         self.b = input("Input second integer: ")
         if self.a > self.b:

@@ -7,7 +7,7 @@ class RecursiveA:
     def get_name(self):
         return self.name
 
-    def process(self):
+    def tester(self):
         print(self.space + "A")
         self.space = self.space + " "
         self.counter += 1
