@@ -4,6 +4,7 @@ from config import *
 from blob import Blob
 from drip import Drip
 from ro import Ro
+from boss import Boss
 
 
 class Glowing:
@@ -125,6 +126,7 @@ class Glowing:
         blob = Blob(WIN_WIDTH / 8, WIN_HEIGHT / 1.5)
         drip = Drip(WIN_WIDTH / 8, WIN_HEIGHT / 2)
         ro = Ro(WIN_WIDTH / 8, WIN_HEIGHT / 4)
+        boss = Boss(WIN_WIDTH / 1.5, WIN_HEIGHT / 2)
         while running:
             # Redefine Variables
             mx, my = pygame.mouse.get_pos()
@@ -138,6 +140,8 @@ class Glowing:
                 drip.main(self.SCREEN, mx, my)
             if self.RO == True:
                 ro.main(self.SCREEN, mx, my)
+            boss.main(self.SCREEN, drip.x, drip.y)
+
 
             if click:
                 pygame.draw.circle(self.SCREEN, 'Green', (mx, my), 5)
