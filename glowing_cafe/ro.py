@@ -1,7 +1,7 @@
 import pygame
 from config import *
 from player import Player
-from star import Star
+from projectile import Feather
 
 
 class Ro(Player):
@@ -15,9 +15,9 @@ class Ro(Player):
     def shoot(self, tx, ty):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
-            self.projectiles.append(Star(self.x, self.y, tx, ty))
-            self.projectiles.append(Star(self.x, self.y, tx, ty + 100))
-            self.projectiles.append(Star(self.x, self.y, tx, ty - 100))
+            self.projectiles.append(Feather(self.x, self.y, tx, ty))
+            self.projectiles.append(Feather(self.x, self.y, tx, ty + 100))
+            self.projectiles.append(Feather(self.x, self.y, tx, ty - 100))
 
         if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
             self.projectile_counter = 0

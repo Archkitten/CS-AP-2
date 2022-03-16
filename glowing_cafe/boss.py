@@ -1,7 +1,7 @@
 import pygame
 from config import *
 from player import Player
-from star import Star
+from projectile import Bullet
 
 
 class Boss(Player):
@@ -26,13 +26,13 @@ class Boss(Player):
 
     def shoot_spread(self, tx, ty):
         if self.projectile_counter == self.PROJECTILE_COOLDOWN:
-            self.projectiles.append(Star(self.x, self.y, tx, ty))
-            self.projectiles.append(Star(self.x, self.y, tx, ty + 50))
-            self.projectiles.append(Star(self.x, self.y, tx, ty - 50))
-            self.projectiles.append(Star(self.x, self.y, tx, ty + 100))
-            self.projectiles.append(Star(self.x, self.y, tx, ty - 100))
+            self.projectiles.append(Bullet(self.x, self.y, tx, ty))
+            self.projectiles.append(Bullet(self.x, self.y, tx, ty + 50))
+            self.projectiles.append(Bullet(self.x, self.y, tx, ty - 50))
+            self.projectiles.append(Bullet(self.x, self.y, tx, ty + 100))
+            self.projectiles.append(Bullet(self.x, self.y, tx, ty - 100))
 
     def shoot_missiles(self, tx, ty):
         if self.projectile_counter == self.PROJECTILE_COOLDOWN / 2:
-            self.projectiles.append(Star(self.x, self.y + 200, tx, ty))
-            self.projectiles.append(Star(self.x, self.y - 200, tx, ty))
+            self.projectiles.append(Bullet(self.x, self.y + 200, tx, ty))
+            self.projectiles.append(Bullet(self.x, self.y - 200, tx, ty))

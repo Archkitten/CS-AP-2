@@ -2,13 +2,14 @@ import pygame
 import math
 from config import *
 
-class Star:
+class LinearProjectile:
     # Constructor
     def __init__(self, x, y, mx, my):
         self.x = x
         self.y = y
         self.RADIUS = 5
-        self.SPEED = 10
+        self.SPEED = 9
+        self.COLOR = 'White'
         self.circle = (self.x, self.y)
 
         # Big Math Stuff
@@ -20,7 +21,7 @@ class Star:
     def main(self, screen):
         self.move()
         self.circle = (self.x, self.y)
-        pygame.draw.circle(screen, 'Yellow', self.circle, self.RADIUS)
+        pygame.draw.circle(screen, self.COLOR, self.circle, self.RADIUS)
 
     # Move
     def move(self):
