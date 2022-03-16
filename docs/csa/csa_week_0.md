@@ -6,7 +6,7 @@
 
 ## Week 0
 
-### Challenges (TPT): [Tri 3: Tech Talk 0 Data Structures](https://github.com/nighthawkcoders/nighthawk_csa/wiki/Tri-3:-Tech-Talk-0---Data-Structures#challenges)
+### (TPT) Study Group Challenges
 
 Assignment:
 * Java Menu that is not hard coded (Use object array?)
