@@ -10,12 +10,19 @@ class Player:
         self.y = y
         self.RADIUS = 10
         self.SPEED = 7
+        self.SLOW_PERCENT = 0.5
         self.COLOR = 'White'
         self.circle = (self.x, self.y)
 
         self.projectiles = []
         self.projectile_counter = 0
         self.PROJECTILE_COOLDOWN = 1
+
+        self.KEY_SHOOT = pygame.K_SPACE
+        self.KEY_LEFT = pygame.K_LEFT
+        self.KEY_RIGHT = pygame.K_RIGHT
+        self.KEY_UP = pygame.K_UP
+        self.KEY_DOWN = pygame.K_DOWN
 
     # Main - Run all other functions.
     def main(self, screen, target_x, target_y):
@@ -31,13 +38,13 @@ class Player:
         keys = pygame.key.get_pressed()
         # Check for diagonal movement.
         key_count = 0
-        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+        if keys[self.KEY_LEFT]:
             key_count += 1
-        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+        if keys[self.KEY_RIGHT]:
             key_count += 1
-        if keys[pygame.K_UP] or keys[pygame.K_w]:
+        if keys[self.KEY_UP]:
             key_count += 1
-        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+        if keys[self.KEY_DOWN]:
             key_count += 1
         # Speed modifiers:
         # If the player is going diagonal divide their speed by 1/math.sqrt(2).
@@ -45,24 +52,24 @@ class Player:
         current_speed = self.SPEED
         if key_count >= 2:
             current_speed *= 0.7071
-        if keys[pygame.K_SPACE]:
-            current_speed *= 0.5
+        if keys[self.KEY_SHOOT]:
+            current_speed *= self.SLOW_PERCENT
         # If the character is trying to go out of bounds, don't move.
-        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
+        if keys[self.KEY_LEFT]:
             if self.x <= 0 + self.RADIUS:
                 self.x -= 0
             else:
                 self.x -= current_speed
-        if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
+        if keys[self.KEY_RIGHT]:
             if self.x >= WIN_WIDTH - self.RADIUS:
                 self.x += 0
             else:
                 self.x += current_speed
-        if keys[pygame.K_UP] or keys[pygame.K_w]:
+        if keys[self.KEY_UP]:
             if self.y <= 0 + self.RADIUS:
                 current_speed = 0
             self.y -= current_speed
-        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
+        if keys[self.KEY_DOWN]:
             if self.y >= WIN_HEIGHT - self.RADIUS:
                 current_speed = 0
             self.y += current_speed
@@ -74,7 +81,7 @@ class Player:
     # Shoot
     def shoot(self, tx, ty):
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_SPACE] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
+        if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
             self.projectiles.append(Bullet(self.x, self.y, tx, ty))
 
         if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
