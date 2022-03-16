@@ -1,4 +1,4 @@
-package com.csap2;
+package java;
 
 public class Song {
 
