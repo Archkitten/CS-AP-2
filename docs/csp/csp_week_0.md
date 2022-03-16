@@ -38,3 +38,25 @@ Notes
 ### [Tri 3 TT0 Python Menu, Replit, Github](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3---TT0---Python-Menu,-Replit,-Github)
 
 Link to code + runtime: [CS-AP-P Python Replit](https://replit.com/@ArchHuang/CS-AP-P?lite=true)
+
+### Create Task Plan
+
+<table>
+    <tr>
+        <th>Project Name</th>
+        <th>Link</th>
+        <th>Description</th>
+        <th>Date</th>
+    </tr>
+    <tr>
+        <td>Create Task</td>
+        <td><a href="https://www.google.com/">N/A</a></td>
+        <td>
+            [Project Name] contains user input through mouse clicks and keyboard inputs.
+            A list will also be used to store objects that can be displayed on the screen.
+            This project will use Object-Oriented Programming, with each object containing functions that allow it to preform tasks like updating position or changing variables based on user input.
+            An algorithm will be used to remove objects that aren't needed anymore, as well as iterate through the list in order to display each object on the screen.
+        </td>
+        <td>TBD</td>
+    </tr>
+</table>

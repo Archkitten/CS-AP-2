@@ -121,7 +121,9 @@ class Glowing:
         # Local variables
         running = True
         click = False
-        BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
+        # BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
+        # BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
+        # BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
         TEXT_TITLE = self.FONT.render("Level 0", False, 'Black')
         # Character Select
         blob = Blob(WIN_WIDTH / 8, WIN_HEIGHT / 1.5)
@@ -132,7 +134,13 @@ class Glowing:
             # Redefine Variables
             mx, my = pygame.mouse.get_pos()
             # Drawing
-            self.SCREEN.blit(BACKGROUND, (0, 0))
+            # self.SCREEN.blit(BACKGROUND, (0, 0))
+            # self.SCREEN.blit(BACKGROUND, (0, 0))
+            # self.SCREEN.blit(BACKGROUND, (0, 0))
+            self.SCREEN.fill('Black')
+            # self.SCREEN.blit(BACKGROUND, (0, 0))
+            # self.SCREEN.blit(BACKGROUND, (0, 0))
+            # self.SCREEN.blit(BACKGROUND, (0, 0))
             self.SCREEN.blit(TEXT_TITLE, (20, 20))
 
             if self.BLOB == True:

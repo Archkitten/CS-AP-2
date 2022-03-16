@@ -14,7 +14,7 @@ class Drip(Player):
 
         self.PROJECTILE_COOLDOWN = 30
 
-        self.KEY_SHOOT = pygame.K_e
+        self.KEY_SHOOT = pygame.K_c
         self.KEY_LEFT = pygame.K_a
         self.KEY_RIGHT = pygame.K_d
         self.KEY_UP = pygame.K_w

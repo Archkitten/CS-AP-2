@@ -14,7 +14,7 @@ class Ro(Player):
 
         self.PROJECTILE_COOLDOWN = 22
 
-        self.KEY_SHOOT = pygame.K_o
+        self.KEY_SHOOT = pygame.K_PERIOD
         self.KEY_LEFT = pygame.K_j
         self.KEY_RIGHT = pygame.K_l
         self.KEY_UP = pygame.K_i
