@@ -15,8 +15,16 @@ class Boss(Player):
     def move(self):
         pass
 
-    # Shoot
+    # Shoot - Call all other "shoot" functions
     def shoot(self, tx, ty):
+        self.shoot_spread(tx, ty)
+        self.shoot_missiles(tx, ty)
+
+        if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
+            self.projectile_counter = 0
+        self.projectile_counter += 1
+
+    def shoot_spread(self, tx, ty):
         if self.projectile_counter == self.PROJECTILE_COOLDOWN:
             self.projectiles.append(Star(self.x, self.y, tx, ty))
             self.projectiles.append(Star(self.x, self.y, tx, ty + 50))
@@ -24,6 +32,7 @@ class Boss(Player):
             self.projectiles.append(Star(self.x, self.y, tx, ty + 100))
             self.projectiles.append(Star(self.x, self.y, tx, ty - 100))
 
-        if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
-            self.projectile_counter = 0
-        self.projectile_counter += 1
+    def shoot_missiles(self, tx, ty):
+        if self.projectile_counter == self.PROJECTILE_COOLDOWN / 2:
+            self.projectiles.append(Star(self.x, self.y + 200, tx, ty))
+            self.projectiles.append(Star(self.x, self.y - 200, tx, ty))

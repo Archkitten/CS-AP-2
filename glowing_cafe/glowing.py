@@ -1,5 +1,6 @@
 import pygame
 import sys
+import random
 from config import *
 from blob import Blob
 from drip import Drip
@@ -126,7 +127,7 @@ class Glowing:
         blob = Blob(WIN_WIDTH / 8, WIN_HEIGHT / 1.5)
         drip = Drip(WIN_WIDTH / 8, WIN_HEIGHT / 2)
         ro = Ro(WIN_WIDTH / 8, WIN_HEIGHT / 4)
-        boss = Boss(WIN_WIDTH / 1.5, WIN_HEIGHT / 2)
+        boss = Boss(WIN_WIDTH / 1.2, WIN_HEIGHT / 2)
         while running:
             # Redefine Variables
             mx, my = pygame.mouse.get_pos()
@@ -135,12 +136,20 @@ class Glowing:
             self.SCREEN.blit(TEXT_TITLE, (20, 20))
 
             if self.BLOB == True:
-                blob.main(self.SCREEN, mx, my)
+                blob.main(self.SCREEN, boss.x, boss.y)
             if self.DRIP == True:
-                drip.main(self.SCREEN, mx, my)
+                drip.main(self.SCREEN, boss.x, boss.y)
             if self.RO == True:
-                ro.main(self.SCREEN, mx, my)
-            boss.main(self.SCREEN, drip.x, drip.y)
+                ro.main(self.SCREEN, boss.x, boss.y)
+
+            # Boss Targeting System
+            target = random.randint(1, 3)
+            if target == 1:
+                boss.main(self.SCREEN, blob.x, blob.y)
+            elif target == 2:
+                boss.main(self.SCREEN, drip.x, drip.y)
+            elif target == 3:
+                boss.main(self.SCREEN, ro.x, ro.y)
 
 
             if click:
