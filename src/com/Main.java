@@ -1,5 +1,8 @@
 package com;
 
+import com.week0.MatrixToText;
+import com.week0.NumberSwap;
+
 import java.util.Scanner;
 
 public class Main {

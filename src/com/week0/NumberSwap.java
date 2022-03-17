@@ -1,4 +1,6 @@
-package com;
+package com.week0;
+
+import com.Option;
 
 import java.util.Scanner;
 
