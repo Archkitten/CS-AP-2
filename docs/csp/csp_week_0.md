@@ -4,11 +4,12 @@
 
 {% include csp_nav.html %}
 
-## Week 0
+## Week 0 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/1)
 
 ### 5.1 Notes
 
-Notes
+* Drones were made that helps video surveillance through air, helps people by finding lost people, although privacy concerns and illegal flying are negatives of the invention.
+* 3D Printers were invented that allows for easy access to many tools, home-printed.
 
 ### [Tri 3 TPT 0.1 related to Beneficial and Harmful Effects of Computing Big Idea 5.1](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-0.1-related-to-Beneficial-and-Harmful-Effects-of-Computing-Big-Idea-5.1)
 
@@ -22,7 +23,8 @@ Notes
 
 ### 5.2 Notes
 
-Notes
+* Some people may not have access to technology at all, some people have technology but they don’t know how to use it or how it works. This is the digital divide, and it is best to reduce this as much as possible.
+* Digital Divide is increasing because a growing number of wealthy people are getting access to technology and other poorer people do not have ready access to technology when needed.
 
 ### [Tri 3 TPT 0.2 related to Digital Divide Big Idea 5.2](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-0.2-related-to-Digital-Divide-Big-Idea-5.2)
 

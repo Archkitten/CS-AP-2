@@ -4,11 +4,12 @@
 
 {% include csp_nav.html %}
 
-## Week 1
+## Week 1 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/4)
 
 ### 5.3 Notes
 
-Notes
+* Computing Bias occurs when the people that make the machines are biased already.
+* Let’s say someone makes a soap dispenser that detects skin color to dispense soap, but forgets about other skin colors. The end result is a biased soap dispenser that only gives soap to the creator, not at the fault of the soap dispenser, but of the person that created it.
 
 ### [Tri 3 TPT 1.0 Computing Bias 5.3](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.0-Computing-Bias-5.3)
 

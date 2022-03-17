@@ -4,7 +4,7 @@
 
 {% include csa_nav.html %}
 
-## Week 1
+## Week 1 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/3)
 
 ### (TPT) Study Group Challenge 1
 
