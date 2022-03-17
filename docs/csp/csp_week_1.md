@@ -21,7 +21,11 @@ Notes
 
 ### [Tri 3 TPT 1.1 Crowdsourcing 5.4](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.1-Crowdsourcing--5.4)
 
-GitHub Actions
+1. CompSci has 150 principles students. Describe a crowdsource idea and how you might initiate it in our environment?
+* A crowdsource idea could be something like announcing to a bunch of students, telling them to gather data on something like how much trash is usually left out at lunch.
+
+2. What about Del Norte crowdsourcing? Could your final project be better with crowdsourcing?
+* The final project would be better with crowdsourcing, allowing many people to run the program and save their own data on the website.
 
 ### [Tri 3 TT1 Data Structures](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT1---Data-Structures)
 
