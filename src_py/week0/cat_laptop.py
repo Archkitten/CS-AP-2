@@ -1,5 +1,5 @@
 import time
-from src_csp.util.option import Option
+from src_py.util.option import Option
 # from ..util.option import Option
 
 
@@ -30,7 +30,6 @@ class CatLaptop(Option):
         print(ANSI_HOME_CURSOR)
         print(RESET_COLOR)
         sp = " " * position
-        print("\n"*4)
         print(sp + "/|")
         print(sp + "||")
         print(sp + "\\|  ᓚᘏᗢ  ")

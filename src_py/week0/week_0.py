@@ -1,9 +1,9 @@
-from src_csp.util.menu import Menu
-from src_csp.util.option import Option
-from src_csp.week0.number_swap import NumberSwap
-from src_csp.week0.matrix_format import MatrixFormat
-from src_csp.week0.build_stairs import BuildStairs
-from src_csp.week0.cat_laptop import CatLaptop
+from src_py.util.menu import Menu
+from src_py.util.option import Option
+from src_py.week0.number_swap import NumberSwap
+from src_py.week0.matrix_format import MatrixFormat
+from src_py.week0.build_stairs import BuildStairs
+from src_py.week0.cat_laptop import CatLaptop
 
 
 class Week0(Option):

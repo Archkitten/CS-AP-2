@@ -54,10 +54,12 @@ InfoDB.append({"P1": "Blob",
 ```
 
 Assignment (InfoDB Loops):
+* Create InfoDB List
 * Iterate through a python list in three different ways:
-* For Loop
-* While Loop
-* Recursion
+  * For Loop
+  * While Loop
+  * Recursion
+* Fibonacci
 ```
 # for loop iterates on length of InfoDB
 def for_loop():

@@ -1,6 +1,6 @@
-from src_csp.util.menu import Menu
-from src_csp.util.option import Option
-from src_csp.week1.recursive_a import RecursiveA
+from src_py.util.menu import Menu
+from src_py.util.option import Option
+from src_py.week1.recursive_a import RecursiveA
 
 
 class Week1(Option):
