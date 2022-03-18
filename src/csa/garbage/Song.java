@@ -1,4 +1,4 @@
-package com;
+package csa.garbage;
 
 public class Song {
 
