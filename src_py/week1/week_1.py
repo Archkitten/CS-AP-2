@@ -1,10 +1,11 @@
-from src_py.menu import Menu
+from src_py.util.menu import Menu
+from src_py.util.option import Option
 from src_py.week1.recursive_a import RecursiveA
 
 # List of options, easily editable. Let's go lazy programming!
-recursive_a = RecursiveA()
+one = RecursiveA()
 
-options_list = [recursive_a]
+options_list = [one]
 
 
 class Week1:
@@ -16,5 +17,5 @@ class Week1:
 
     def tester(self):
         print(self.name)
-        m = Menu("Week 1 Options:", options_list)
+        m = Menu("----- WEEK 1 -----", options_list)
         m.menu()

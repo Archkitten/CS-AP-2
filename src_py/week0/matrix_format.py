@@ -1,13 +1,14 @@
-class MatrixToText:
+from src_py.util.option import Option
+
+
+class MatrixFormat(Option):
     def __init__(self):
-        self.name = "matrix_to_text"
+        super().__init__()
+        self.name = "Matrix Format"
         self.numpad = [[1, 2, 3],
                        [4, 5, 6],
                        [7, 8, 9],
                        [" ", 0, " "]]
-
-    def get_name(self):
-        return self.name
 
     def tester(self):
         for i in self.numpad:

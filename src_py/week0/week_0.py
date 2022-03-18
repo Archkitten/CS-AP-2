@@ -1,22 +1,20 @@
-from src_py.menu import Menu
+from src_py.util.menu import Menu
+from src_py.util.option import Option
 from src_py.week0.number_swap import NumberSwap
-from src_py.week0.matrix_to_text import MatrixToText
+from src_py.week0.matrix_format import MatrixFormat
 
 # List of options, easily editable. Let's go lazy programming!
-number_swap = NumberSwap()
-matrix_to_text = MatrixToText()
+one = NumberSwap()
+two = MatrixFormat()
 
-options_list = [number_swap, matrix_to_text]
+options = [one, two]
 
 
-class Week0:
+class Week0(Option):
     def __init__(self):
+        super().__init__()
         self.name = "Week 0"
 
-    def get_name(self):
-        return self.name
-
     def tester(self):
-        print(self.name)
-        m = Menu("Week 0 Options:", options_list)
+        m = Menu("----- WEEK 0 -----", options)
         m.menu()

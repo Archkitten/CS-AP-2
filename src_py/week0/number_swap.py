@@ -1,17 +1,19 @@
-class NumberSwap:
-    def __init__(self):
-        self.name = "number_swap"
-        self.a = 0
-        self.b = 0
+from src_py.util.option import Option
 
-    def get_name(self):
-        return self.name
+
+class NumberSwap(Option):
+    def __init__(self):
+        super().__init__()
+        self.name = "Number Swap"
 
     def tester(self):
-        self.a = input("Input first integer: ")
-        self.b = input("Input second integer: ")
-        if self.a > self.b:
-            temp = self.a
-            self.a = self.b
-            self.b = temp
-        print(self.a, self.b)
+        print(self.swap(1, 2))
+        print(self.swap(60, 30))
+        print(self.swap(9, -11))
+
+    def swap(self, a, b):
+        if a > b:
+            temp = a
+            a = b
+            b = temp
+        return a, b

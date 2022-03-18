@@ -12,11 +12,11 @@ class Menu:
             print(self.banner)
 
             # Prints out all available options.
+            print("0 - Exit")
             i = 1
             for o in self.options_list:
                 print(i, "-", o.get_name())
                 i += 1
-            print("0 - exit")
 
             # Asks for user input.
             user_input = input(">")
