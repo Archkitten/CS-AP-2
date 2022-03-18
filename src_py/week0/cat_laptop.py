@@ -10,10 +10,10 @@ SHIP_COLOR = u"\u001B[32m\u001B[2D"
 RESET_COLOR = u"\u001B[0m\u001B[2D"
 
 
-class Ship(Option):
+class CatLaptop(Option):
     def __init__(self):
         super().__init__()
-        self.name = "Ship Animation"
+        self.name = "Cat Laptop"
 
     def tester(self):
         self.ship()
@@ -30,11 +30,12 @@ class Ship(Option):
         print(ANSI_HOME_CURSOR)
         print(RESET_COLOR)
         sp = " " * position
+        print("\n"*4)
         print(sp + "/|")
         print(sp + "||")
-        print(sp + "\|  ᓚᘏᗢ  ")
+        print(sp + "\\|  ᓚᘏᗢ  ")
         print(SHIP_COLOR, end="")
-        print(sp + "  \______/  ")
+        print(sp + "  \\______/  ")
         print(RESET_COLOR)
 
     # ship function, iterate into this file
