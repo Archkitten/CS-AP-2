@@ -1,6 +1,7 @@
 from src_py.util.menu import Menu
 from src_py.util.option import Option
 from src_py.week1.recursive_a import RecursiveA
+from src_py.week1.info_loops import InfoLoops
 
 
 class Week1(Option):
@@ -9,7 +10,8 @@ class Week1(Option):
         self.name = "Week 1"
 
         one = RecursiveA()
-        self.options_list = [one]
+        two = InfoLoops()
+        self.options_list = [one, two]
 
     def tester(self):
         print(self.name)
