@@ -2,12 +2,13 @@ package csa;
 import csa.util.Menu;
 import csa.util.Option;
 import csa.week0.WeekZero;
+import csa.week1.WeekOne;
 
 public class Main {
 
     public static void main(String[] args) {
         Option one = new WeekZero();
-        Option two = new WeekZero();
+        Option two = new WeekOne();
 
         Option[] options = new Option[] {one, two};
 
