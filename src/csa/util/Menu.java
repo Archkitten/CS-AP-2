@@ -23,8 +23,8 @@ public class Menu {
             // User Input
             int userInput;
             do {
-                System.out.println("Please input an integer from 0 to " + options_array.length + ": ");
-                userInput = getValidInput(scanObj);
+                System.out.print(">");
+                userInput = getValidInput(scanObj, options_array.length);
             } while (userInput < 0 || userInput > options_array.length);
 
             // Checks if user input matches a menu option.
@@ -40,11 +40,20 @@ public class Menu {
     }
 
     // Error Handling
-    private int getValidInput(Scanner scanObj) {
+    private int getValidInput(Scanner scanObj, int arrayLength) {
         try {
-            return Integer.parseInt(scanObj.nextLine());
+            int userInput = Integer.parseInt(scanObj.nextLine());
+            if (userInput <= -1 || userInput > arrayLength) {
+                System.out.println("Out of Range");
+            }
+            return userInput;
+        }
+        catch(NumberFormatException e) {
+            System.out.println("Wrong Format");
+            return -1;
         }
         catch(Exception e) {
+            System.out.println("Unknown Error");
             return -1;
         }
     }
