@@ -33,6 +33,14 @@ public class Queue<T> implements Iterable<T> {
         }
     }
 
+    public void delete() {
+        System.out.println("Dequeued data: " + this.head.getData());
+        // Technically the data is still there, but the pointer (starting place) has been moved to the next one,
+        // meaning it will never be accessed. So mission accomplished?
+        this.head = this.head.getNext();
+        size--;
+    }
+
     /**
      *  Returns the head object.
      *

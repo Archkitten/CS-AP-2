@@ -17,6 +17,13 @@ public class ChallengeOne extends Option {
         myQueue.printQueue();
         myQueue.queue.add("ro");
         myQueue.printQueue();
+
+        myQueue.queue.delete();
+        myQueue.printQueue();
+        myQueue.queue.delete();
+        myQueue.printQueue();
+        myQueue.queue.delete();
+        myQueue.printQueue();
     }
 
 }
