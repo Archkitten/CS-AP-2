@@ -1,7 +1,5 @@
 package csa.util;
 
-import csa.util.QueueManager;
-
 /**
  * Driver Class
  * Tests queue with string, integers, and mixes of Classes and types
