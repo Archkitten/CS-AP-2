@@ -13,11 +13,44 @@
 
 ### [Tri 3 TPT 1.0 Computing Bias 5.3](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.0-Computing-Bias-5.3)
 
-GitHub Actions
+1. Does the owner of the computer think this was intentional?
+* No.
+
+2. If yes or no, justify you conclusion.
+* It probably wasn't intentional, since nobody wants to purposefully develop a racism program.
+
+3. How do you think this happened?
+* The company developing the face-tracking software only used white people as a sample size, so once the computer learned to recognize white people, they stopped developing the program. As a result, personal bias and forgetting other races exist is the cause of this error.
+
+4. Is this harmful? Was it intended to be harmful or exclude?
+* This is harmful, but it wasn't intended to be.
+
+5. Should it be corrected?
+* After the issue was discovered, HP should correct it as soon as possible.
+
+6. What would you or should you do to produce a better outcome?
+* Producing a better outcome relies on the individual to keep in mind their own biases and try and prevent them from entering programs they create.
 
 ### 5.4 Notes
 
-Notes
+* Public Data Sets
+  * IOC-1.E.1
+    * Widespread access to information and public data facilitates the identification of problems, development of solutions, and dissemination of results.
+* Distributed Computing
+  * Donate spare computing power to help calculations!
+* Innovations made possible with crowdsourcing
+  * Spotify
+    * Collaborative Playlists
+    * Algorithm
+    * Metadata write-in
+  * Crowdfunding
+    * Kickstarter
+    * IndieGoGo
+    * Patreon
+  * Blockchain
+    * Cryptocurrency
+    * Other tokens - Concert tickets
+    * N F T s >:(
 
 ### [Tri 3 TPT 1.1 Crowdsourcing 5.4](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-1.1-Crowdsourcing--5.4)
 
