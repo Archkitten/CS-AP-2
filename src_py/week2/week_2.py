@@ -2,6 +2,7 @@ from src_py.util.menu import Menu
 from src_py.util.option import Option
 from src_py.week2.factorial import Factorial
 from src_py.week2.palindrome import Palindrome
+from src_py.week2.tri_angle import TriAngle
 
 
 class Week2(Option):
@@ -11,7 +12,8 @@ class Week2(Option):
 
         one = Factorial()
         two = Palindrome()
-        self.options_list = [one, two]
+        three = TriAngle()
+        self.options_list = [one, two, three]
 
     def tester(self):
         print(self.name)
