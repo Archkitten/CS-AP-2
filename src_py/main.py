@@ -1,11 +1,13 @@
 from src_py.util.menu import Menu
 from src_py.week0.week_0 import Week0
 from src_py.week1.week_1 import Week1
+from src_py.week2.week_2 import Week2
 
 one = Week0()
 two = Week1()
+three = Week2()
 
-weeks = [one, two]
+weeks = [one, two, three]
 
 m = Menu("----- MAIN MENU -----", weeks)
 m.menu()
