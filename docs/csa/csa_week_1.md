@@ -69,7 +69,7 @@ Double sided Linked List
 * and Next Node
 * null <- above <-> blob <-> cup -> null
 
-### Challenge #1:
+### Challenge #1: Add and Delete elements in a Queue
 Queue.java
 ```
 package csa.util;
@@ -169,7 +169,7 @@ public class QueueManager<T> {
 }
 ```
 
-### Challenge #2:
+### Challenge #2: Merge Queues
 QueueManager.java
 ```
     // Made for Challenge #2, the Merge Queue after one of the queues has run out of data.
@@ -219,7 +219,7 @@ ChallengeTwo.java
     }
 ```
 
-### Challenge #3:
+### Challenge #3: Reverse Queue using Stack
 ChallengeThree.java
 ```
 public class ChallengeThree extends Option {

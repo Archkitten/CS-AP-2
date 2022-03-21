@@ -16,5 +16,4 @@ public class Keyboard extends Option {
             System.out.println();
         }
     }
-
 }

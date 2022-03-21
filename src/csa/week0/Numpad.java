@@ -16,5 +16,4 @@ public class Numpad extends Option {
             System.out.println();
         }
     }
-
 }

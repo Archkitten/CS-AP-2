@@ -62,3 +62,133 @@ Link to code + runtime: [CS-AP-P Python Replit](https://replit.com/@ArchHuang/CS
         <td>TBD</td>
     </tr>
 </table>
+
+### Challenge #1: Number Swap
+number_swap.py
+```
+from src_py.util.option import Option
+
+
+class NumberSwap(Option):
+    def __init__(self):
+        super().__init__()
+        self.name = "Number Swap"
+
+    def tester(self):
+        print(self.swap(1, 2))
+        print(self.swap(60, 30))
+        print(self.swap(9, -11))
+
+    def swap(self, a, b):
+        if a > b:
+            temp = a
+            a = b
+            b = temp
+        return a, b
+```
+
+### Challenge #2: Matrix Format
+matrix_format.py
+```
+from src_py.util.option import Option
+
+
+class MatrixFormat(Option):
+    def __init__(self):
+        super().__init__()
+        self.name = "Matrix Format"
+        self.numpad = [[1, 2, 3],
+                       [4, 5, 6],
+                       [7, 8, 9],
+                       [" ", 0, " "]]
+
+    def tester(self):
+        for i in self.numpad:
+            for j in i:
+                print(j, "", end="")
+            print()
+```
+
+### Challenge #3: Christmas Tree
+build_stairs.py
+```
+from src_py.util.option import Option
+
+
+class BuildStairs(Option):
+    def __init__(self):
+        super().__init__()
+        self.name = "Build Stairs"
+        self.space = ""
+
+    def tester(self):
+        counter = 0
+        steps = int(input("How many steps? "))
+
+        while counter < steps:
+            self.stairs()
+            counter += 1
+        self.space = ""
+
+    def stairs(self):
+        print(self.space + "|__")
+        self.space = self.space + " - "
+```
+
+### Challenge #4: Ship Animation
+cat_laptop.py
+```
+import time
+from src_py.util.option import Option
+# from ..util.option import Option
+
+
+ANSI_CLEAR_SCREEN = u"\u001B[2J"
+ANSI_HOME_CURSOR = u"\u001B[0;0H\u001B[2"
+OCEAN_COLOR = u"\u001B[44m\u001B[2D"
+SHIP_COLOR = u"\u001B[32m\u001B[2D"
+RESET_COLOR = u"\u001B[0m\u001B[2D"
+
+
+class CatLaptop(Option):
+    def __init__(self):
+        super().__init__()
+        self.name = "Cat Laptop"
+
+    def tester(self):
+        self.ship()
+
+    def ocean_print(self):
+        # print ocean
+        # print(ANSI_CLEAR_SCREEN, ANSI_HOME_CURSOR)
+
+        print("\n"*4)
+        print(OCEAN_COLOR + "  " * 35)
+
+    # print ship with colors and leading spaces
+    def ship_print(self, position):
+        print(ANSI_HOME_CURSOR)
+        print(RESET_COLOR)
+        sp = " " * position
+        print(sp + "/|")
+        print(sp + "||")
+        print(sp + "\\|  ᓚᘏᗢ  ")
+        print(SHIP_COLOR, end="")
+        print(sp + "  \\______/  ")
+        print(RESET_COLOR)
+
+    # ship function, iterate into this file
+    def ship(self):
+        # only need to print ocean once
+        self.ocean_print()
+
+        # loop control variables
+        start = 0  # start at zero
+        distance = 60  # how many times to repeat
+        step = 2  # count by 2
+
+        # loop purpose is to animate ship sailing
+        for position in range(start, distance, step):
+            self.ship_print(position)  # call to function with parameter
+            time.sleep(.1)
+```

@@ -4,7 +4,7 @@
 
 {% include csp_nav.html %}
 
-## Week 2 - [Ticket]()
+## Week 2 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/6)
 
 ### 5.5 Notes
 
@@ -55,3 +55,46 @@ Challenges
    * Evaluate complex algorithms eliminating spaces, case and special characters. "A man, a plan, a canal -- Panama!"
    * Use Test data, not input
    * Illustrate failure
+
+### Challenge 1: Factorial
+factorial.py
+```
+from src_py.util.option import Option
+
+
+class Factorial(Option):
+    def __init__(self):
+        super().__init__()
+        self.name = "Factorial"
+
+    def tester(self):
+        number = int(input("Input a number to get a factorial from: "))
+        f_obj = FactorialClass(number)
+        f_obj.factorial()
+
+
+class FactorialClass:
+    def __init__(self, n):
+        self.n = n
+
+    def factorial(self):
+        factorial = 1
+        number = self.n
+        while number > 0:
+            factorial *= number
+            number -= 1
+
+        print(str(self.n) + "! is " + str(factorial))
+```
+
+### Challenge 2: Palindrome
+palindrome.py
+```
+# Need Test Cases before publishing code
+```
+
+### Challenge 3: Custom Math Function
+tri_angle.py
+```
+# Need Test Cases before publishing code
+```
