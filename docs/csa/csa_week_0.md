@@ -159,7 +159,7 @@ public class Numpad extends Option {
     }
 
     public void tester() {
-        int[][] numpad_array = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0, 0, 0}};
+        int[][] numpad_array = new int[][] CODE IMPLEMENTATION NOT SHOWN;
         for (int[] i : numpad_array) {
             for (int j : i) {
                 System.out.print(j + " ");
