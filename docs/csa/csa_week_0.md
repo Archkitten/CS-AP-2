@@ -182,7 +182,7 @@ public class Keyboard extends Option {
     }
 
     public void tester() {
-        char[][] keyboard_array = new char[][] {{'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'}, {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'}, {'z', 'x', 'c', 'v', 'b', 'n', 'm'}};
+        char[][] keyboard_array = new char[][] CODE IMPLEMENTATION NOT SHOWN;
         for (char[] i : keyboard_array) {
             for (char j : i) {
                 System.out.print(j + " ");
