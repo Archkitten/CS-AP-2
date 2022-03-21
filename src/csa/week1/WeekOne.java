@@ -11,8 +11,9 @@ public class WeekOne extends Option {
     public void tester() {
         Option one = new ChallengeOne();
         Option two = new ChallengeTwo();
+        Option three = new ChallengeThree();
 
-        Option[] options = new Option[] {one, two};
+        Option[] options = new Option[] {one, two, three};
 
         Menu menu = new Menu();
         menu.run("\n----- WEEK 1 -----", options);

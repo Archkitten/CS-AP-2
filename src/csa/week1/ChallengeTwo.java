@@ -4,7 +4,7 @@ import csa.util.QueueManager;
 
 public class ChallengeTwo extends Option {
 
-    private Integer[] numbers1 = new Integer[] {1, 4, 5, 8};
+    private Integer[] numbers1 = new Integer[] {1, 4, 5, 8, 9, 10, 11};
     private Integer[] numbers2 = new Integer[] {2, 3, 6, 7};
     private QueueManager<Integer> q1 = new QueueManager("Q1", numbers1);
     private QueueManager<Integer> q2 = new QueueManager("Q2", numbers2);
@@ -37,6 +37,10 @@ public class ChallengeTwo extends Option {
 
         // If q1 has finished its course, add the remaining values from q2 into q3.
         if (q1.queue.getHead() == null) {
+            // You know, I could've also just linked q3's tail to q2's head.
+            // It would've been much more efficient.
+            // But I cannot for the life of me find out how to do so through code, so...
+            // This idiot solution stays.
             while (q2.queue.getHead() != null) {
                 q3.queue.add(q2.queue.getHead().getData());
                 q2.queue.delete();
@@ -49,5 +53,11 @@ public class ChallengeTwo extends Option {
                 q1.queue.delete();
             }
         }
+    }
+
+    // Tester
+    public static void main(String[] args) {
+        ChallengeTwo t = new ChallengeTwo();
+        t.tester();
     }
 }
