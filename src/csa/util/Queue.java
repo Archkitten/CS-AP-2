@@ -14,13 +14,21 @@ public class Queue<T> implements Iterable<T> {
     LinkedList<T> head, tail;
     int size = 0;
 
+    private boolean debug = false;
+
+    public void setDebug(boolean isDebug) {
+        debug = isDebug;
+    }
+
     /**
      *  Add a new object at the end of the Queue,
      *
      * @param  data,  is the data to be inserted in the Queue.
      */
     public void add(T data) {
-        System.out.println("Enqueued data: " + data);
+        if (debug) {
+            System.out.println("Enqueued data: " + data);
+        }
         // add new object to end of Queue
         LinkedList<T> tail = new LinkedList<>(data, null);
         size++;
@@ -34,7 +42,9 @@ public class Queue<T> implements Iterable<T> {
     }
 
     public void delete() {
-        System.out.println("Dequeued data: " + this.head.getData());
+        if (debug) {
+            System.out.println("Dequeued data: " + this.head.getData());
+        }
         // Technically the data is still there, but the pointer (starting place) has been moved to the next one,
         // meaning it will never be accessed. So mission accomplished?
         this.head = this.head.getNext();
