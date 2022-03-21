@@ -37,6 +37,12 @@ public class QueueManager<T> {
             }
     }
 
+    // Made for Challenge #2, the Merge Queue after one of the queues has run out of data.
+    public void appendQueue(Queue<T> q) {
+        this.queue.getTail().setNextNode(q.getHead());
+        queue.size += q.size;
+    }
+
     /**
      * Print any array objects from queue
      */
