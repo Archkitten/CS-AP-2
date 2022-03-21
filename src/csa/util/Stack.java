@@ -6,9 +6,9 @@ package csa.util;
  * @author     John Mortensen
  *
  */
-public class Stack
+public class Stack<T>
 {
-    private LinkedList lifo;  // last in first out Object of stack
+    private LinkedList<T> lifo;  // last in first out Object of stack
 
     /**
      *  Constructor for the SinglyLinkedList object
@@ -24,7 +24,7 @@ public class Stack
      *
      * @return  the current objects value in Stack.
      */
-    public Object peek()
+    public T peek()
     {
         if (lifo == null)
             return null;
@@ -37,21 +37,21 @@ public class Stack
      *
      * @param  value  is the database to be inserted at the top of the Stack.
      */
-    public void push(Object value)
+    public void push(T value)
     {
         // note the order that things happen:
         // the new object becomes current and gets a value
         // current lifo is parameter, it is assigned as previous node in lifo
-        lifo = new LinkedList(value, lifo);
+        lifo = new LinkedList<T>(value, lifo);
     }
 
     /**
      *  Removes the top element in the Stack.  Garbage collection should destroy this element when needed.
      *
      */
-    public Object pop()
+    public T pop()
     {
-        Object value = null;
+        T value = null;
 
         if (lifo != null) {
             value = lifo.getData();
@@ -71,7 +71,7 @@ public class Stack
     {
         StringBuilder stackToString = new StringBuilder("[");
 
-        LinkedList node = lifo;  				// start from the back
+        LinkedList<T> node = lifo;  				// start from the back
         while (node != null)
         {
             stackToString.append(node.getData()); 	// append the database to output string
