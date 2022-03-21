@@ -58,8 +58,7 @@ implements vs. extends
 * 'implements' has no definition? usually from interface
 * extends
 
-Generic T - IT DOESN'T MATTER WHICH DATA TYPE YOU PUT IN THE DATA STRUCTURE!!! :D
-* I've been looking for something like this in Java. It's what Python does by default!
+Generic T - You can put whatever data type you wish into the LinkedList. Once a data type is put in, the entire LinkedList becomes (uses) that data type.
 ```
 public class Queue<T> implements Iterable<T> {
     LinkedList<T> head, tail;
