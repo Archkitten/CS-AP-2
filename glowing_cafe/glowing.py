@@ -144,20 +144,22 @@ class Glowing:
             self.SCREEN.blit(TEXT_TITLE, (20, 20))
 
             if self.BLOB == True:
-                blob.main(self.SCREEN, boss.x, boss.y)
+                blob.main(self.SCREEN, boss.x, boss.y, boss.projectiles)
             if self.DRIP == True:
-                drip.main(self.SCREEN, boss.x, boss.y)
+                drip.main(self.SCREEN, boss.x, boss.y, boss.projectiles)
             if self.RO == True:
-                ro.main(self.SCREEN, boss.x, boss.y)
+                ro.main(self.SCREEN, boss.x, boss.y, boss.projectiles)
 
+            # Player Projectiles
+            player_projectiles = blob.projectiles + drip.projectiles + ro.projectiles
             # Boss Targeting System
             target = random.randint(1, 3)
             if target == 1:
-                boss.main(self.SCREEN, blob.x, blob.y)
+                boss.main(self.SCREEN, blob.x, blob.y, player_projectiles)
             elif target == 2:
-                boss.main(self.SCREEN, drip.x, drip.y)
+                boss.main(self.SCREEN, drip.x, drip.y, player_projectiles)
             elif target == 3:
-                boss.main(self.SCREEN, ro.x, ro.y)
+                boss.main(self.SCREEN, ro.x, ro.y, player_projectiles)
 
 
             if click:

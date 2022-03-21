@@ -1,4 +1,5 @@
 import pygame
+import math
 from config import *
 from projectile import Bullet
 
@@ -12,6 +13,7 @@ class Player:
         self.SPEED = 7
         self.SLOW_PERCENT = 0.5
         self.COLOR = 'White'
+        self.color = 'White'
         self.circle = (self.x, self.y)
 
         self.projectiles = []
@@ -24,14 +26,22 @@ class Player:
         self.KEY_UP = pygame.K_UP
         self.KEY_DOWN = pygame.K_DOWN
 
+        self.health = 4
+        self.i_frames = 0
+        self.I_FRAMES = 60
+
+        self.alive = True
+
     # Main - Run all other functions.
-    def main(self, screen, target_x, target_y):
-        self.move()
-        self.animate()
-        self.shoot(target_x, target_y)
-        self.display_projectiles(screen)
-        self.circle = (self.x, self.y)
-        pygame.draw.circle(screen, self.COLOR, self.circle, self.RADIUS)
+    def main(self, screen, target_x, target_y, enemy_projectiles):
+        if self.alive:
+            self.move()
+            self.animate()
+            self.shoot(target_x, target_y)
+            self.display_projectiles(screen)
+            self.detect_collisions(enemy_projectiles)
+            self.circle = (self.x, self.y)
+            pygame.draw.circle(screen, self.color, self.circle, self.RADIUS)
 
     # Move
     def move(self):
@@ -96,3 +106,25 @@ class Player:
             elif projectile.y < 0 - projectile.RADIUS or projectile.y > WIN_HEIGHT + projectile.RADIUS:
                 self.projectiles.remove(projectile)
             projectile.main(screen)
+
+    def detect_collisions(self, projectiles):
+        for projectile in projectiles:
+            distance = math.sqrt((self.x - projectile.x) ** 2 + (self.y - projectile.y) ** 2)
+            if distance <= self.RADIUS and self.i_frames == 0:
+                self.health -= 1
+                self.i_frames = self.I_FRAMES
+
+        # Change color upon getting hit.
+        if self.i_frames > 0:
+            self.color = 'Red'
+        else:
+            self.color = self.COLOR
+
+        # Reduce i_frames by 1 every frame, also prevent i_frames from going negative.
+        self.i_frames -= 1
+        if self.i_frames < 0:
+            self.i_frames = 0
+
+        # Die after reaching zero health.
+        if self.health <= 0:
+            self.alive = False
