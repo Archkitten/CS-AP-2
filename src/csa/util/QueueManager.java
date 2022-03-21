@@ -49,8 +49,12 @@ public class QueueManager<T> {
     public void printQueue() {
         System.out.print(this.name + " count: " + queue.size + ", ");
         System.out.print("data: ");
-        for (T data : queue)
+        for (T data : queue) {
             System.out.print(data + " ");
+        }
+        if (queue.getHead() == null) {
+            System.out.print("null");
+        }
         System.out.println();
     }
 }

@@ -5,7 +5,7 @@ import csa.util.QueueManager;
 public class ChallengeOne extends Option {
 
     public ChallengeOne() {
-        optionName = "Challenge #1";
+        optionName = "Challenge #1 (Add and Delete elements in a Queue)";
     }
 
     public void tester() {
