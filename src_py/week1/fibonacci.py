@@ -11,11 +11,13 @@ class Fibonacci(Option):
     def tester(self):
         self.steps = int(input("How many steps? "))
         self.fibonacci(1)
+        # Print
+        for i in self.number:
+            print(i, "", end="")
         # Reset
         self.number = [0, 1]
 
     def fibonacci(self, n):
-        print(self.number)
         self.number.append(self.number[n - 1] + self.number[n])
         if n < self.steps:
             self.fibonacci(n + 1)
