@@ -8,7 +8,16 @@
 
 ### 5.5 Notes
 
-* Notes
+* Intellectual Property - Creative invention/product where an individual has ownership over (Intellectual property/rights).
+  * Like things protected by copyright! ©
+* Creative Commons license:
+  * Creative Commons provides free licenses that can be modified based on the author's needs.
+  * [Creative Commons Website - About CC Licenses](https://creativecommons.org/about/cclicenses/)
+* Open Source:
+  * Anyone else can freely redistribute or modify the program.
+* Open Access:
+  * Online research free of any and all restrictions, including copyright or license restrictions.
+* Always give credit if you use someone else's works!
 
 ### [Tri 3 TPT 2.0 Legal and Ethical Concerns 5.5](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Legal-and-Ethical-Concerns-5.5)
 
@@ -20,7 +29,40 @@
 
 ### 5.6 Notes
 
-* Notes
+Daily Video 1:
+* Personally Identifiable Information (PII) - Information specific to an individual
+  * Basically, personal information. Cell phone number, email address, age, search history, location...
+  * Can be used for good: Autofill, convenience sake, recommended based on your interests...
+  * Can be used for bad: If privacy is breached, all of a sudden a bunch of sensitive information is now out in the open.
+* Information placed online is difficult to get rid of :( ← Digital Footprint
+
+Daily Video 2:
+* Authentication (Passwords)
+* Multi-Factor Authentication (Fingerprint, Physical Card, Link to Phone or Email)
+* Virus - Duplicate themselves across systems.
+* Malware - Infiltrate a system through impersonation (email, 'friendly' website), damaging the system after getting in.
+* Encryption and Decryption
+  * Caesar Cipher
+  * [Rumkin Tools](http://rumkin.com/tools/cipher/) ← This website is really cool, holding tons of different ways to encrypt and decrypt a message. Try it!
+* Asymmetric Encryption - Public and Private key
+  * Public key used to encrypt a message
+  * Private key used to decrypt a message
+  * Smoothie analogy
+    * Public key is banana.
+    * Your private key is strawberry.
+    * Friend's private key is blueberry.
+    * You send over strawberry + banana.
+    * Friend sends over blueberry + banana.
+    * Interceptor receives ? + banana and ? + banana.
+    * You add strawberry to the blueberry + banana, resulting in strawberry + blueberry + banana.
+    * Friend adds blueberry to the strawberry + banana, resulting in strawberry + blueberry + banana.
+  * In the end, both you and your friend received the same message while the Interceptor received an encrypted mess.
+* Digital Certificates - Those public and private keys, but verified :D
+
+Daily Video 3:
+* Phishing - Trick the user into providing personal information, usually an email or 'friendly' website.
+* Keylogger - Records user keystrokes in order to gain passwords or other confidential information.
+* Rogue Access Point - Intercepting data across a network.
 
 ### [Tri 3 TPT 2.0 Safe Computing 5.6](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Safe-Computing-5.6)
 
