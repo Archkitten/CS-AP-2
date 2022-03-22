@@ -8,8 +8,13 @@ class Boss(Player):
     # Constructor
     def __init__(self, x, y):
         super().__init__(x, y)
-        self.RADIUS = 100
+        self.RADIUS = 120
         self.PROJECTILE_COOLDOWN = 60
+
+        self.health = 120
+        self.MAX_HEALTH = 120
+        self.uses_health_bar = True
+        self.HEALTH_BAR_POSITION = 1
 
     # Move
     def move(self):
@@ -17,8 +22,10 @@ class Boss(Player):
 
     # Shoot - Call all other "shoot" functions
     def shoot(self, tx, ty):
-        self.shoot_spread(tx, ty)
-        self.shoot_missiles(tx, ty)
+        if self.health < 90:
+            self.shoot_spread(tx, ty)
+        if self.health < 60 or self.health > 90:
+            self.shoot_missiles(tx, ty)
 
         if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
             self.projectile_counter = 0

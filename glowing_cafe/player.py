@@ -27,6 +27,9 @@ class Player:
         self.KEY_DOWN = pygame.K_DOWN
 
         self.health = 4
+        self.MAX_HEALTH = 4
+        self.uses_health_bar = False
+        self.HEALTH_BAR_POSITION = 1
         self.i_frames = 0
         self.I_FRAMES = 60
 
@@ -38,10 +41,10 @@ class Player:
             self.move()
             self.animate()
             self.shoot(target_x, target_y)
-            self.display_projectiles(screen)
-            self.detect_collisions(enemy_projectiles)
+            self.detect_collisions(screen, enemy_projectiles)
             self.circle = (self.x, self.y)
             pygame.draw.circle(screen, self.color, self.circle, self.RADIUS)
+        self.display_projectiles(screen)
 
     # Move
     def move(self):
@@ -107,7 +110,7 @@ class Player:
                 self.projectiles.remove(projectile)
             projectile.main(screen)
 
-    def detect_collisions(self, projectiles):
+    def detect_collisions(self, screen, projectiles):
         for projectile in projectiles:
             distance = math.sqrt((self.x - projectile.x) ** 2 + (self.y - projectile.y) ** 2)
             if distance <= self.RADIUS and self.i_frames == 0:
@@ -125,6 +128,18 @@ class Player:
         if self.i_frames < 0:
             self.i_frames = 0
 
-        # Die after reaching zero health.
+        # Draw health bar based on health.
+        if self.uses_health_bar:
+            pygame.draw.rect(screen, self.COLOR, (20, 20 * self.HEALTH_BAR_POSITION, (WIN_WIDTH - 40) / self.MAX_HEALTH * self.health, 20))
+        # Draw health blobs based on health.
+        else:
+            hearts = self.health
+            while (hearts > 0):
+                pygame.draw.circle(screen, self.COLOR, (35 * hearts, 30 * self.HEALTH_BAR_POSITION), 10)
+                hearts -= 1
+
+        # Prevent health from going beyond max health. Also die after reaching zero health.
+        if self.health > self.MAX_HEALTH:
+            self.health = self.MAX_HEALTH
         if self.health <= 0:
             self.alive = False

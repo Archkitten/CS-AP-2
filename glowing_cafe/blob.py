@@ -20,6 +20,10 @@ class Blob(Player):
         self.KEY_UP = pygame.K_UP
         self.KEY_DOWN = pygame.K_DOWN
 
+        self.health = 4
+        self.MAX_HEALTH = 4
+        self.HEALTH_BAR_POSITION = 2
+
     # Shoot
     def shoot(self, tx, ty):
         keys = pygame.key.get_pressed()

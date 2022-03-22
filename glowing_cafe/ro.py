@@ -20,6 +20,10 @@ class Ro(Player):
         self.KEY_UP = pygame.K_i
         self.KEY_DOWN = pygame.K_k
 
+        self.health = 2
+        self.MAX_HEALTH = 2
+        self.HEALTH_BAR_POSITION = 4
+
     # Shoot
     def shoot(self, tx, ty):
         keys = pygame.key.get_pressed()

@@ -20,6 +20,10 @@ class Drip(Player):
         self.KEY_UP = pygame.K_w
         self.KEY_DOWN = pygame.K_s
 
+        self.health = 4
+        self.MAX_HEALTH = 4
+        self.HEALTH_BAR_POSITION = 3
+
     # Shoot
     def shoot(self, tx, ty):
         keys = pygame.key.get_pressed()
