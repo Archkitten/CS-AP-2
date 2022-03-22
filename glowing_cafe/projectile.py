@@ -2,12 +2,21 @@ import pygame
 import math
 from config import *
 from linear_projectile import LinearProjectile
+from lingering_projectile import LingeringProjectile
 
 
 class Bullet(LinearProjectile):
     # Constructor
     def __init__(self, x, y, mx, my):
         super().__init__(x, y, mx, my)
+
+
+class LingeringBullet(LingeringProjectile):
+    # Constructor
+    def __init__(self, x, y):
+        super().__init__(x, y)
+        self.RADIUS = 20
+        self.duration = -1
 
 
 class Goop(LinearProjectile):

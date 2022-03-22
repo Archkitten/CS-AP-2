@@ -8,8 +8,8 @@ class Blob(Player):
     # Constructor
     def __init__(self, x, y):
         super().__init__(x, y)
-        self.SPEED = 5
-        self.SLOW_PERCENT = 0.8
+        self.SPEED = 7
+        self.SLOW_PERCENT = 0.5
         self.COLOR = 'Purple'
 
         self.PROJECTILE_COOLDOWN = 10
