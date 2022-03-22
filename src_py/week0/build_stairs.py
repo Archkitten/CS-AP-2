@@ -9,7 +9,8 @@ class BuildStairs(Option):
 
     def tester(self):
         counter = 0
-        steps = int(input("How many steps? "))
+        # steps = int(input("How many steps? "))
+        steps = 6
 
         while counter < steps:
             self.stairs()
