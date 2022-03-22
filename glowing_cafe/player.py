@@ -39,7 +39,7 @@ class Player:
     def main(self, screen, target_x, target_y, enemy_projectiles):
         if self.alive:
             self.move()
-            self.animate()
+            self.animate(screen)
             self.shoot(target_x, target_y)
             self.detect_collisions(screen, enemy_projectiles)
             self.circle = (self.x, self.y)
@@ -88,7 +88,7 @@ class Player:
             self.y += current_speed
 
     # Animate
-    def animate(self):
+    def animate(self, screen):
         pass
 
     # Shoot
