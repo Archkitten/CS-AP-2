@@ -8,10 +8,21 @@ class TriAngle(Option):
         self.name = "Tri Angle"
 
     def tester(self):
-        target_x = int(input("Target x value? "))
-        target_y = int(input("Target y value? "))
-        a = Angles(0, 0, target_x, target_y)
+        # target_x = int(input("Target x value? "))
+        # target_y = int(input("Target y value? "))
+        # a = Angles(0, 0, target_x, target_y)
+        # a.print_coordinates()
+        print("\nProjectile starts at (0, 0) and goes to (5, 5):")
+        a = Angles(0, 0, 5, 5)
         a.print_coordinates()
+
+        print("\nProjectile starts at (0, 0) and goes to (-3, -3):")
+        b = Angles(0, 0, -3, -3)
+        b.print_coordinates()
+
+        print("\nProjectile starts at (5.5, 8) and goes to (-6.23, 11.1):")
+        c = Angles(5.5, 8, -6.23, 11.1)
+        c.print_coordinates()
 
 
 class Angles:

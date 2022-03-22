@@ -7,9 +7,20 @@ class Factorial(Option):
         self.name = "Factorial"
 
     def tester(self):
-        number = int(input("Input a number to get a factorial from: "))
-        f_obj = FactorialClass(number)
-        f_obj.factorial()
+        # number = int(input("Input a number to get a factorial from: "))
+        # f_obj = FactorialClass(number)
+        # f_obj.factorial()
+        zero_factorial = FactorialClass(0)
+        zero_factorial.factorial()
+
+        three_factorial = FactorialClass(3)
+        three_factorial.factorial()
+
+        four_factorial = FactorialClass(4)
+        four_factorial.factorial()
+
+        six_factorial = FactorialClass(6)
+        six_factorial.factorial()
 
 
 class FactorialClass:
