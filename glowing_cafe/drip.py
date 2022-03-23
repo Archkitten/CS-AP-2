@@ -32,6 +32,12 @@ class Drip(Player):
         self.animation_frame = 0
         self.ANIMATION_COOLDOWN = 3
 
+        self.INTRO_DURATION = 1
+
+    # Intro Animate
+    def intro_animate(self, screen):
+        pass
+
     # Shoot
     def shoot(self, tx, ty, keys):
         if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:

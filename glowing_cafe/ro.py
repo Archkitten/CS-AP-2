@@ -34,3 +34,8 @@ class Ro(Player):
         if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
             self.projectile_counter = 0
         self.projectile_counter += 1
+
+    # Ghost Animate
+    def ghost_animate(self, screen):
+        pygame.draw.rect(screen, self.COLOR, (self.x - self.RADIUS / 1.5, self.y - self.RADIUS / 1.5,
+                                              self.RADIUS * 1.5, self.RADIUS * 1.5))

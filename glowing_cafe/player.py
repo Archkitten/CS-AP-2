@@ -33,12 +33,20 @@ class Player:
         self.i_frames = 0
         self.I_FRAMES = 60
 
-        self.alive = True
+        self.intro_counter = 0
+        self.INTRO_DURATION = 1
+        self.alive = "Intro"
         self.gravity = 0
+        self.START_WIDTH = PLAYER_START_WIDTH
+        self.START_HEIGHT = WIN_HEIGHT / 2
 
     # Main - Run all other functions.
     def main(self, screen, target_x, target_y, enemy_projectiles):
-        if self.alive:
+        if self.alive == "Intro":
+            self.intro()
+            self.intro_animate(screen)
+            self.intro_bars(screen)
+        elif self.alive == "Alive":
             keys = pygame.key.get_pressed()
             self.move(keys)
             self.animate(screen, keys)
@@ -46,10 +54,37 @@ class Player:
             self.detect_collisions(screen, enemy_projectiles)
             self.circle = (self.x, self.y)
             pygame.draw.circle(screen, self.color, self.circle, self.RADIUS)
-        else:
+        elif self.alive == "Ghost":
             self.ghost()
+            self.ghost_collision()
             self.ghost_animate(screen)
+        elif self.alive == "Dead":
+            self.x = self.START_WIDTH
+            self.y = self.START_HEIGHT
         self.display_projectiles(screen)
+
+    # Intro
+    def intro(self):
+        self.intro_counter += 1
+        if self.intro_counter == self.INTRO_DURATION:
+            self.alive = "Alive"
+
+    # Intro Animate
+    def intro_animate(self, screen):
+        pass
+
+    # Intro Health Bars
+    def intro_bars(self, screen):
+        # Draw health bar based on health.
+        if self.uses_health_bar:
+            pygame.draw.rect(screen, self.COLOR,
+                             (20, 20 * self.HEALTH_BAR_POSITION, (WIN_WIDTH - 40) / self.MAX_HEALTH * (self.intro_counter), 20))
+        # Draw health blobs based on health.
+        else:
+            hearts = self.health
+            while (hearts > 0):
+                pygame.draw.circle(screen, self.COLOR, (35 * hearts, 30 * self.HEALTH_BAR_POSITION), 10)
+                hearts -= 1
 
     # Move
     def move(self, keys):
@@ -145,12 +180,17 @@ class Player:
         if self.health > self.MAX_HEALTH:
             self.health = self.MAX_HEALTH
         if self.health <= 0:
-            self.alive = False
+            self.alive = "Ghost"
 
     # Ghost
     def ghost(self):
         self.gravity += 0.02
         self.y -= self.gravity
+
+    # Ghost Collision
+    def ghost_collision(self):
+        if self.y <= -100:
+            self.alive = "Dead"
 
     # Ghost Animate
     def ghost_animate(self, screen):

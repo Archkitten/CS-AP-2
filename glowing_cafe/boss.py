@@ -16,6 +16,15 @@ class Boss(Player):
         self.uses_health_bar = True
         self.HEALTH_BAR_POSITION = 1
 
+        self.INTRO_DURATION = self.MAX_HEALTH
+        self.START_WIDTH = WIN_WIDTH / 1.2
+        self.START_HEIGHT = WIN_HEIGHT / 2
+
+    # Intro Animate
+    def intro_animate(self, screen):
+        self.circle = (self.x + (self.MAX_HEALTH - self.intro_counter) * 4, self.y)
+        pygame.draw.circle(screen, self.color, self.circle, self.RADIUS)
+
     # Move
     def move(self, keys):
         pass
