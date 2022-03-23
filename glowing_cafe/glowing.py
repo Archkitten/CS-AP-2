@@ -135,6 +135,20 @@ class Glowing:
         drip = Drip(PLAYER_START_WIDTH, DRIP_START_HEIGHT)
         ro = Ro(PLAYER_START_WIDTH, RO_START_HEIGHT)
         boss = Boss(WIN_WIDTH / 1.2, WIN_HEIGHT / 2)
+        # Scuffed Revive System
+        players_that_can_revive_blob = []
+        players_that_can_revive_drip = []
+        players_that_can_revive_ro = []
+        players_that_can_revive_boss = []
+        if self.BLOB == True:
+            players_that_can_revive_drip.append(blob)
+            players_that_can_revive_ro.append(blob)
+        if self.DRIP == True:
+            players_that_can_revive_blob.append(drip)
+            players_that_can_revive_ro.append(drip)
+        if self.RO == True:
+            players_that_can_revive_blob.append(ro)
+            players_that_can_revive_drip.append(ro)
         while running:
             # Redefine Variables
             mx, my = pygame.mouse.get_pos()
@@ -149,22 +163,22 @@ class Glowing:
             self.SCREEN.blit(TEXT_TITLE, (20, 20))
 
             if self.BLOB == True:
-                blob.main(self.SCREEN, boss.x, boss.y, boss.projectiles)
+                blob.main(self.SCREEN, boss.x, boss.y, boss.projectiles, players_that_can_revive_blob)
             if self.DRIP == True:
-                drip.main(self.SCREEN, boss.x, boss.y, boss.projectiles)
+                drip.main(self.SCREEN, boss.x, boss.y, boss.projectiles, players_that_can_revive_drip)
             if self.RO == True:
-                ro.main(self.SCREEN, boss.x, boss.y, boss.projectiles)
+                ro.main(self.SCREEN, boss.x, boss.y, boss.projectiles, players_that_can_revive_ro)
 
             # Player Projectiles
             player_projectiles = blob.projectiles + drip.projectiles + ro.projectiles
             # Boss Targeting System
             target = random.randint(1, 3)
             if target == 1:
-                boss.main(self.SCREEN, blob.x, blob.y, player_projectiles)
+                boss.main(self.SCREEN, blob.x, blob.y, player_projectiles, players_that_can_revive_boss)
             elif target == 2:
-                boss.main(self.SCREEN, drip.x, drip.y, player_projectiles)
+                boss.main(self.SCREEN, drip.x, drip.y, player_projectiles, players_that_can_revive_boss)
             elif target == 3:
-                boss.main(self.SCREEN, ro.x, ro.y, player_projectiles)
+                boss.main(self.SCREEN, ro.x, ro.y, player_projectiles, players_that_can_revive_boss)
 
 
             if click:

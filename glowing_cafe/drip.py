@@ -95,7 +95,7 @@ class Drip(Player):
         # Shooting Animation
         elif keys[self.KEY_SHOOT]:
             # Animation Cooldown
-            if self.animation_frame == self.ANIMATION_COOLDOWN:
+            if self.animation_frame >= self.ANIMATION_COOLDOWN:
                 self.sprite_sheet_x += 1
                 self.animation_frame = 0
             else:
@@ -117,7 +117,7 @@ class Drip(Player):
     # Ghost Animate
     def ghost_animate(self, screen):
         # Animation Cooldown
-        if self.animation_frame == 15:
+        if self.animation_frame >= 15:
             self.sprite_sheet_x += 1
             self.animation_frame = 0
         else:

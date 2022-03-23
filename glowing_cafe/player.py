@@ -41,7 +41,7 @@ class Player:
         self.START_HEIGHT = WIN_HEIGHT / 2
 
     # Main - Run all other functions.
-    def main(self, screen, target_x, target_y, enemy_projectiles):
+    def main(self, screen, target_x, target_y, enemy_projectiles, players):
         if self.alive == "Intro":
             self.intro()
             self.intro_animate(screen)
@@ -56,7 +56,7 @@ class Player:
             pygame.draw.circle(screen, self.color, self.circle, self.RADIUS)
         elif self.alive == "Ghost":
             self.ghost()
-            self.ghost_collision()
+            self.ghost_collision(players)
             self.ghost_animate(screen)
         elif self.alive == "Dead":
             self.x = self.START_WIDTH
@@ -188,9 +188,15 @@ class Player:
         self.y -= self.gravity
 
     # Ghost Collision
-    def ghost_collision(self):
+    def ghost_collision(self, players):
         if self.y <= -100:
             self.alive = "Dead"
+        for player in players:
+            distance = math.sqrt((self.x - player.x) ** 2 + (self.y - player.y) ** 2)
+            if distance <= self.RADIUS:
+                self.health = 1
+                self.gravity = 0
+                self.alive = "Alive"
 
     # Ghost Animate
     def ghost_animate(self, screen):
