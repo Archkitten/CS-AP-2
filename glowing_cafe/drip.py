@@ -33,8 +33,7 @@ class Drip(Player):
         self.ANIMATION_COOLDOWN = 3
 
     # Shoot
-    def shoot(self, tx, ty):
-        keys = pygame.key.get_pressed()
+    def shoot(self, tx, ty, keys):
         if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
             # Cannot shoot if hurt.
             if self.i_frames == 0:
@@ -45,8 +44,7 @@ class Drip(Player):
         self.projectile_counter += 1
 
     # Animate
-    def animate(self, screen):
-        keys = pygame.key.get_pressed()
+    def animate(self, screen, keys):
         # Conditionals
         # Hurt Animation (Priority)
         if self.i_frames > 0:

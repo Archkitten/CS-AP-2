@@ -14,19 +14,18 @@ class Ro(Player):
 
         self.PROJECTILE_COOLDOWN = 22
 
-        self.KEY_SHOOT = pygame.K_PERIOD
-        self.KEY_LEFT = pygame.K_j
-        self.KEY_RIGHT = pygame.K_l
-        self.KEY_UP = pygame.K_i
-        self.KEY_DOWN = pygame.K_k
+        self.KEY_SHOOT = pygame.K_m
+        self.KEY_LEFT = pygame.K_g
+        self.KEY_RIGHT = pygame.K_j
+        self.KEY_UP = pygame.K_y
+        self.KEY_DOWN = pygame.K_h
 
         self.health = 2
         self.MAX_HEALTH = 2
         self.HEALTH_BAR_POSITION = 4
 
     # Shoot
-    def shoot(self, tx, ty):
-        keys = pygame.key.get_pressed()
+    def shoot(self, tx, ty, keys):
         if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
             self.projectiles.append(Feather(self.x, self.y, tx, ty))
             self.projectiles.append(Feather(self.x, self.y, tx, ty + 100))

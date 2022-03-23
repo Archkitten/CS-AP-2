@@ -131,9 +131,9 @@ class Glowing:
         # Music
         self.arch_birthday_music.play(loops=-1)
         # Character Select
-        blob = Blob(WIN_WIDTH / 8, WIN_HEIGHT / 1.5)
+        blob = Blob(WIN_WIDTH / 8, (WIN_HEIGHT / 2) + (WIN_HEIGHT / 4))
         drip = Drip(WIN_WIDTH / 8, WIN_HEIGHT / 2)
-        ro = Ro(WIN_WIDTH / 8, WIN_HEIGHT / 4)
+        ro = Ro(WIN_WIDTH / 8, (WIN_HEIGHT / 2) - (WIN_HEIGHT / 4))
         boss = Boss(WIN_WIDTH / 1.2, WIN_HEIGHT / 2)
         while running:
             # Redefine Variables

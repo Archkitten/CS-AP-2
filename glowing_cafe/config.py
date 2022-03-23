@@ -1,3 +1,5 @@
+import pygame
+
 GAME_TITLE = "Glowing Cafe"
 
 WIN_WIDTH = 1280

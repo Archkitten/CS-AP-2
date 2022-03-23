@@ -26,8 +26,7 @@ class Blob(Player):
         self.HEALTH_BAR_POSITION = 2
 
     # Shoot
-    def shoot(self, tx, ty):
-        keys = pygame.key.get_pressed()
+    def shoot(self, tx, ty, keys):
         if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
             self.projectiles.append(Goop(self.x, self.y, tx + random.randint(-100, 100), ty + random.randint(-100, 100)))
 

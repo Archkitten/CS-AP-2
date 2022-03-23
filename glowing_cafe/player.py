@@ -39,9 +39,10 @@ class Player:
     # Main - Run all other functions.
     def main(self, screen, target_x, target_y, enemy_projectiles):
         if self.alive:
-            self.move()
-            self.animate(screen)
-            self.shoot(target_x, target_y)
+            keys = pygame.key.get_pressed()
+            self.move(keys)
+            self.animate(screen, keys)
+            self.shoot(target_x, target_y, keys)
             self.detect_collisions(screen, enemy_projectiles)
             self.circle = (self.x, self.y)
             pygame.draw.circle(screen, self.color, self.circle, self.RADIUS)
@@ -51,8 +52,7 @@ class Player:
         self.display_projectiles(screen)
 
     # Move
-    def move(self):
-        keys = pygame.key.get_pressed()
+    def move(self, keys):
         # Check for diagonal movement.
         key_count = 0
         if keys[self.KEY_LEFT]:
@@ -92,12 +92,11 @@ class Player:
             self.y += current_speed
 
     # Animate
-    def animate(self, screen):
+    def animate(self, screen, keys):
         pass
 
     # Shoot
-    def shoot(self, tx, ty):
-        keys = pygame.key.get_pressed()
+    def shoot(self, tx, ty, keys):
         if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
             self.projectiles.append(Bullet(self.x, self.y, tx, ty))
 

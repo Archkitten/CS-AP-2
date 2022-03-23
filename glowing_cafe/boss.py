@@ -17,11 +17,11 @@ class Boss(Player):
         self.HEALTH_BAR_POSITION = 1
 
     # Move
-    def move(self):
+    def move(self, keys):
         pass
 
     # Shoot - Call all other "shoot" functions
-    def shoot(self, tx, ty):
+    def shoot(self, tx, ty, keys):
         # First Phase - Intro 0:00
         if self.health <= 104 + 1 and self.health > 92 + 1:
             self.starry_night()
@@ -42,12 +42,12 @@ class Boss(Player):
             self.starry_night()
             self.shoot_missiles(tx, ty)
         # Seventh Phase - All Together 1:10
-        elif self.health <= 35 + 1 and self.health > 22 + 1:
+        elif self.health <= 35 + 1 and self.health > 21 + 1:
             self.starry_night()
             self.shoot_missiles(tx, ty)
             self.shoot_spread(tx, ty)
         # Eighth Phase - Concerto 1:23
-        elif self.health <= 22 + 1 and self.health > 7 + 1:
+        elif self.health <= 21 + 1 and self.health > 7 + 1:
             self.outer_wall()
             i = 0
             while i <= 10:
