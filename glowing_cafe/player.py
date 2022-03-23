@@ -34,6 +34,7 @@ class Player:
         self.I_FRAMES = 60
 
         self.alive = True
+        self.gravity = 0
 
     # Main - Run all other functions.
     def main(self, screen, target_x, target_y, enemy_projectiles):
@@ -44,6 +45,9 @@ class Player:
             self.detect_collisions(screen, enemy_projectiles)
             self.circle = (self.x, self.y)
             pygame.draw.circle(screen, self.color, self.circle, self.RADIUS)
+        else:
+            self.ghost()
+            self.ghost_animate(screen)
         self.display_projectiles(screen)
 
     # Move
@@ -143,3 +147,12 @@ class Player:
             self.health = self.MAX_HEALTH
         if self.health <= 0:
             self.alive = False
+
+    # Ghost
+    def ghost(self):
+        self.gravity += 0.02
+        self.y -= self.gravity
+
+    # Ghost Animate
+    def ghost_animate(self, screen):
+        pass

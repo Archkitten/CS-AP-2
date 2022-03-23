@@ -65,7 +65,7 @@ class Star(LinearProjectile):
         else:
             self.animation_frame += 1
         # If animation is complete, loop it.
-        if self.sprite_sheet_x >= 4 * 180:
+        if self.sprite_sheet_x > 3 * 180:
             self.sprite_sheet_x = 0
 
         self.image = self.SPRITE_SHEET.get_sprite(self.sprite_sheet_x, self.sprite_sheet_y, 100, 100)

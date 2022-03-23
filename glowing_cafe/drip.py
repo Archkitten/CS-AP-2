@@ -70,7 +70,7 @@ class Drip(Player):
             # self.sprite_sheet_x += 1
             self.sprite_sheet_y = 1
             # If animation is complete, loop it.
-            if self.sprite_sheet_x >= 6 * 1:
+            if self.sprite_sheet_x > 5 * 1:
                 self.sprite_sheet_x = 0
         # Idle Animation
         else:
@@ -81,3 +81,19 @@ class Drip(Player):
         self.image = pygame.transform.scale(self.image, (200 * 0.4, 250 * 0.4))
         screen.blit(self.image, (self.x - 40, self.y - 65))
 
+    # Ghost Animate
+    def ghost_animate(self, screen):
+        # Animation Cooldown
+        if self.animation_frame == 15:
+            self.sprite_sheet_x += 1
+            self.animation_frame = 0
+        else:
+            self.animation_frame += 1
+        # If animation is complete, loop it.
+        if self.sprite_sheet_x > 1:
+            self.sprite_sheet_x = 0
+        self.sprite_sheet_y = 3
+
+        self.image = self.SPRITE_SHEET.get_sprite(self.sprite_sheet_x * 200, self.sprite_sheet_y * 250, 200, 250)
+        self.image = pygame.transform.scale(self.image, (200 * 0.4, 250 * 0.4))
+        screen.blit(self.image, (self.x - 40, self.y - 65))
