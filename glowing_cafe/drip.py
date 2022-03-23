@@ -32,7 +32,7 @@ class Drip(Player):
         self.animation_frame = 0
         self.ANIMATION_COOLDOWN = 3
 
-        self.INTRO_DURATION = 68
+        self.INTRO_DURATION = 72
 
     # Intro Animate
     def intro_animate(self, screen):
@@ -50,15 +50,15 @@ class Drip(Player):
             intro_image = pygame.transform.scale(intro_image, (310 * 0.4, 160 * 0.4))
             screen.blit(intro_image, (self.x - 60, self.y - 35))
         # Part Two - Cube
-        elif self.intro_counter >= 40 and self.intro_counter < 47:
+        elif self.intro_counter >= 40 and self.intro_counter < 48:
             intro_image = self.SPRITE_SHEET.get_sprite(380, 1000, 310, 400)
             intro_image = pygame.transform.scale(intro_image, (310 * 0.4, 400 * 0.4))
             screen.blit(intro_image, (self.x - 60, self.y - 110))
-        elif self.intro_counter >= 47 and self.intro_counter < 54:
+        elif self.intro_counter >= 48 and self.intro_counter < 56:
             intro_image = self.SPRITE_SHEET.get_sprite(685, 1080, 230, 270)
             intro_image = pygame.transform.scale(intro_image, (230 * 0.4, 270 * 0.4))
             screen.blit(intro_image, (self.x - 60, self.y - 70))
-        elif self.intro_counter >= 54 and self.intro_counter < 61:
+        elif self.intro_counter >= 56 and self.intro_counter < 64:
             intro_image = self.SPRITE_SHEET.get_sprite(915, 1080, 230, 270)
             intro_image = pygame.transform.scale(intro_image, (230 * 0.4, 270 * 0.4))
             screen.blit(intro_image, (self.x - 60, self.y - 70))
