@@ -22,6 +22,7 @@ class LinearProjectile:
         self.move()
         self.circle = (self.x, self.y)
         pygame.draw.circle(screen, self.COLOR, self.circle, self.RADIUS)
+        self.animate(screen)
 
     # Move
     def move(self):
@@ -29,3 +30,7 @@ class LinearProjectile:
         self.y += self.dy
         # self.x = int(self.x)
         # self.y = int(self.y)
+
+    # Animate
+    def animate(self, screen):
+        pass
