@@ -32,11 +32,40 @@ class Drip(Player):
         self.animation_frame = 0
         self.ANIMATION_COOLDOWN = 3
 
-        self.INTRO_DURATION = 1
+        self.INTRO_DURATION = 68
 
     # Intro Animate
     def intro_animate(self, screen):
-        pass
+        # Slide In
+        self.x = PLAYER_START_WIDTH - (self.INTRO_DURATION - self.intro_counter) * 2.5
+        # Part One - Words
+        if self.intro_counter < 40:
+            # :flushed:
+            self.sprite_sheet_y = int(self.intro_counter / 4)
+            intro_words = self.SPRITE_SHEET.get_sprite(100, self.sprite_sheet_y * 53 + 1355, 200, 50)
+            intro_words = pygame.transform.scale(intro_words, (200 * 0.4, 53 * 0.4))
+            screen.blit(intro_words, (self.x - 40, self.y - 60))
+            # Body
+            intro_image = self.SPRITE_SHEET.get_sprite(25, 1180, 310, 160)
+            intro_image = pygame.transform.scale(intro_image, (310 * 0.4, 160 * 0.4))
+            screen.blit(intro_image, (self.x - 60, self.y - 35))
+        # Part Two - Cube
+        elif self.intro_counter >= 40 and self.intro_counter < 47:
+            intro_image = self.SPRITE_SHEET.get_sprite(380, 1000, 310, 400)
+            intro_image = pygame.transform.scale(intro_image, (310 * 0.4, 400 * 0.4))
+            screen.blit(intro_image, (self.x - 60, self.y - 110))
+        elif self.intro_counter >= 47 and self.intro_counter < 54:
+            intro_image = self.SPRITE_SHEET.get_sprite(685, 1080, 230, 270)
+            intro_image = pygame.transform.scale(intro_image, (230 * 0.4, 270 * 0.4))
+            screen.blit(intro_image, (self.x - 60, self.y - 70))
+        elif self.intro_counter >= 54 and self.intro_counter < 61:
+            intro_image = self.SPRITE_SHEET.get_sprite(915, 1080, 230, 270)
+            intro_image = pygame.transform.scale(intro_image, (230 * 0.4, 270 * 0.4))
+            screen.blit(intro_image, (self.x - 60, self.y - 70))
+        else:
+            intro_image = self.SPRITE_SHEET.get_sprite(1145, 1080, 230, 270)
+            intro_image = pygame.transform.scale(intro_image, (230 * 0.4, 270 * 0.4))
+            screen.blit(intro_image, (self.x - 60, self.y - 70))
 
     # Shoot
     def shoot(self, tx, ty, keys):
