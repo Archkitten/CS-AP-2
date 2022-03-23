@@ -81,6 +81,7 @@ class Drip(Player):
     # Animate
     def animate(self, screen, keys):
         # Conditionals
+        shoot_adjust = 0
         # Hurt Animation (Priority)
         if self.i_frames > 0:
             if self.i_frames > 40:
@@ -91,7 +92,7 @@ class Drip(Player):
                 self.sprite_sheet_x = 2
             elif self.i_frames > 10:
                 self.sprite_sheet_x = 3
-            self.sprite_sheet_y = 2
+            self.sprite_sheet_y = 500
         # Shooting Animation
         elif keys[self.KEY_SHOOT]:
             # Animation Cooldown
@@ -101,7 +102,8 @@ class Drip(Player):
             else:
                 self.animation_frame += 1
             # self.sprite_sheet_x += 1
-            self.sprite_sheet_y = 1
+            self.sprite_sheet_y = 250
+            shoot_adjust = 20
             # If animation is complete, loop it.
             if self.sprite_sheet_x > 5 * 1:
                 self.sprite_sheet_x = 0
@@ -110,7 +112,7 @@ class Drip(Player):
             self.sprite_sheet_x = 0
             self.sprite_sheet_y = 0
 
-        self.image = self.SPRITE_SHEET.get_sprite(self.sprite_sheet_x * 200, self.sprite_sheet_y * 250, 200, 250)
+        self.image = self.SPRITE_SHEET.get_sprite(self.sprite_sheet_x * 200, self.sprite_sheet_y, 200, 250 - shoot_adjust)
         self.image = pygame.transform.scale(self.image, (200 * 0.4, 250 * 0.4))
         screen.blit(self.image, (self.x - 40, self.y - 65))
 

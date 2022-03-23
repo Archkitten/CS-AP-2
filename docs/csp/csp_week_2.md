@@ -86,6 +86,14 @@ Daily Video 3:
 
 ### [Tri 3 TT2 Python Classes](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT2-Python-Classes)
 
+Python Class - the call method
+```
+def __call__(self):
+    # It's like the main(String[] args) method in java!
+    # Run it just by calling the Object!
+    # No dot operator needed to run the code.
+```
+
 Challenges
 1. Organize files, directories and menus for the first 3 weeks. Use Teacher implementation as an example. Make sure that work is organized so it is easy to illustrate this weeks assignments.
 2. Write Factorial function using classes, providing implementation of call.

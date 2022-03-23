@@ -15,6 +15,7 @@ class Boss(Player):
         self.MAX_HEALTH = 105
         self.uses_health_bar = True
         self.HEALTH_BAR_POSITION = 1
+        self.I_FRAMES = 60
 
         self.INTRO_DURATION = self.MAX_HEALTH
         self.START_WIDTH = WIN_WIDTH / 1.2
