@@ -150,8 +150,28 @@ public class Calculator {
     }
 
     // New method here, the week 2 challenge! By Arch :D
-    private void rpnToResult() {
-        // Code goes here
+    // Takes RPN and produces a final result
+    private void rpnToResult()
+    {
+        // Stack used to hold calculation while process RPN
+        Stack<String> calculation = new Stack<>();
+
+        // for loop to process RPN
+        {
+            // If the token is a number
+            {
+                // Push number to stack
+            }
+            // else
+            {
+                // Pop the two top entries
+
+                // Based off of Token operator calculate result
+
+                // Push result back onto the stack
+            }
+        }
+        // Pop final result and set as final result for expression
     }
 
     // Print the expression, terms, and result

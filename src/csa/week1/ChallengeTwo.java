@@ -4,8 +4,8 @@ import csa.util.QueueManager;
 
 public class ChallengeTwo extends Option {
 
-    private Integer[] numbers1 = new Integer[] {1, 4, 5, 8};
-    private Integer[] numbers2 = new Integer[] {2, 3, 6, 7, 9, 10, 11};
+    private Integer[] numbers1 = new Integer[] {1, 5, 8, 9, 10};
+    private Integer[] numbers2 = new Integer[] {2, 3, 4, 6, 7, 11, 12, 13};
     private QueueManager<Integer> q1 = new QueueManager<>("Q1", numbers1);
     private QueueManager<Integer> q2 = new QueueManager<>("Q2", numbers2);
     private QueueManager<Integer> q3 = new QueueManager<>("Q3");
