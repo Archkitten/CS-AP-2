@@ -1,4 +1,5 @@
 import pygame
+import random
 from config import *
 from player import Player
 from projectile import Goop
@@ -28,7 +29,7 @@ class Blob(Player):
     def shoot(self, tx, ty):
         keys = pygame.key.get_pressed()
         if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
-            self.projectiles.append(Goop(self.x, self.y, tx, ty))
+            self.projectiles.append(Goop(self.x, self.y, tx + random.randint(-100, 100), ty + random.randint(-100, 100)))
 
         if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
             self.projectile_counter = 0

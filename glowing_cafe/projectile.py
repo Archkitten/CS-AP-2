@@ -2,8 +2,17 @@ import pygame
 import math
 from config import *
 from spritesheet import SpriteSheet
+from horizontal_projectile import HorizontalProjectile
 from linear_projectile import LinearProjectile
 from lingering_projectile import LingeringProjectile
+
+
+class HorizontalBullet(HorizontalProjectile):
+    # Constructor
+    def __init__(self, x):
+        super().__init__(x)
+        self.SPEED = -3
+        self.RADIUS = 7
 
 
 class Bullet(LinearProjectile):
@@ -17,7 +26,7 @@ class LingeringBullet(LingeringProjectile):
     def __init__(self, x, y):
         super().__init__(x, y)
         self.RADIUS = 20
-        self.duration = -1
+        self.duration = 61
 
 
 class Goop(LinearProjectile):

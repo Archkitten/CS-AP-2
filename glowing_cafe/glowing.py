@@ -20,6 +20,9 @@ class Glowing:
         self.BLOB = False
         self.DRIP = False
         self.RO = False
+        # Music
+        self.arch_birthday_music = pygame.mixer.Sound('audio/Arch_Birthday.ogg')
+        self.arch_birthday_music.set_volume(MUSIC_VOLUME)
 
     def main_menu(self):
         # Local Variables
@@ -125,6 +128,8 @@ class Glowing:
         # BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
         # BACKGROUND = pygame.transform.scale(pygame.image.load('background/unwind-cafe-world-3.png'), (WIN_WIDTH, WIN_HEIGHT))
         TEXT_TITLE = self.FONT.render("Level 0", False, 'Black')
+        # Music
+        self.arch_birthday_music.play(loops=-1)
         # Character Select
         blob = Blob(WIN_WIDTH / 8, WIN_HEIGHT / 1.5)
         drip = Drip(WIN_WIDTH / 8, WIN_HEIGHT / 2)
@@ -187,6 +192,8 @@ class Glowing:
                         click = False
             pygame.display.update()
             self.CLOCK.tick(FPS)
+        # Stop music if the while loop ends.
+        self.arch_birthday_music.stop()
 
 
 g = Glowing()
