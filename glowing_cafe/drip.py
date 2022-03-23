@@ -36,7 +36,9 @@ class Drip(Player):
     def shoot(self, tx, ty):
         keys = pygame.key.get_pressed()
         if keys[self.KEY_SHOOT] and self.projectile_counter == self.PROJECTILE_COOLDOWN:
-            self.projectiles.append(Star(self.x + 10, self.y - 35, tx, ty))
+            # Cannot shoot if hurt.
+            if self.i_frames == 0:
+                self.projectiles.append(Star(self.x + 10, self.y - 35, tx, ty))
 
         if self.projectile_counter >= self.PROJECTILE_COOLDOWN:
             self.projectile_counter = 0
@@ -46,7 +48,19 @@ class Drip(Player):
     def animate(self, screen):
         keys = pygame.key.get_pressed()
         # Conditionals
-        if keys[self.KEY_SHOOT]:
+        # Hurt Animation (Priority)
+        if self.i_frames > 0:
+            if self.i_frames > 40:
+                self.sprite_sheet_x = 0
+            elif self.i_frames > 30:
+                self.sprite_sheet_x = 1
+            elif self.i_frames > 20:
+                self.sprite_sheet_x = 2
+            elif self.i_frames > 10:
+                self.sprite_sheet_x = 3
+            self.sprite_sheet_y = 2
+        # Shooting Animation
+        elif keys[self.KEY_SHOOT]:
             # Animation Cooldown
             if self.animation_frame == self.ANIMATION_COOLDOWN:
                 self.sprite_sheet_x += 1
@@ -58,8 +72,8 @@ class Drip(Player):
             # If animation is complete, loop it.
             if self.sprite_sheet_x >= 6 * 1:
                 self.sprite_sheet_x = 0
+        # Idle Animation
         else:
-            # Idle Animation
             self.sprite_sheet_x = 0
             self.sprite_sheet_y = 0
 
