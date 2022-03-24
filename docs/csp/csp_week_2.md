@@ -22,10 +22,17 @@
 ### [Tri 3 TPT 2.0 Legal and Ethical Concerns 5.5](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Legal-and-Ethical-Concerns-5.5)
 
 1. When you create a GitHub repository it requests a license type. Review the license types in relationship to this Tech Talk and make some notes in GitHub pages.
-* Response
+* [GNU General Public License V3](https://www.youtube.com/watch?v=sQIVclmxvdQ)
+  * Information
+    * Anything you release must be open source.
+    * You are allowed to sell your product, but there is no piracy protection (because the code is open source).
+    * If anybody uses your code, their product automatically inherits the GNU General Public License V3.
+  * Target
+    * If your want to develop an open source project, this is the license for you. It garentees that nobody in the future will be able to close source the project.
+    * If a company wants to make money, this is not the right license to use. A company should also avoid using any code that is under the GNU General Public License V3.
 
 2. Make a license for your personal and Team project. Document license you picked and why.
-* Response
+* We chose the GNU General Public License V3 because we don't plan to generate revenue off of the project we build. We acknowledge that our skills are still improving, and that the things we create are not ready for commercial use. Therefore, if anybody wishes to build off of our code, they may be allowed to do so. By using this license, we are also avoiding potential plagiarism where somebody tries to make a profit off our code without our knowledge.
 
 ### 5.6 Notes
 
@@ -47,16 +54,6 @@ Daily Video 2:
 * Asymmetric Encryption - Public and Private key
   * Public key used to encrypt a message
   * Private key used to decrypt a message
-  * Smoothie analogy
-    * Public key is banana.
-    * Your private key is strawberry.
-    * Friend's private key is blueberry.
-    * You send over strawberry + banana.
-    * Friend sends over blueberry + banana.
-    * Interceptor receives ? + banana and ? + banana.
-    * You add strawberry to the blueberry + banana, resulting in strawberry + blueberry + banana.
-    * Friend adds blueberry to the strawberry + banana, resulting in strawberry + blueberry + banana.
-  * In the end, both you and your friend received the same message while the Interceptor received an encrypted mess.
 * Digital Certificates - Those public and private keys, but verified :D
 
 Daily Video 3:
@@ -67,22 +64,37 @@ Daily Video 3:
 ### [Tri 3 TPT 2.0 Safe Computing 5.6](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TPT-2.0-Safe-Computing-5.6)
 
 1. Describe PII you have seen on project in CompSci Principles.
-* Response
+* About Page, voluntary PII.
 
 2. What are your feelings about PII and your exposure?
-* Response
+* If I'm willingly giving out PII, I'm okay with it.
+* If a company is collecting PII with the correct handling of information, privacy, and security, AND tells me about it, I'm okay with it.
+* If a company is secretly building a profile of me without me knowing... I guess I wouldn't know about it, would I?
 
 3. Describe good and bad passwords? What is another step that is used to assist in authentication.
-* Response
+* Good password: Tg^3x&bHFo8#z
+* Bad password: user1234
+* Multi-Factor authentication adds layers of security in addition to passwords. It's possible an intruder may know one thing about you, but the more authentication methods added the greater the chance that someone bypassing each one is the actual person.
 
 4. Try to describe Symmetric and Asymmetric encryption.
-* Response
+* Smoothie analogy
+  * Public key is banana.
+  * Your private key is strawberry.
+  * Friend's private key is blueberry.
+  * You send over strawberry + banana.
+  * Friend sends over blueberry + banana.
+  * Interceptor receives ? + banana and ? + banana.
+  * You add strawberry to the blueberry + banana, resulting in strawberry + blueberry + banana.
+  * Friend adds blueberry to the strawberry + banana, resulting in strawberry + blueberry + banana.
+* In the end, both you and your friend received the same message while the Interceptor received an encrypted mess.
 
 5. Provide and example of encryption we used in deployment.
-* Response
+* Certbot.
 
 6. Describe a phishing scheme you have learned about the hard way. Describe some other phishing techniques.
-* Response
+* clubpengun.com
+  * Your Club Penguin account is not verified. Please enter your login information in order to regain access to your account.
+* Other phishing techniques include suspicious emails, false bank account pages, or suspicious texts.
 
 ### [Tri 3 TT2 Python Classes](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT2-Python-Classes)
 
@@ -106,7 +118,31 @@ Challenges
    * Use Test data, not input
    * Illustrate failure
 
-### Challenge 1: Factorial
+### Challenge 1: Reorganize
+main_pattern.py
+```
+from src_py.util.menu import Menu
+from src_py.pattern_menus.animations import Animations
+from src_py.pattern_menus.data_structures import DataStructures
+from src_py.pattern_menus.math_algorithms import MathAlgorithms
+
+
+class MainPattern:
+    def __init__(self):
+        super().__init__()
+        self.name = "Main Menu P"
+
+        one = Animations()
+        two = DataStructures()
+        three = MathAlgorithms()
+        self.options = [one, two, three]
+
+    def main(self):
+        m = Menu("----- MAIN MENU P -----", self.options)
+        m.menu()
+```
+
+### Challenge 2: Factorial
 factorial.py
 ```
 from src_py.util.option import Option
@@ -117,7 +153,7 @@ class Factorial(Option):
         super().__init__()
         self.name = "Factorial"
 
-    def tester(self):
+    def __call__(self):
         number = int(input("Input a number to get a factorial from: "))
         f_obj = FactorialClass(number)
         f_obj.factorial()
@@ -137,7 +173,7 @@ class FactorialClass:
         print(str(self.n) + "! is " + str(factorial))
 ```
 
-### Challenge 2: Palindrome
+### Challenge 4: Palindrome
 palindrome.py
 ```
 from src_py.util.option import Option
@@ -148,7 +184,7 @@ class Palindrome(Option):
         super().__init__()
         self.name = "Palindrome"
 
-    def tester(self):
+    def __call__(self):
         nd = NotDatabase()
         print("\nTest Case 1: A man, a plan, a canal -- Panama!")
         nd.input_word("A man, a plan, a canal -- Panama!")
@@ -213,11 +249,18 @@ class TriAngle(Option):
         super().__init__()
         self.name = "Tri Angle"
 
-    def tester(self):
-        target_x = int(input("Target x value? "))
-        target_y = int(input("Target y value? "))
-        a = Angles(0, 0, target_x, target_y)
+    def __call__(self):
+        print("\nParticle starts at (0, 0) and goes to (5, 5):")
+        a = Angles(0, 0, 5, 5)
         a.print_coordinates()
+
+        print("\nParticle starts at (0, 0) and goes to (-3, -3):")
+        b = Angles(0, 0, -3, -3)
+        b.print_coordinates()
+
+        print("\nParticle starts at (5.5, 8) and goes to (-6.23, 11.1):")
+        c = Angles(5.5, 8, -6.23, 11.1)
+        c.print_coordinates()
 
 
 class Angles:
