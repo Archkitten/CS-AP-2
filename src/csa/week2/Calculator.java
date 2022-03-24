@@ -16,6 +16,7 @@ public class Calculator {
     private final Map<String, Integer> OPERATORS = new HashMap<>();
     {
         // Map<"token", precedence>
+        OPERATORS.put("^", 2);
         OPERATORS.put("*", 3);
         OPERATORS.put("/", 3);
         OPERATORS.put("%", 3);
@@ -124,6 +125,7 @@ public class Calculator {
                 case "*":
                 case "/":
                 case "%":
+                case "^":
                     // While stack
                     // not empty AND stack top element
                     // and is an operator
@@ -149,7 +151,6 @@ public class Calculator {
 
     }
 
-    // New method here, the week 2 challenge! By Arch :D
     // Takes RPN and produces a final result
     private void rpnToResult()
     {
@@ -157,21 +158,43 @@ public class Calculator {
         Stack<String> calculation = new Stack<>();
 
         // for loop to process RPN
-        {
+        for (String i : this.reverse_polish) {
             // If the token is a number
-            {
+            if (isANumber(i)) {
                 // Push number to stack
+                calculation.push(i);
             }
             // else
-            {
+            else {
                 // Pop the two top entries
-
+                double a = Double.parseDouble(calculation.pop());
+                double b = Double.parseDouble(calculation.pop());
                 // Based off of Token operator calculate result
-
+                double c = switch (i) {
+                    case "+" -> a + b;
+                    case "-" -> a - b;
+                    case "*" -> a * b;
+                    case "/" -> a / b;
+                    case "%" -> a % b;
+                    case "^" -> Math.pow(b, a);
+                    default -> 0;
+                };
                 // Push result back onto the stack
+                calculation.push(String.valueOf(c));
             }
         }
         // Pop final result and set as final result for expression
+        result = Double.parseDouble(calculation.pop());
+    }
+
+    private Boolean isANumber(String i) {
+        try {
+            Double.parseDouble(i);
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
     }
 
     // Print the expression, terms, and result

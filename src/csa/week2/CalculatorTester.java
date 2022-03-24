@@ -19,5 +19,8 @@ public class CalculatorTester extends Option {
 
         Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
         System.out.println("All Math2\n" + allMath2);
+
+        Calculator expMath = new Calculator("5 ^ 2");
+        System.out.println("Exponent Math\n" + expMath);
     }
 }
