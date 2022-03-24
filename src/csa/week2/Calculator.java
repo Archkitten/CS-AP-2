@@ -17,6 +17,7 @@ public class Calculator {
     {
         // Map<"token", precedence>
         OPERATORS.put("^", 2);
+        OPERATORS.put("√", 2);
         OPERATORS.put("*", 3);
         OPERATORS.put("/", 3);
         OPERATORS.put("%", 3);
@@ -126,6 +127,7 @@ public class Calculator {
                 case "/":
                 case "%":
                 case "^":
+                case "√":
                     // While stack
                     // not empty AND stack top element
                     // and is an operator
@@ -163,6 +165,15 @@ public class Calculator {
             if (isANumber(i)) {
                 // Push number to stack
                 calculation.push(i);
+            }
+            // else if square root
+            else if (i.equals("√")) {
+                // Pop the top entry
+                double a = Double.parseDouble(calculation.pop());
+                // Calculate square root
+                double c = Math.sqrt(a);
+                // Push result back to stack
+                calculation.push(String.valueOf(c));
             }
             // else
             else {
