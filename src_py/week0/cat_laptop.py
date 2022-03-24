@@ -15,7 +15,7 @@ class CatLaptop(Option):
         super().__init__()
         self.name = "Cat Laptop"
 
-    def tester(self):
+    def __call__(self):
         self.ship()
 
     def ocean_print(self):

@@ -7,7 +7,7 @@ class BuildStairs(Option):
         self.name = "Build Stairs"
         self.space = ""
 
-    def tester(self):
+    def __call__(self):
         counter = 0
         # steps = int(input("How many steps? "))
         steps = 6

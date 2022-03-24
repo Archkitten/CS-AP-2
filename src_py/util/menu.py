@@ -28,7 +28,7 @@ class Menu:
                 # Otherwise, run the selection.
                 else:
                     try:
-                        self.options_list[user_input - 1].tester()
+                        self.options_list[user_input - 1]()
                     except IndexError:
                         print("Invalid Input: Selection out of range")
             except ValueError:

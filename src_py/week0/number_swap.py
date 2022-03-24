@@ -6,7 +6,7 @@ class NumberSwap(Option):
         super().__init__()
         self.name = "Number Swap"
 
-    def tester(self):
+    def __call__(self):
         print(self.swap(1, 2))
         print(self.swap(60, 30))
         print(self.swap(9, -11))

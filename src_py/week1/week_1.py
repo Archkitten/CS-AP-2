@@ -15,7 +15,7 @@ class Week1(Option):
         three = Fibonacci()
         self.options_list = [one, two, three]
 
-    def tester(self):
+    def __call__(self):
         print(self.name)
         m = Menu("----- WEEK 1 -----", self.options_list)
         m.menu()

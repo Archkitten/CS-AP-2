@@ -8,7 +8,7 @@ class Fibonacci(Option):
         self.steps = 0
         self.number = [0, 1]
 
-    def tester(self):
+    def __call__(self):
         # self.steps = int(input("How many steps? "))
         self.steps = 15
         self.fibonacci(1)

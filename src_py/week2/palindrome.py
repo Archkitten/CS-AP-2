@@ -6,7 +6,7 @@ class Palindrome(Option):
         super().__init__()
         self.name = "Palindrome"
 
-    def tester(self):
+    def __call__(self):
         nd = NotDatabase()
         print("\nTest Case 1: A man, a plan, a canal -- Panama!")
         nd.input_word("A man, a plan, a canal -- Panama!")

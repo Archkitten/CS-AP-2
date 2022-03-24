@@ -16,7 +16,7 @@ class InfoLoops(Option):
                              "alias": ["Fallen Ferric"],
                              "minor_alias": ["???? ??????"]})
 
-    def tester(self):
+    def __call__(self):
         print("For Loop:")
         self.for_loop()
         print("While Loop:")

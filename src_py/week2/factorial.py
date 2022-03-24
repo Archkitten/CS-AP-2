@@ -6,7 +6,7 @@ class Factorial(Option):
         super().__init__()
         self.name = "Factorial"
 
-    def tester(self):
+    def __call__(self):
         # number = int(input("Input a number to get a factorial from: "))
         # f_obj = FactorialClass(number)
         # f_obj.factorial()

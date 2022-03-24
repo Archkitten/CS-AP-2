@@ -8,7 +8,7 @@ class RecursiveA(Option):
         self.space = ""
         self.counter = 0
 
-    def tester(self):
+    def __call__(self):
         print(self.space + "A")
         self.space = self.space + " "
         self.counter += 1

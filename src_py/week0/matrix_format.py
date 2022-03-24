@@ -10,7 +10,7 @@ class MatrixFormat(Option):
                        [7, 8, 9],
                        [" ", 0, " "]]
 
-    def tester(self):
+    def __call__(self):
         for i in self.numpad:
             for j in i:
                 print(j, "", end="")
