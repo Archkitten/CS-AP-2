@@ -56,15 +56,15 @@ Reverse Polish Notation (Array, works well with Stack):
 [7, 5, +, 9, *]
 ```
 
-[Youtube Video](https://www.youtube.com/watch?v=Wz85Hiwi5MY) - 3:00
+[Youtube Video](https://www.youtube.com/watch?v=Wz85Hiwi5MY)
 * Sorting the values within the Reverse Polish Notation arrayList
   * Is it an operator (+ - * / %)?
     * Is the existing operator of greater precedence?
-      * Do/Don't put in Stack?
-      * Pop something?
-    * Else?
-      * Do/Don't put in Stack?
-      * Pop something?
+      * Push to Stack
+    * Else
+      * Pop out operator underneath
+      * Push to Stack
+      * Push the popped operator back to Stack
   * Is it a seperator (" ")?
     * Skip it
   * Is it a number (1 2 3 4 5)?
@@ -72,13 +72,99 @@ Reverse Polish Notation (Array, works well with Stack):
 
 Result (Double):
 ```
-
+4.0
+27.0
+13.0
+108.0
 ```
 
 
-### Challenge #1: RPN To Result
+### Challenge #1 + #2 + #4: RPN To Result, Power, Square Root
 Calculator.java
 ```
-# rpnToResult()
-# Code Snippet
+public class Calculator {
+
+    ...
+
+    // Helper definition for supported operators
+    private final Map<String, Integer> OPERATORS = new HashMap<>();
+    {
+        // Map<"token", precedence>
+        OPERATORS.put("^", 2);
+        OPERATORS.put("√", 2);
+        OPERATORS.put("*", 3);
+        OPERATORS.put("/", 3);
+        OPERATORS.put("%", 3);
+        OPERATORS.put("+", 4);
+        OPERATORS.put("-", 4);
+    }
+    
+    ...
+    
+    // Takes RPN and produces a final result
+    private void rpnToResult()
+    {
+        // Stack used to hold calculation while process RPN
+        Stack<String> calculation = new Stack<>();
+
+        // for loop to process RPN
+        for (String i : this.reverse_polish) {
+            // If the token is a number
+            if (isANumber(i)) {
+                // Push number to stack
+                calculation.push(i);
+            }
+            // else if square root
+            else if (i.equals("√")) {
+                // Pop the top entry
+                double a = Double.parseDouble(calculation.pop());
+                // Calculate square root
+                double c = Math.sqrt(a);
+                // Push result back to stack
+                calculation.push(String.valueOf(c));
+            }
+            // else
+            else {
+                // Pop the two top entries
+                double a = Double.parseDouble(calculation.pop());
+                double b = Double.parseDouble(calculation.pop());
+                // Based off of Token operator calculate result
+                double c = switch (i) {
+                    case "+" -> a + b;
+                    case "-" -> a - b;
+                    case "*" -> a * b;
+                    case "/" -> a / b;
+                    case "%" -> a % b;
+                    case "^" -> Math.pow(b, a);
+                    default -> 0;
+                };
+                // Push result back onto the stack
+                calculation.push(String.valueOf(c));
+            }
+        }
+        // Pop final result and set as final result for expression
+        result = Double.parseDouble(calculation.pop());
+    }
+
+    private Boolean isANumber(String i) {
+        try {
+            Double.parseDouble(i);
+            return true;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+    
+    ...
+}
+```
+
+CalculatorTester.java
+```
+Calculator expMath = new Calculator("2 * 5 ^ 2 * 2");
+System.out.println("\nExponent Math\n" + expMath);
+
+Calculator sqrtMath = new Calculator("√(60 + 4) * √4 ^ 2");
+System.out.println("\nSquare Root Math\n" + sqrtMath);
 ```

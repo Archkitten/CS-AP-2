@@ -23,7 +23,7 @@ public class CalculatorTester extends Option {
         Calculator expMath = new Calculator("2 * 5 ^ 2 * 2");
         System.out.println("\nExponent Math\n" + expMath);
 
-        Calculator sqrtMath = new Calculator("√64 * √4 ^ 2");
+        Calculator sqrtMath = new Calculator("√(60 + 4) * √4 ^ 2");
         System.out.println("\nSquare Root Math\n" + sqrtMath);
     }
 }
