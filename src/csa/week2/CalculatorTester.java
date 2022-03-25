@@ -1,5 +1,6 @@
 package csa.week2;
 import csa.util.Option;
+import java.util.Scanner;
 
 public class CalculatorTester extends Option {
 
@@ -25,5 +26,11 @@ public class CalculatorTester extends Option {
 
         Calculator sqrtMath = new Calculator("√(60 + 4) * √4 ^ 2");
         System.out.println("\nSquare Root Math\n" + sqrtMath);
+
+        Scanner scanObj = new Scanner(System.in);
+        System.out.println("\nEnter your own math equation to calculate:");
+        String customString = scanObj.nextLine();
+        Calculator customMath = new Calculator(customString);
+        System.out.println("\nCustom Math\n" + customMath);
     }
 }
