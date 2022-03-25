@@ -3,6 +3,7 @@ from src_py.util.option import Option
 from src_py.week2.factorial import Factorial
 from src_py.week2.palindrome import Palindrome
 from src_py.week2.tri_angle import TriAngle
+from src_py.week2.multiplication_table import MultiplicationTable
 
 
 class Week2(Option):
@@ -13,7 +14,8 @@ class Week2(Option):
         one = Factorial()
         two = Palindrome()
         three = TriAngle()
-        self.options_list = [one, two, three]
+        four = MultiplicationTable()
+        self.options_list = [one, two, three, four]
 
     def __call__(self):
         print(self.name)

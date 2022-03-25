@@ -4,6 +4,7 @@ from src_py.week0.number_swap import NumberSwap
 from src_py.week1.fibonacci import Fibonacci
 from src_py.week2.factorial import Factorial
 from src_py.week2.tri_angle import TriAngle
+from src_py.week2.multiplication_table import MultiplicationTable
 
 
 class MathAlgorithms(Option):
@@ -11,7 +12,7 @@ class MathAlgorithms(Option):
         super().__init__()
         self.name = "Math Algorithms"
 
-        self.options = [NumberSwap(), Fibonacci(), Factorial(), TriAngle()]
+        self.options = [NumberSwap(), Fibonacci(), Factorial(), TriAngle(), MultiplicationTable()]
 
     def __call__(self):
         m = Menu("----- Math Algorithms -----", self.options)
