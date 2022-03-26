@@ -9,15 +9,17 @@ class UIMenu:
         self.CLOCK = pygame.time.Clock()
         pygame.init()
         pygame.display.set_caption(GAME_TITLE)
-        self.SCREEN = pygame.display.set_mode((WIN_WIDTH * WIN_SCALE, WIN_HEIGHT * WIN_SCALE))
+        self.SCREEN = pygame.display.set_mode((1600 * WIN_SCALE, 900 * WIN_SCALE))
         # Running
         self.running = True
         # Click
         self.left_click = False
+        self.mx, self.my = pygame.mouse.get_pos()
 
     # Call other functions
     def __call__(self):
         while self.running:
+            self.mx, self.my = pygame.mouse.get_pos()
             self.while_loop()
             self.event_loop()
             self.update()

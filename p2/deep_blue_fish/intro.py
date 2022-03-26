@@ -67,4 +67,3 @@ class Intro(UIMenu):
         # End intro after fading complete. 43 is the delay.
         if self.timer > 255 + 43:
             self.running = False
-

@@ -1,8 +1,6 @@
 GAME_TITLE = "Deep Blue Fish"
 
 WIN_SCALE = 0.8
-WIN_WIDTH = 1600
-WIN_HEIGHT = 900
 
 FPS = 60
 
