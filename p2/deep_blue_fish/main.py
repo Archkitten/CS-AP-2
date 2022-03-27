@@ -1,6 +1,6 @@
 from p2.deep_blue_fish.util.ui_menu import UIMenu
 from p2.deep_blue_fish.util.ui_elements import Text, Button
-from p2.deep_blue_fish.util.sprites import Feesh, Bouncer
+from p2.deep_blue_fish.util.sprites import Fish_Left, Fish_Right
 from p2.deep_blue_fish.util.config import *
 import pygame
 import random
@@ -38,18 +38,12 @@ class Main(UIMenu):
         if self.timer % 40 == 0:
             direction = random.randint(0, 4)
             if direction == 0:
-                self.fish_list.append(Feesh(-100, random.randint(150, 900), 0.25, "Right"))
+                self.fish_list.append(Fish_Left(-100, random.randint(150, 900), 0.25))
             elif direction == 1:
-                self.fish_list.append(Feesh(1700, random.randint(150, 900), 0.25, "Left"))
+                self.fish_list.append(Fish_Right(1700, random.randint(150, 900), 0.25))
             else:
                 pass
         for fish in self.fish_list:
             fish(self.SCREEN, 255)
-            if fish.image_rect.x > 1800 * WIN_SCALE:
+            if fish.image_rect.x > 1800 * WIN_SCALE or fish.image_rect.x < -200 * WIN_SCALE:
                 self.fish_list.remove(fish)
-            if fish.image_rect.x < -200 * WIN_SCALE:
-                self.fish_list.remove(fish)
-
-        # Bouncer
-        if self.timer % 1 == 0 and self.timer <= 80:
-            self.fish_list.append(Bouncer(self.timer * 20, -225, 0.25))
