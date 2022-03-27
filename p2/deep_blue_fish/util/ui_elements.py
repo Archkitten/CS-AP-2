@@ -4,9 +4,11 @@ import pygame
 
 class Text:
     def __init__(self, text, x, y, color, font, font_size):
+        self.x = x
+        self.y = y
         self.FONT = pygame.font.SysFont(font, int(font_size * WIN_SCALE))
         self.text = self.FONT.render(text, True, color)
-        self.text_rect = self.text.get_rect(center=(x * WIN_SCALE, y * WIN_SCALE))
+        self.text_rect = self.text.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
 
     def __call__(self, screen):
         screen.blit(self.text, self.text_rect)
@@ -14,9 +16,11 @@ class Text:
 
 class Picture:
     def __init__(self, image, x, y, scale):
+        self.x = x
+        self.y = y
         self.image = pygame.image.load(image).convert_alpha()
         self.image = pygame.transform.scale(self.image, (self.image.get_width() * WIN_SCALE * scale, self.image.get_height() * WIN_SCALE * scale))
-        self.image_rect = self.image.get_rect(center=(x * WIN_SCALE, y * WIN_SCALE))
+        self.image_rect = self.image.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
 
     def __call__(self, screen, opacity):
         self.image.set_alpha(opacity)
@@ -25,14 +29,16 @@ class Picture:
 
 class Button:
     def __init__(self, image, x, y, scale, text, color, font, font_size):
+        self.x = x
+        self.y = y
         # Picture
         self.image = pygame.image.load(image).convert_alpha()
         self.image = pygame.transform.scale(self.image, (self.image.get_width() * WIN_SCALE * scale, self.image.get_height() * WIN_SCALE * scale))
-        self.image_rect = self.image.get_rect(center=(x * WIN_SCALE, y * WIN_SCALE))
+        self.image_rect = self.image.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
         # Text
         self.FONT = pygame.font.SysFont(font, int(font_size * WIN_SCALE))
         self.text = self.FONT.render(text, True, color)
-        self.text_rect = self.text.get_rect(center=(x * WIN_SCALE, y * WIN_SCALE))
+        self.text_rect = self.text.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
 
     def __call__(self, screen, opacity, mx, my, click):
         # I discovered this hover and click opacity system on accident.

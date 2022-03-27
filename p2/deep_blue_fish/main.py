@@ -1,6 +1,6 @@
 from p2.deep_blue_fish.util.ui_menu import UIMenu
 from p2.deep_blue_fish.util.ui_elements import Text, Button
-from p2.deep_blue_fish.util.sprites import Fish_Left, Fish_Right
+from p2.deep_blue_fish.util.ui_fish import Fish_Left, Fish_Right
 from p2.deep_blue_fish.util.config import *
 import random
 

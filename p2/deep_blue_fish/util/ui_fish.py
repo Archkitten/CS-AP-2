@@ -7,18 +7,20 @@ class Fish_Left(Picture):
     def __init__(self, x, y, scale):
         super().__init__('img/feesh.png', x, y, scale)
         self.image = pygame.transform.flip(self.image, True, True)
-        self.SPEED = int(3 * WIN_SCALE)
+        self.SPEED = 3
 
     def __call__(self, screen, opacity):
-        self.image_rect.x += self.SPEED
+        self.x += self.SPEED
+        self.image_rect = self.image.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
         super().__call__(screen, opacity)
 
 
 class Fish_Right(Picture):
     def __init__(self, x, y, scale):
         super().__init__('img/feesh.png', x, y, scale)
-        self.SPEED = int(3 * WIN_SCALE)
+        self.SPEED = 3
 
     def __call__(self, screen, opacity):
-        self.image_rect.x -= self.SPEED
+        self.x -= self.SPEED
+        self.image_rect = self.image.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
         super().__call__(screen, opacity)
