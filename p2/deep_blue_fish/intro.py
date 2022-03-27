@@ -1,7 +1,5 @@
 from p2.deep_blue_fish.util.ui_menu import UIMenu
 from p2.deep_blue_fish.util.ui_elements import Text, Picture
-from p2.deep_blue_fish.util.config import *
-import pygame
 import random
 
 
@@ -34,16 +32,13 @@ class Intro(UIMenu):
                        "SCP-8704 and Protocol 520-Gan"]
         q = random.randint(-3, len(self.quotes) - 1)
         if q == -1:
-            self.quote = Text('"Instead of fading everything out, just make Black.png fade in" - Q', 800, 450, 'Blue',
-                              pygame.font.SysFont('cambria', int(50 * WIN_SCALE)))
+            self.quote = Text('"Instead of fading everything out, just make Black.png fade in" - Q', 800, 450, 'Blue', 'cambria', 50)
         elif q == -2:
-            self.quote = Text("BOTTOM TEXT", 800, 800, 'Blue',
-                              pygame.font.SysFont('impact', int(100 * WIN_SCALE)))
+            self.quote = Text("BOTTOM TEXT", 800, 800, 'Blue', 'impact', 100)
         elif q == -3:
-            self.quote = Text("To each it is left unknown, that to each it is granted, this gift brings a curse; that every memory of something as a part of anything can become everything in an instant, as existence in this place and time brings a power unlike any other to create that which can create, and to manifest something in the mind of anyone, that beckons their soul to the heavens of Earth.",
-                              800, 450, 'White', pygame.font.SysFont('pristina', int(14 * WIN_SCALE)))
+            self.quote = Text("To each it is left unknown, that to each it is granted, this gift brings a curse; that every memory of something as a part of anything can become everything in an instant, as existence in this place and time brings a power unlike any other to create that which can create, and to manifest something in the mind of anyone, that beckons their soul to the heavens of Earth.", 800, 450, 'White', 'pristina', 14)
         else:
-            self.quote = Text(self.quotes[q], 800, 450, 'Blue', pygame.font.SysFont('pristina', int(80 * WIN_SCALE)))
+            self.quote = Text(self.quotes[q], 800, 450, 'Blue', 'pristina', 80)
         # Black.png
         self.black = Picture('img/Black.png', 800, 450, 1)
         self.timer = 255
