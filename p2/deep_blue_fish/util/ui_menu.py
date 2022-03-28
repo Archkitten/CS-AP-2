@@ -12,6 +12,8 @@ class UIMenu:
         self.SCREEN = pygame.display.set_mode((1600 * WIN_SCALE, 900 * WIN_SCALE))
         # Running
         self.running = True
+        # Timer
+        self.timer = 0
         # Click
         self.left_click = False
         self.mx, self.my = pygame.mouse.get_pos()
@@ -22,6 +24,7 @@ class UIMenu:
             self.mx, self.my = pygame.mouse.get_pos()
             # While Loop
             self.while_loop()
+            self.timer += 1
             # Event For Loop
             for event in pygame.event.get():
                 self.event_loop(event)

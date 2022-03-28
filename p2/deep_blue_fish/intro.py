@@ -30,6 +30,7 @@ class Intro(UIMenu):
                        "Nay I say!",
                        "Ohn",
                        "SCP-8704 and Protocol 520-Gan"]
+        # Chooses custom splash text or text from the list.
         q = random.randint(-3, len(self.quotes) - 1)
         if q == -1:
             self.quote = Text('"Instead of fading everything out, just make Black.png fade in" - Q', 800, 450, 'Blue', 'cambria', 50)
@@ -41,24 +42,24 @@ class Intro(UIMenu):
             self.quote = Text(self.quotes[q], 800, 450, 'Blue', 'pristina', 80)
         # Black.png
         self.black = Picture('img/Black.png', 800, 450, 1)
-        self.timer = 255
+        self.black_opacity = 255
         self.timer_phase = "Fading out, words appearing"
 
     def while_loop(self):
         self.SCREEN.fill('Black')
         self.quote(self.SCREEN)
-        self.black(self.SCREEN, self.timer)
+        self.black(self.SCREEN, self.black_opacity)
         # Skip with left click.
         if self.left_click:
             self.running = False
         # Fading or unfading black. 4 and 3 are the fading and unfading speeds, respectively.
         if self.timer_phase == "Fading out, words appearing":
-            self.timer -= 4
+            self.black_opacity -= 4
         else:
-            self.timer += 3
+            self.black_opacity += 3
         # Switch from fading to unfading. -43 is the delay.
-        if self.timer <= -43:
+        if self.black_opacity <= -43:
             self.timer_phase = "Fading in, words disappearing"
         # End intro after fading complete. 43 is the delay.
-        if self.timer > 255 + 43:
+        if self.black_opacity > 255 + 43:
             self.running = False
