@@ -1,5 +1,5 @@
-from p2.deep_blue_fish.util.ui_menu import UIMenu
-from p2.deep_blue_fish.util.ui_elements import Text, Picture
+from ui_menu import UIMenu
+from ui_elements import Text, Picture
 import random
 
 
