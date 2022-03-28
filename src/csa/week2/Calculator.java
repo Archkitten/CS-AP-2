@@ -60,6 +60,9 @@ public class Calculator {
         // parse expression into terms
         this.termTokenizer();
 
+        // are there variables? - Arch
+        this.variableDetector();
+
         // place terms into reverse polish notation
         this.tokensToReversePolishNotation();
 
@@ -99,6 +102,16 @@ public class Calculator {
         if (multiCharTerm.length() > 0) {
             tokens.add(this.expression.substring(start));
         }
+    }
+
+    // Detect variables, equals, and semicolons - Arch
+    // Java String to Char Array: https://stackoverflow.com/questions/10006165/converting-string-to-character-array-in-java
+    // ^ you probably don't need that because Tokenization already does it for you ^
+    // Java Char to Int: https://beginnersbook.com/2019/04/java-char-to-int-conversion/
+    private void variableDetector() {
+        // If you see equals, calculate the terms afterwards? until the semicolon at least
+        // Then somehow set the expression equal to the variable, store that somewhere
+        // and if the variable comes up again, replace it with the expression
     }
 
     // Takes tokens and converts to Reverse Polish Notation (RPN), this is one where the operator follows its operands.
