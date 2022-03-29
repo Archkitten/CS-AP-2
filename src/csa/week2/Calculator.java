@@ -194,6 +194,31 @@ public class Calculator {
                 double a = Double.parseDouble(calculation.pop());
                 double b = Double.parseDouble(calculation.pop());
                 // Based off of Token operator calculate result
+                double c = 0;
+                // IDE is trying to suggest: 'if' statement can be replaced with 'switch' statement
+                if (i.equals("+")) {
+                    c = a + b;
+                }
+                else if (i.equals("-")) {
+                    c = a - b;
+                }
+                else if (i.equals("*")) {
+                    c = a * b;
+                }
+                else if (i.equals("/")) {
+                    c = a / b;
+                }
+                else if (i.equals("%")) {
+                    c = a % b;
+                }
+                else if (i.equals("^")) {
+                    c = Math.pow(b, a);
+                }
+                else {
+                    c = 0;
+                }
+                // enhanced switch statement (suggested by IDE) doesn't work with Replit
+                /*
                 double c = switch (i) {
                     case "+" -> a + b;
                     case "-" -> a - b;
@@ -203,6 +228,7 @@ public class Calculator {
                     case "^" -> Math.pow(b, a);
                     default -> 0;
                 };
+                */
                 // Push result back onto the stack
                 calculation.push(String.valueOf(c));
             }
