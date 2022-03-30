@@ -1,4 +1,6 @@
 # Reusable menu() class and function.
+import os
+
 class Menu:
     def __init__(self, banner, options_list):
         self.banner = banner
@@ -28,6 +30,7 @@ class Menu:
                 # Otherwise, run the selection.
                 else:
                     try:
+                        os.system('clear')
                         self.options_list[user_input - 1]()
                     except IndexError:
                         print("Invalid Input: Selection out of range")
