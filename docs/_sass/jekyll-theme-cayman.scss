@@ -109,7 +109,11 @@ a {
   color: $header-heading-color;
   text-align: center;
   background-color: $header-bg-color;
-  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  background-image: linear-gradient(315deg, $header-bg-color 0%, $header-bg-color-secondary 74%);
+  // background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  // https://www.eggradients.com/category/sunset-gradient
+  // Free Food
+  // Wireless Headset
 
   @include large {
     padding: 5rem 6rem;

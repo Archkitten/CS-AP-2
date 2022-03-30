@@ -12,8 +12,8 @@ public class Menu {
             // Prints the banner message.
             System.out.println(banner);
             // Iterator, prints out options of the menu.
-            int i = 1;
-            System.out.println("0 - Exit");
+            int i = 0;
+            System.out.println("99 - Exit");
             for (Option o : options_array) {
                 System.out.print(i + " - ");
                 i++;
@@ -25,14 +25,14 @@ public class Menu {
             do {
                 System.out.print(">");
                 userInput = getValidInput(scanObj, options_array.length);
-            } while (userInput < 0 || userInput > options_array.length);
+            } while ((userInput < 0 || userInput > options_array.length) && userInput != 99);
 
             // Checks if user input matches a menu option.
             for (int o = 0; o < options_array.length; o++) {
-                if (userInput == 0) {
+                if (userInput == 99) {
                     running = false;
                 }
-                else if (userInput == o + 1) {
+                else if (userInput == o) {
                     options_array[o].tester();
                 }
             }
@@ -43,7 +43,7 @@ public class Menu {
     private int getValidInput(Scanner scanObj, int arrayLength) {
         try {
             int userInput = Integer.parseInt(scanObj.nextLine());
-            if (userInput <= -1 || userInput > arrayLength) {
+            if ((userInput <= -1 || userInput > arrayLength - 1) && userInput != 99) {
                 System.out.println("Out of Range");
             }
             return userInput;
