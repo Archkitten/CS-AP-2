@@ -18,3 +18,24 @@ In order to update:
 language="bash"
 run="cd src && javac csa/*.java && java csa/Main && rm csa/**/*.class"
 ```
+
+## Makefile (by MZ)
+```
+run: build execute
+
+build:
+	find -name *.java > sources.txt
+	javac -d bin @sources.txt
+
+execute:
+	java -cp ./bin csa/Main
+
+clean:
+	rm -rf ./bin/*
+	rm sources.txt
+```
+* make - updates and runs program
+* make run - updates and runs program
+* make build - updates program
+* make execute - runs program
+* make clean - remove all .class files
