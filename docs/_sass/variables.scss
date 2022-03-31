@@ -4,16 +4,20 @@ $medium-breakpoint: 42em !default;
 
 // Headers
 $header-heading-color: #fff !default;
-$header-bg-color: #ffff00 !default;
-$header-bg-color-secondary: #ff0000 !default;
+$header-bg-color: #f6d327 !default;
+$header-bg-color-secondary: #de4daa !default;
 // $header-bg-color: #159957 !default;
 // $header-bg-color-secondary: #155799 !default;
+// header-bg-color-secondary is on the left, header-bg-color is on the right.
+// now header-bg-color is on the bottom, header-bg-color-secondary is on the top.
 
 // Text
-$section-headings-color: #159957 !default;
+$section-headings-color: #000000 !default;
 $body-text-color: #606c71 !default;
-$body-link-color: #1e6bb8 !default;
+$body-link-color: #0000ee !default;
 $blockquote-text-color: #819198 !default;
+// $section-headings-color: #159957 !default;
+// $body-link-color: #1e6bb8 !default;
 
 // Code
 $code-bg-color: #f3f6fa !default;
