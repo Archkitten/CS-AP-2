@@ -1,5 +1,3 @@
-{% include navigation.html %}
-
 # P2
 
 {% include p2_nav.html %}
