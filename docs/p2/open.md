@@ -1,5 +1,5 @@
 ---
-layout: akhil
+layout: default
 ---
 
 # P2
