@@ -1,3 +1,7 @@
+function importNav() {
+    navParent = document.getElementById("navParent");
+    nav = document.createElement("div");
+    nav.innerHTML = `
 <link rel="stylesheet" href="assets/css/main.css">
 <div id="top" class="rounded-corners box bar">
     <div class="bar-title">
@@ -34,3 +38,6 @@
         </a>
     </div>
 </div>
+  `
+    navParent.appendChild(nav);
+}
