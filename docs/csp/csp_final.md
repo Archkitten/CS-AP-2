@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # CSP
 
 {% include csp_nav.html %}

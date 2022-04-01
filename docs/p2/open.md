@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # P2
 
 {% include p2_nav.html %}
