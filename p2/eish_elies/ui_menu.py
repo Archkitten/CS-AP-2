@@ -9,8 +9,8 @@ class UIMenu:
         self.CLOCK = pygame.time.Clock()
         pygame.init()
         pygame.display.set_icon(pygame.image.load('img/Zap.png'))
-        pygame.display.set_caption(GAME_TITLE)
-        self.SCREEN = pygame.display.set_mode((1600 * WIN_SCALE, 900 * WIN_SCALE))
+        pygame.display.set_caption(data['GAME_TITLE'])
+        self.SCREEN = pygame.display.set_mode((1600 * data['WIN_SCALE'], 900 * data['WIN_SCALE']))
         # Running
         self.running = True
         # Timer
@@ -55,4 +55,4 @@ class UIMenu:
 
     def update(self):
         pygame.display.update()
-        self.CLOCK.tick(FPS)
+        self.CLOCK.tick(data['FPS'])

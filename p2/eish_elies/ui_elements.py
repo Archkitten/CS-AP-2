@@ -6,9 +6,9 @@ class Text:
     def __init__(self, text, x, y, color, font, font_size):
         self.x = x
         self.y = y
-        self.FONT = pygame.font.SysFont(font, int(font_size * WIN_SCALE))
+        self.FONT = pygame.font.SysFont(font, int(font_size * data['WIN_SCALE']))
         self.text = self.FONT.render(text, True, color)
-        self.text_rect = self.text.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
+        self.text_rect = self.text.get_rect(center=(self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE']))
 
     def __call__(self, screen):
         screen.blit(self.text, self.text_rect)
@@ -19,8 +19,8 @@ class Picture:
         self.x = x
         self.y = y
         self.image = pygame.image.load(image).convert_alpha()
-        self.image = pygame.transform.scale(self.image, (self.image.get_width() * WIN_SCALE * scale, self.image.get_height() * WIN_SCALE * scale))
-        self.image_rect = self.image.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
+        self.image = pygame.transform.scale(self.image, (self.image.get_width() * data['WIN_SCALE'] * scale, self.image.get_height() * data['WIN_SCALE'] * scale))
+        self.image_rect = self.image.get_rect(center=(self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE']))
 
     def __call__(self, screen, opacity):
         self.image.set_alpha(opacity)
@@ -30,7 +30,7 @@ class Picture:
 class Background:
     def __init__(self, image):
         self.image = pygame.image.load(image).convert_alpha()
-        self.image = pygame.transform.scale(self.image, (1600 * WIN_SCALE, 900 * WIN_SCALE))
+        self.image = pygame.transform.scale(self.image, (1600 * data['WIN_SCALE'], 900 * data['WIN_SCALE']))
 
     def __call__(self, screen):
         screen.blit(self.image, (0, 0))
@@ -42,18 +42,18 @@ class Button:
         self.y = y
         # Picture
         self.image = pygame.image.load(image).convert_alpha()
-        self.image = pygame.transform.scale(self.image, (self.image.get_width() * WIN_SCALE * scale, self.image.get_height() * WIN_SCALE * scale))
-        self.image_rect = self.image.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
+        self.image = pygame.transform.scale(self.image, (self.image.get_width() * data['WIN_SCALE'] * scale, self.image.get_height() * data['WIN_SCALE'] * scale))
+        self.image_rect = self.image.get_rect(center=(self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE']))
         # Text
-        self.FONT = pygame.font.SysFont(font, int(font_size * WIN_SCALE))
+        self.FONT = pygame.font.SysFont(font, int(font_size * data['WIN_SCALE']))
         self.text = self.FONT.render(text, True, color)
-        self.text_rect = self.text.get_rect(center=(self.x * WIN_SCALE, self.y * WIN_SCALE))
+        self.text_rect = self.text.get_rect(center=(self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE']))
 
     def __call__(self, screen, opacity, mx, my, click):
         # I discovered this hover and click opacity system on accident.
         screen.blit(self.image, self.image_rect)
         screen.blit(self.text, self.text_rect)
-        if self.text_rect.collidepoint((mx, my)):
+        if self.image_rect.collidepoint((mx, my)):
             opacity /= 2
             if click:
                 return True
