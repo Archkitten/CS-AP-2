@@ -1,7 +1,7 @@
 from ui_menu import UIMenu
 
 
-class Play(UIMenu):
+class Options(UIMenu):
     def __init__(self):
         super().__init__()
 
