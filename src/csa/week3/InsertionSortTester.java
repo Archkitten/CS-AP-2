@@ -1,9 +1,9 @@
 package csa.week3;
 import csa.util.Option;
 
-public class InsertionSort extends Option {
+public class InsertionSortTester extends Option {
 
-    public InsertionSort() {
+    public InsertionSortTester() {
         optionName = "Insertion Sort";
     }
 

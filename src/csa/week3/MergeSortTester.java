@@ -1,9 +1,9 @@
 package csa.week3;
 import csa.util.Option;
 
-public class MergeSort extends Option {
+public class MergeSortTester extends Option {
 
-    public MergeSort() {
+    public MergeSortTester() {
         optionName = "Merge Sort";
     }
 

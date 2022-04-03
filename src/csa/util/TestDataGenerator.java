@@ -9,8 +9,8 @@ public class TestDataGenerator {
 
     public int[] getTestData() {
         int[] intArray = new int[size];
+        Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            Random rand = new Random();
             intArray[i] = rand.nextInt();
         }
         return intArray;

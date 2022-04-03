@@ -1,9 +1,9 @@
 package csa.week3;
 import csa.util.Option;
 
-public class SelectionSort extends Option {
+public class SelectionSortTester extends Option {
 
-    public SelectionSort() {
+    public SelectionSortTester() {
         optionName = "Selection Sort";
     }
 

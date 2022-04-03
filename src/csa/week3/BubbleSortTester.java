@@ -1,9 +1,9 @@
 package csa.week3;
 import csa.util.Option;
 
-public class BubbleSort extends Option {
+public class BubbleSortTester extends Option {
 
-    public BubbleSort() {
+    public BubbleSortTester() {
         optionName = "Bubble Sort";
     }
 

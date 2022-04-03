@@ -9,10 +9,10 @@ public class WeekThree extends Option {
     }
 
     public void tester() {
-        Option one = new BubbleSort();
-        Option two = new SelectionSort();
-        Option three = new InsertionSort();
-        Option four = new MergeSort();
+        Option one = new BubbleSortTester();
+        Option two = new SelectionSortTester();
+        Option three = new InsertionSortTester();
+        Option four = new MergeSortTester();
 
         Option[] options = new Option[] {one, two, three, four};
 
