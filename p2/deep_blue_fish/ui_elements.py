@@ -27,6 +27,15 @@ class Picture:
         screen.blit(self.image, self.image_rect)
 
 
+class Background:
+    def __init__(self, image):
+        self.image = pygame.image.load(image).convert_alpha()
+        self.image = pygame.transform.scale(self.image, (1600 * WIN_SCALE, 900 * WIN_SCALE))
+
+    def __call__(self, screen):
+        screen.blit(self.image, (0, 0))
+
+
 class Button:
     def __init__(self, image, x, y, scale, text, color, font, font_size):
         self.x = x
