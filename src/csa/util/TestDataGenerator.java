@@ -1,5 +1,4 @@
 package csa.util;
-import java.util.Random;
 
 public class TestDataGenerator {
     int size;
@@ -9,9 +8,9 @@ public class TestDataGenerator {
 
     public int[] getTestData() {
         int[] intArray = new int[size];
-        Random rand = new Random();
         for (int i = 0; i < size; i++) {
-            intArray[i] = rand.nextInt();
+            // If size is 5000, it chooses a number between 0 and 5000
+            intArray[i] = (int)(Math.random() * (size + 1));
         }
         return intArray;
     }
