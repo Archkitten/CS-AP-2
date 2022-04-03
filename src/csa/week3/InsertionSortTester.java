@@ -14,7 +14,7 @@ public class InsertionSortTester extends Option {
     }
 
     public void tester() {
-        TestDataGenerator testDataGenerator = new TestDataGenerator(5000);
+        TestDataGenerator testDataGenerator = new TestDataGenerator(10);
         InsertionSort insertionArray = new InsertionSort();
         for (int i = 0; i < 12; i++) {
             int[] testArray = testDataGenerator.getTestData();
