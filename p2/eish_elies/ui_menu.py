@@ -46,12 +46,13 @@ class UIMenu:
             if event.key == pygame.K_ESCAPE:
                 pass
         # MOUSE
+        self.left_click = False
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 self.left_click = True
-        elif event.type == pygame.MOUSEBUTTONUP:
-            if event.button == 1:
-                self.left_click = False
+        # elif event.type == pygame.MOUSEBUTTONUP:
+        #     if event.button == 1:
+        #         self.left_click = False
 
     def update(self):
         pygame.display.update()
