@@ -407,3 +407,274 @@ private void merge(int[] arrayMerged, int[] arrayOne, int[] arrayTwo) {
         <td>0</td>
     </tr>
 </table>
+
+### Challenge #0: System working with Queues
+SortTester.java
+```
+public void queueTester(ITemplateSort genericSort) {
+    TestDataGenerator testDataGenerator = new TestDataGenerator(5000);
+    int minimum = 0;
+    int maximum = 0;
+    int totalTime = 0;
+
+    for (int i = 0; i < 12; i++) {
+        Queue<Integer> testQueue = testDataGenerator.createQueueTestData();
+        System.out.print("Initial Queue ");
+        printQueue(testQueue);
+
+        Instant start = Instant.now();  // time capture -- start
+        genericSort.sort(testQueue);
+        Instant end = Instant.now();    // time capture -- end
+        Duration timeElapsed = Duration.between(start, end);
+
+        minimum = Math.min(minimum, timeElapsed.getNano());
+        maximum = Math.max(timeElapsed.getNano(), maximum);
+        totalTime += timeElapsed.getNano();
+
+        System.out.print("Sorted Queue ");
+        printQueue(testQueue);
+
+        System.out.println("Time: " + timeElapsed);
+        System.out.println();
+    }
+    int averageTime = (totalTime - minimum - maximum) / 10;
+    double averageTimeInSeconds = averageTime / 1_000_000_000.0;
+    System.out.println("Average Time (in seconds): " + averageTimeInSeconds);
+}
+
+private void printQueue(Queue<Integer> queue) {
+    System.out.print("data: ");
+    for (Integer data : queue) {
+        System.out.print(data + " ");
+    }
+    if (queue.getHead() == null) {
+        System.out.print("null");
+    }
+    System.out.println();
+}
+```
+TestDataGenerator.java
+```
+public Queue<Integer> createQueueTestData() {
+    Queue<Integer> intQueue = new Queue<>();
+    for (int i = 0; i < size; i++) {
+        intQueue.add((int)(Math.random() * (size + 1)));
+    }
+    return intQueue;
+}
+```
+
+### Challenge #5: Merge Sort Objective 2
+MergeSort.java
+* Analysis:
+  * Average Speed:
+    * ~0.0024
+  * My mergeQueues method came from the Merge Queues Challenge we did during Week 1. I just had to modify it to work with Queue instead of QueueManager.
+  * For sort, I just used the same logic from Objective 1.
+  * The only difference is instead of having 3 pointers that add the two Arrays to the larger one, I deleted the elements from the two Queues in order to add it to the larger one.
+```
+@Override
+public void sort(Queue<Integer> intQueue) {
+    int intQueueLength = intQueue.size;
+
+    if (intQueueLength == 1) {
+        return;
+    }
+
+    int intQueueMidpoint = intQueueLength / 2;
+
+    Queue<Integer> q1 = new Queue<>();
+    Queue<Integer> q2 = new Queue<>();
+
+    int i = 0;
+    while (i < intQueueMidpoint) {
+        q1.add(intQueue.getHead().getData());
+        intQueue.delete();
+        i++;
+    }
+    while (i < intQueueLength) {
+        q2.add(intQueue.getHead().getData());
+        intQueue.delete();
+        i++;
+    }
+
+    sort(q1);
+    sort(q2);
+
+    mergeQueues(intQueue, q1, q2);
+}
+
+private void mergeQueues(Queue<Integer> qMerged, Queue<Integer> q1, Queue<Integer> q2) {
+    while (q1.getHead() != null && q2.getHead() != null) {
+        // If q1 is less than (or equal to) q2, add the value from q1 into q3.
+        // Then delete the head of q1.
+        if (q1.getHead().getData() <= q2.getHead().getData()) {
+            qMerged.add(q1.getHead().getData());
+            q1.delete();
+        }
+        // Otherwise, add the value from q2 into q3.
+        else {
+            qMerged.add(q2.getHead().getData());
+            q2.delete();
+        }
+    }
+
+    // If q1 has finished its course, add the remaining values from q2 into q3.
+    if (q1.getHead() == null) {
+        /*
+        while (q2.queue.getHead() != null) {
+            q3.queue.add(q2.queue.getHead().getData());
+            q2.queue.delete();
+        }
+        */
+        qMerged.getTail().setNextNode(q2.getHead());
+    }
+    // Else if q2 has finished its course, add the remaining values from q1 into q3.
+    else if (q2.getHead() == null) {
+        /*
+        while (q1.queue.getHead() != null) {
+            q3.queue.add(q1.queue.getHead().getData());
+            q1.queue.delete();
+        }
+        */
+        qMerged.getTail().setNextNode(q1.getHead());
+    }
+}
+```
+
+### Challenge #6: Bubble Sort Objective 2
+BubbleSort.java
+* Analysis:
+  * Average Speed:
+    * ~0.0840
+  * Oh boy. This was difficult to figure out, and took... a long time.
+  * I don't quite remember all the struggles and errors that I encountered, it was late and there were way too many.
+  * Oh right, one thing I do remember: I was about to give up when I saw that TKperson had completed his version of Bubble Sort that had a runtime of 30 minutes.
+  * I looked at how his code worked, and used it for inspiration on how to structure mine. I also noticed that his code ended up doing a triple nested for loop as a result of his swap() function.
+  * I also noticed that the third for loop was the same as the second for loop, so it wasn't needed. I integrated his swap() function into mine without calling a new function, but it still didn't work.
+  * What ended up fixing everything was learning about the idea of a dummy head, where the dummy head moves but the real head doesn't.
+```
+LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
+dummyHead.setNextNode(intQueue.head);
+LinkedList<Integer> node1, node2;
+
+for (int j = 1; j < intQueue.size; j++) {
+    node1 = dummyHead;
+    for (int i = 0; i < intQueue.size - j; i++) {
+        node1 = node1.getNext();
+        node2 = node1.getNext();
+
+        if (node1.getData() > node2.getData()) {
+            Integer temp = node1.getData();
+            node1.setData(node2.getData());
+            node2.setData(temp);
+        }
+    }
+}
+```
+
+### Challenge #7: Selection Sort Objective 2
+SelectionSort.java
+InsertionSort.java
+* Analysis:
+  * Average Speed:
+    * ~0.0490
+  * After learning about swapping values and the dummy head, this was a breeze.
+```
+LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
+dummyHead.setNextNode(intQueue.head);
+LinkedList<Integer> node1=dummyHead, node2, minTempNode;
+
+for (int i = 0; i < intQueue.size; i++) {
+    // "i" controls what has already been sorted.
+    node1 = node1.getNext();
+    int min = node1.getData();
+    int minIndex = i;
+    minTempNode = node1;
+    // "j = i" prevents the algorithm from sorting what has already been sorted.
+    // The "+ 1" is because we don't need to compare the minimum with the minimum again.
+    node2 = node1;
+    for (int j = i + 1; j < intQueue.size; j++) {
+        // If the value we get to is less than j, set it as the new minimum.
+        node2 = node2.getNext();
+        if (node2.getData() < min) {
+            min = node2.getData();
+            minTempNode = node2;
+        }
+    }
+    // Once we've found the minimum, swap the two values.
+    minTempNode.setData(node1.getData());
+    node1.setData(min);
+    // Learning algorithmic strategies from Insertion Sort! Reduce swapping as much as possible!
+}
+```
+
+### Challenge #8: Insertion Sort Objective 2
+InsertionSort.java
+* Analysis:
+  * Average Speed:
+    * ~0.0320
+  * There was a NullPointerExceptionError that happened.
+  * I looked at Mr. Mortensen's custom Queue class again and found that I was missing some code about the curr value.
+  * Adding the code fixed the error. ¯\\\_(ツ)_/¯
+```
+LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
+dummyHead.setNextNode(intQueue.head);
+intQueue.head.setPrevNode(dummyHead);
+LinkedList<Integer> node1 = intQueue.head;
+LinkedList<Integer> node2;
+for (int i = 1; i < intQueue.size; i++) {
+    int j = i;
+    node1 = node1.getNext();
+    // "value" holds the current value, we'll hold this value in memory in case we need to move it back.
+    int value = node1.getData();
+    node2 = node1.getPrevious();
+    while (j > 0 && value < node2.getData()) {
+        // Move all values up one until we find the place to insert "value".
+        node2.getNext().setData(node2.getData());
+        node2 = node2.getPrevious();
+        j--;
+    }
+    node2.getNext().setData(value);
+}
+```
+
+### Final Judgement: Objective 2
+If the Bubble Sort was still O(n^3) with the triple nested for loop, it may have taken ~20-30 minutes to run through 5000 elements!
+<table>
+    <tr>
+        <th>Sorting Algorithm</th>
+        <th>Queue Time (in seconds)</th>
+        <th>Array Time (in seconds)</th>
+        <th>Big O Complexity</th>
+        <th>Swaps</th>
+    </tr>
+    <tr>
+        <th>Bubble Sort</th>
+        <td>~0.0840</td>
+        <td>~0.0460</td>
+        <td>O(n^2)</td>
+        <td>n^2</td>
+    </tr>
+    <tr>
+        <th>Selection Sort</th>
+        <td>~0.0490</td>
+        <td>~0.0058</td>
+        <td>O(n^2)</td>
+        <td>n</td>
+    </tr>
+    <tr>
+        <th>Insertion Sort</th>
+        <td>~0.0320</td>
+        <td>~0.0042</td>
+        <td>O(n^2)</td>
+        <td>n</td>
+    </tr>
+    <tr>
+        <th>Merge Sort</th>
+        <td>~0.0024</td>
+        <td>~0.0010</td>
+        <td>O(log(n))</td>
+        <td>0</td>
+    </tr>
+</table>

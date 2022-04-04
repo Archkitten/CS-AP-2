@@ -63,17 +63,6 @@ public class InsertionSort implements ITemplateSort {
 
     @Override
     public void sort(Queue<Integer> intQueue) {
-//        for (int i = 1; i < intQueue.size; i++) {
-//            int j = i;
-//            // "value" holds the current value, we'll hold this value in memory in case we need to move it back.
-//            int value = intQueue[j];
-//            while (j > 0 && value < intQueue[j - 1]) {
-//                // Move all values up one until we find the place to insert "value".
-//                intQueue[j] = intArray[j - 1];
-//                j--;
-//            }
-//            intArray[j] = value;
-//        }
         LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
         dummyHead.setNextNode(intQueue.head);
         intQueue.head.setPrevNode(dummyHead);
