@@ -8,6 +8,20 @@ layout: default
 
 ## Week 3 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/7)
 
+### Table of Contents
+* Challenge #0: Time and Sample Size
+* Challenge #1: Bubble Sort Objective 1
+* Challenge #2: Insertion Sort Objective 1
+* Challenge #3: Selection Sort Objective 1
+* Challenge #4: Merge Sort Objective 1
+* Final Judgement: Objective 1
+* Challenge #0: System works with Queues
+* Challenge #5: Merge Sort Objective 2
+* Challenge #6: Bubble Sort Objective 2
+* Challenge #7: Selection Sort Objective 2
+* Challenge #8: Insertion Sort Objective 2
+* Final Judgement: Objective 2
+
 ### (TPT) Study Group Challenge 3
 
 Objective 1: Build all of these into your data structures.
@@ -47,6 +61,7 @@ Objective 2 (optional): Blow me away for auto 100% on all Data Structures work, 
 * [Insertion Sort in 2 minutes](https://www.youtube.com/watch?v=JU767SDMDvA)
 * [Selection Sort in 3 minutes](https://www.youtube.com/watch?v=g-PGLbMth_g)
 * [Merge Sort in 3 minutes](https://www.youtube.com/watch?v=4VqmGXwpLqc)
+* [Merge Sort Algorithm - Full Tutorial](https://www.youtube.com/watch?v=bOk35XmHPKs)
 
 ### Challenge #0: Time and Sample Size
 SortTester.java
@@ -408,7 +423,7 @@ private void merge(int[] arrayMerged, int[] arrayOne, int[] arrayTwo) {
     </tr>
 </table>
 
-### Challenge #0: System working with Queues
+### Challenge #0: System works with Queues
 SortTester.java
 ```
 public void queueTester(ITemplateSort genericSort) {
@@ -616,7 +631,7 @@ InsertionSort.java
     * ~0.0320
   * There was a NullPointerExceptionError that happened.
   * I looked at Mr. Mortensen's custom Queue class again and found that I was missing some code about the curr value.
-  * Adding the code fixed the error. ¯\\\_(ツ)_/¯
+  * Adding the code fixed the error. ¯\_(ツ)_/¯
 ```
 LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
 dummyHead.setNextNode(intQueue.head);
