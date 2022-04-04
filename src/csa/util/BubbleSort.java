@@ -22,6 +22,13 @@ public class BubbleSort implements ITemplateSort {
 
     @Override
     public void sort(Queue<Integer> intQueue) {
+        for (int j = 1; j < intQueue.size; j++) {
+            for (int i = 0; i < intQueue.size - j; i++) {
+                swapIfNeeded(intQueue, i, i + 1);
+            }
+        }
+
+        /*
         QueueIterator<Integer> it = (QueueIterator<Integer>) intQueue.iterator();
         // System.out.println(it.next());
         // Example being node 2
@@ -37,21 +44,7 @@ public class BubbleSort implements ITemplateSort {
             // it.next() moves the pointer forward
             System.out.println(it.next());
         }
-
-        /*
-        // System.out.println(it.next());
-            int temp = it.next();
-            // Example being node 2
-            while (it.hasNext()) {
-                if (temp > it.next()) {
-                    // it.current.getPrevious() is node 1, it.current.getNext() is node 3
-                    // it.current.getPrevious().setNextNode(it.current.getNext());
-                    // it.current.setNextNode(it.current.getPrevious());
-                    it.current.getPrevious().setData(it.current.getData());
-                    it.current.setData(temp);
-                }
-            }
-         */
+        */
 
         // Direct Translation, doesn't work.
         /*
@@ -65,5 +58,28 @@ public class BubbleSort implements ITemplateSort {
             }
         }
         */
+    }
+
+    // Swap if needed
+    public void swapIfNeeded(Queue<Integer> queue, int index1, int index2) {
+        // As long as they don't throw a QueueOutOfBoundsException...
+        if (index1 < queue.size && index2 < queue.size) {
+
+            LinkedList<Integer> node1 = queue.head;
+            LinkedList<Integer> node2 = queue.head;
+
+            // Finding node in the right position?
+            for (int i = 0; i < index1; i++) {
+                node1 = node1.getNext();
+            }
+            node2 = node1.getNext();
+
+            // The actual swap!
+            if (node1.getData() > node2.getData()) {
+                Integer temp = node1.getData();
+                node1.setData(node2.getData());
+                node2.setData(temp);
+            }
+        }
     }
 }
