@@ -568,6 +568,7 @@ BubbleSort.java
   * I looked at how his code worked, and used it for inspiration on how to structure mine. I also noticed that his code ended up doing a triple nested for loop as a result of his swap() function.
   * I also noticed that the third for loop was the same as the second for loop, so it wasn't needed. I integrated his swap() function into mine without calling a new function, but it still didn't work.
   * What ended up fixing everything was learning about the idea of a dummy head, where the dummy head moves but the real head doesn't.
+
 ```
 LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
 dummyHead.setNextNode(intQueue.head);
@@ -590,7 +591,6 @@ for (int j = 1; j < intQueue.size; j++) {
 
 ### Challenge #7: Selection Sort Objective 2
 SelectionSort.java
-InsertionSort.java
 * Analysis:
   * Average Speed:
     * ~0.0490
