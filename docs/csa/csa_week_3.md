@@ -65,7 +65,7 @@ Objective 2 (optional): Blow me away for auto 100% on all Data Structures work, 
 
 ### Challenge #0: Time and Sample Size
 SortTester.java
-```java
+```
 public class SortTester {
     public void tester(ITemplateSort genericSort) {
         TestDataGenerator testDataGenerator = new TestDataGenerator(5000);
@@ -127,7 +127,7 @@ int averageTime = (totalTime - minimum - maximum) / 10;
 TestDataGenerator testDataGenerator = new TestDataGenerator(5000);
 ```
 TestDataGenerator.java
-```java
+```
 public class TestDataGenerator {
     int size;
     public TestDataGenerator(int size) {
@@ -156,6 +156,8 @@ BubbleSort.java
   * Average Speed (without "- j"):
     * ~0.0500
   * ...well, efficiency is efficiency.
+
+Code:
 ```
 // The amount of iterations is equal to the elements in the array, to account for the worst case scenario.
 for (int j = 1; j < intArray.length; j++) {
@@ -181,6 +183,8 @@ InsertionSort.java - The Prequel
   * So funny story, at the start of this coding session I was too impatient to learn about Insertion Sort (since I learned it a long time ago), so I decided to just look at a .gif of an Insertion Sort for visualization, and then IMMEDIATELY coded this.
   * Surprisingly, it worked!
   * What didn't work was the fact that I was still checking all the values that had already been sorted, essentially making this version equivalent to a glorified reverse bubble sort. Whoops.
+
+Code:
 ```
 // My old garbage reverse bubble sort:
 for (int i = 1; i < intArray.length; i++) {
@@ -196,6 +200,7 @@ for (int i = 1; i < intArray.length; i++) {
     }
 }
 ```
+
 InsertionSort.java - The Sequel to the Prequel
 * Analysis:
   * Average Speed:
@@ -203,6 +208,8 @@ InsertionSort.java - The Sequel to the Prequel
   * Moving the if statement within the while loop fixed the problem above.
   * The reason why is that in the above example, it'll continue while looping regardless of whether the if-condition has been met or not.
   * By moving the if statement within the while loop, the while loop will stop once the condition has been met, saving precious time.
+
+Code:
 ```
 // My actual Insertion Sort, but using swappers
 for (int i = 1; i < intArray.length; i++) {
@@ -216,6 +223,7 @@ for (int i = 1; i < intArray.length; i++) {
     }
 }
 ```
+
 InsertionSort.java - Turing Planet
 * Analysis:
   * Average Speed:
@@ -223,6 +231,8 @@ InsertionSort.java - Turing Planet
     * (I thought it was ~0.0060 before?)
   * I finally decided to go and take a look at someone else's example, and I found it quite interesting!
   * Instead of swapping each value backwards like in Bubble Sort, they decided to hold the value in a variable called "cur" and then located the right place to insert the value. Doing it this way saves so much time!
+
+Code:
 ```
 // Someone else's slightly more efficient code?
 for(int i = 1; i < intArray.length; i++) {
@@ -235,12 +245,15 @@ for(int i = 1; i < intArray.length; i++) {
     intArray[j + 1] = cur;
 }
 ```
+
 InsertionSort.java - FINAL VERSION
 * Analysis:
   * Average Speed:
     * ~0.0042
   * I implemented the thought behind their code into my own, and it actually surprised me that my code ran faster than theirs!
   * I suspect it has something to do with the fact that I'm doing less operations in the form of those "- 1"s and "+ 1"s, and me having less of them.
+
+Code:
 ```
 // Woah! Much faster than the code I copied from, after a few modifications! No more swappers too!
 for (int i = 1; i < intArray.length; i++) {
@@ -263,6 +276,8 @@ SelectionSort.java - FINAL VERSION
     * ~0.0058
   * Now THIS is a reverse bubble sort.
   * But... with way less swapping. +Efficiency points
+
+Code:
 ```
 for (int i = 0; i < intArray.length; i++) {
     // "i" controls what has already been sorted.
@@ -283,11 +298,14 @@ for (int i = 0; i < intArray.length; i++) {
     // Learning algorithmic strategies from Insertion Sort! Reduce swapping as much as possible!
 }
 ```
+
 SelectionSort.java - The Sequel
 * Analysis:
   * Average Speed:
     * ~0.0130
   * Not as good as what I coded above... sometimes less is more, y'know?
+
+Code:
 ```
 // I tried getting rid of "min" and replace it with "temp", but...
 // Line 36 is slower since I need to find the element of the index again.
@@ -317,6 +335,8 @@ MergeSort.java
   * Average Speed:
     * ~0.0010
   * Very fast.
+
+Code:
 ```
 public void sort(int[] intArray) {
     // intArray.length will be called on a lot, so defining it beforehand saves time.
@@ -487,6 +507,8 @@ MergeSort.java
   * My mergeQueues method came from the Merge Queues Challenge we did during Week 1. I just had to modify it to work with Queue instead of QueueManager.
   * For sort, I just used the same logic from Objective 1.
   * The only difference is instead of having 3 pointers that add the two Arrays to the larger one, I deleted the elements from the two Queues in order to add it to the larger one.
+
+Code:
 ```
 @Override
 public void sort(Queue<Integer> intQueue) {
@@ -568,6 +590,8 @@ BubbleSort.java
   * I looked at how his code worked, and used it for inspiration on how to structure mine. I also noticed that his code ended up doing a triple nested for loop as a result of his swap() function.
   * I also noticed that the third for loop was the same as the second for loop, so it wasn't needed. I integrated his swap() function into mine without calling a new function, but it still didn't work.
   * What ended up fixing everything was learning about the idea of a dummy head, where the dummy head moves but the real head doesn't.
+
+Code:
 ```
 LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
 dummyHead.setNextNode(intQueue.head);
@@ -594,6 +618,8 @@ SelectionSort.java
   * Average Speed:
     * ~0.0490
   * After learning about swapping values and the dummy head, this was a breeze.
+
+Code:
 ```
 LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
 dummyHead.setNextNode(intQueue.head);
@@ -631,6 +657,8 @@ InsertionSort.java
   * There was a NullPointerExceptionError that happened.
   * I looked at Mr. Mortensen's custom Queue class again and found that I was missing some code about the curr value.
   * Adding the code fixed the error. ¯\_(ツ)_/¯
+
+Code:
 ```
 LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
 dummyHead.setNextNode(intQueue.head);
