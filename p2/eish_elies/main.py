@@ -2,6 +2,7 @@ from config import *
 from ui_menu import UIMenu
 from ui_elements import Text, Button
 from static_fish import StaticFish
+from play import Play
 from options import Options
 
 
@@ -21,7 +22,8 @@ class Main(UIMenu):
         # Menu and Buttons
         self.title(self.SCREEN)
         if self.button_play(self.SCREEN, 255, self.mx, self.my, self.left_click):
-            pass
+            play = Play()
+            play()
         if self.timer >= 30:
             if self.button_options(self.SCREEN, 255, self.mx, self.my, self.left_click):
                 options = Options()
