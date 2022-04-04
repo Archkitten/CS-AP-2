@@ -65,6 +65,7 @@ Objective 2 (optional): Blow me away for auto 100% on all Data Structures work, 
 
 ### Challenge #0: Time and Sample Size
 SortTester.java
+
 ```
 public class SortTester {
     public void tester(ITemplateSort genericSort) {
@@ -96,7 +97,9 @@ public class SortTester {
     }
 }
 ```
+
 Getting the time of the sort (directly):
+
 ```
 Instant end = Instant.now();
 -
@@ -106,7 +109,9 @@ Duration timeElapsed = Duration.between(start, end);
 
 System.out.println("Time: " + timeElapsed);
 ```
+
 Getting the average time of all 12 sorts (excluding minimum and maximum):
+
 ```
 minimum = Math.min(minimum, timeElapsed.getNano());
 maximum = Math.max(timeElapsed.getNano(), maximum);
@@ -116,17 +121,23 @@ int averageTime = (totalTime - minimum - maximum) / 10;
 double averageTimeInSeconds = averageTime / 1_000_000_000.0;
 System.out.println("Average Time (in seconds): " + averageTimeInSeconds);
 ```
+
 Sample size of 12 - 2:
+
 ```
 for (int i = 0; i < 12; i++) {
 }
 int averageTime = (totalTime - minimum - maximum) / 10;
 ```
+
 5000 random pieces of data:
+
 ```
 TestDataGenerator testDataGenerator = new TestDataGenerator(5000);
 ```
+
 TestDataGenerator.java
+
 ```
 public class TestDataGenerator {
     int size;
@@ -152,9 +163,10 @@ BubbleSort.java
     * ~0.0460
   * Yeah, it's pretty slow.
   * Imagine iterating through each element of the array for each element of the array, and swapping every value along the way.
-  * At least the "- j" prevents us from checking the values that have already been bubbled to the top. I only noticed that I was missing this after checking my answers, imagine how much slower it would be if I hadn't changed it!
+  * At least the "- j" prevents it from checking the values that have already been bubbled to the top. I only noticed that I was missing this after checking my answers, imagine how much slower it would be if I hadn't changed it!
   * Average Speed (without "- j"):
     * ~0.0500
+
 ```
 // The amount of iterations is equal to the elements in the array, to account for the worst case scenario.
 for (int j = 1; j < intArray.length; j++) {
@@ -180,6 +192,7 @@ InsertionSort.java - The Prequel
   * So funny story, at the start of this coding session I was too impatient to learn about Insertion Sort (since I learned it a long time ago), so I decided to just look at a .gif of an Insertion Sort for visualization, and then IMMEDIATELY coded this.
   * Surprisingly, it worked!
   * What didn't work was the fact that I was still checking all the values that had already been sorted, essentially making this version equivalent to a glorified reverse bubble sort. Whoops.
+
 ```
 // My old garbage reverse bubble sort:
 for (int i = 1; i < intArray.length; i++) {
@@ -195,6 +208,7 @@ for (int i = 1; i < intArray.length; i++) {
     }
 }
 ```
+
 InsertionSort.java - The Sequel to the Prequel
 * Analysis:
   * Average Speed:
@@ -202,6 +216,7 @@ InsertionSort.java - The Sequel to the Prequel
   * Moving the if statement within the while loop fixed the problem above.
   * The reason why is that in the above example, it'll continue while looping regardless of whether the if-condition has been met or not.
   * By moving the if statement within the while loop, the while loop will stop once the condition has been met, saving precious time.
+
 ```
 // My actual Insertion Sort, but using swappers
 for (int i = 1; i < intArray.length; i++) {
@@ -215,6 +230,7 @@ for (int i = 1; i < intArray.length; i++) {
     }
 }
 ```
+
 InsertionSort.java - Turing Planet
 * Analysis:
   * Average Speed:
@@ -222,6 +238,7 @@ InsertionSort.java - Turing Planet
     * (I thought it was ~0.0060 before?)
   * I finally decided to go and take a look at someone else's example, and I found it quite interesting!
   * Instead of swapping each value backwards like in Bubble Sort, they decided to hold the value in a variable called "cur" and then located the right place to insert the value. Doing it this way saves so much time!
+
 ```
 // Someone else's slightly more efficient code?
 for(int i = 1; i < intArray.length; i++) {
@@ -234,12 +251,14 @@ for(int i = 1; i < intArray.length; i++) {
     intArray[j + 1] = cur;
 }
 ```
+
 InsertionSort.java - FINAL VERSION
 * Analysis:
   * Average Speed:
     * ~0.0042
   * I implemented the thought behind their code into my own, and it actually surprised me that my code ran faster than theirs!
   * I suspect it has something to do with the fact that I'm doing less operations in the form of those "- 1"s and "+ 1"s, and me having less of them.
+
 ```
 // Woah! Much faster than the code I copied from, after a few modifications! No more swappers too!
 for (int i = 1; i < intArray.length; i++) {
@@ -262,6 +281,7 @@ SelectionSort.java - FINAL VERSION
     * ~0.0058
   * Now THIS is a reverse bubble sort.
   * But... with way less swapping. +Efficiency points
+
 ```
 for (int i = 0; i < intArray.length; i++) {
     // "i" controls what has already been sorted.
@@ -282,11 +302,13 @@ for (int i = 0; i < intArray.length; i++) {
     // Learning algorithmic strategies from Insertion Sort! Reduce swapping as much as possible!
 }
 ```
+
 SelectionSort.java - The Sequel
 * Analysis:
   * Average Speed:
     * ~0.0130
   * Not as good as what I coded above... sometimes less is more, y'know?
+
 ```
 // I tried getting rid of "min" and replace it with "temp", but...
 // Line 36 is slower since I need to find the element of the index again.
@@ -316,6 +338,7 @@ MergeSort.java
   * Average Speed:
     * ~0.0010
   * Very fast.
+
 ```
 public void sort(int[] intArray) {
     // intArray.length will be called on a lot, so defining it beforehand saves time.
