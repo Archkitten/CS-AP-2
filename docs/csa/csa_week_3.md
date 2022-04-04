@@ -425,6 +425,7 @@ private void merge(int[] arrayMerged, int[] arrayOne, int[] arrayTwo) {
 
 ### Challenge #0: System works with Queues
 SortTester.java
+
 ```
 public void queueTester(ITemplateSort genericSort) {
     TestDataGenerator testDataGenerator = new TestDataGenerator(5000);
@@ -468,7 +469,9 @@ private void printQueue(Queue<Integer> queue) {
     System.out.println();
 }
 ```
+
 TestDataGenerator.java
+
 ```
 public Queue<Integer> createQueueTestData() {
     Queue<Integer> intQueue = new Queue<>();
@@ -487,6 +490,7 @@ MergeSort.java
   * My mergeQueues method came from the Merge Queues Challenge we did during Week 1. I just had to modify it to work with Queue instead of QueueManager.
   * For sort, I just used the same logic from Objective 1.
   * The only difference is instead of having 3 pointers that add the two Arrays to the larger one, I deleted the elements from the two Queues in order to add it to the larger one.
+
 ```
 @Override
 public void sort(Queue<Integer> intQueue) {
@@ -595,6 +599,7 @@ SelectionSort.java
   * Average Speed:
     * ~0.0490
   * After learning about swapping values and the dummy head, this was a breeze.
+
 ```
 LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
 dummyHead.setNextNode(intQueue.head);
@@ -632,6 +637,7 @@ InsertionSort.java
   * There was a NullPointerExceptionError that happened.
   * I looked at Mr. Mortensen's custom Queue class again and found that I was missing some code about the curr value.
   * Adding the code fixed the error. ¯\_(ツ)_/¯
+
 ```
 LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
 dummyHead.setNextNode(intQueue.head);
