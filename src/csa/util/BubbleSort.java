@@ -22,9 +22,21 @@ public class BubbleSort implements ITemplateSort {
 
     @Override
     public void sort(Queue<Integer> intQueue) {
+        LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
+        dummyHead.setNextNode(intQueue.head);
+        LinkedList<Integer> node1, node2;
+
         for (int j = 1; j < intQueue.size; j++) {
+            node1 = dummyHead;
             for (int i = 0; i < intQueue.size - j; i++) {
-                swapIfNeeded(intQueue, i, i + 1);
+                node1 = node1.getNext();
+                node2 = node1.getNext();
+
+                if (node1.getData() > node2.getData()) {
+                    Integer temp = node1.getData();
+                    node1.setData(node2.getData());
+                    node2.setData(temp);
+                }
             }
         }
 
@@ -58,28 +70,5 @@ public class BubbleSort implements ITemplateSort {
             }
         }
         */
-    }
-
-    // Swap if needed
-    public void swapIfNeeded(Queue<Integer> queue, int index1, int index2) {
-        // As long as they don't throw a QueueOutOfBoundsException...
-        if (index1 < queue.size && index2 < queue.size) {
-
-            LinkedList<Integer> node1 = queue.head;
-            LinkedList<Integer> node2 = queue.head;
-
-            // Finding node in the right position?
-            for (int i = 0; i < index1; i++) {
-                node1 = node1.getNext();
-            }
-            node2 = node1.getNext();
-
-            // The actual swap!
-            if (node1.getData() > node2.getData()) {
-                Integer temp = node1.getData();
-                node1.setData(node2.getData());
-                node2.setData(temp);
-            }
-        }
     }
 }

@@ -63,31 +63,36 @@ public class InsertionSort implements ITemplateSort {
 
     @Override
     public void sort(Queue<Integer> intQueue) {
-
-    }
-
-    // Swap if needed
-    public void swapIfNeeded(Queue<Integer> queue, int index1, int index2) {
-        // As long as they don't throw a QueueOutOfBoundsException...
-        if (index1 < queue.size && index2 < queue.size) {
-
-            LinkedList<Integer> node1 = queue.head;
-            LinkedList<Integer> node2 = queue.head;
-
-            // Finding node in the right position?
-            for (int i = 0; i < index1; i++) {
-                node1 = node1.getNext();
+//        for (int i = 1; i < intQueue.size; i++) {
+//            int j = i;
+//            // "value" holds the current value, we'll hold this value in memory in case we need to move it back.
+//            int value = intQueue[j];
+//            while (j > 0 && value < intQueue[j - 1]) {
+//                // Move all values up one until we find the place to insert "value".
+//                intQueue[j] = intArray[j - 1];
+//                j--;
+//            }
+//            intArray[j] = value;
+//        }
+        LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
+        dummyHead.setNextNode(intQueue.head);
+        intQueue.head.setPrevNode(dummyHead);
+        LinkedList<Integer> node1 = intQueue.head;
+        LinkedList<Integer> node2;
+        for (int i = 1; i < intQueue.size; i++) {
+            int j = i;
+            node1 = node1.getNext();
+            // "value" holds the current value, we'll hold this value in memory in case we need to move it back.
+            int value = node1.getData();
+            node2 = node1.getPrevious();
+            while (j > 0 && value < node2.getData()) {
+                // Move all values up one until we find the place to insert "value".
+                node2.getNext().setData(node2.getData());
+                node2 = node2.getPrevious();
+                j--;
             }
-            for (int i = 0; i < index2; i++) {
-                node2 = node2.getNext();
-            }
-
-            // The actual swap!
-            if (node1.getData() > node2.getData()) {
-                Integer temp = node1.getData();
-                node1.setData(node2.getData());
-                node2.setData(temp);
-            }
+            node2.getNext().setData(value);
         }
     }
+
 }

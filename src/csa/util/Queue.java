@@ -11,7 +11,7 @@ import java.util.Iterator;
  * 3. "has a" LinkedList for head and tail
  */
 public class Queue<T> implements Iterable<T> {
-    LinkedList<T> head, tail;
+    LinkedList<T> head, curr, tail;
     int size = 0;
 
     private boolean debug = false;
@@ -29,6 +29,7 @@ public class Queue<T> implements Iterable<T> {
         if (debug) {
             System.out.println("Enqueued data: " + data);
         }
+        /*
         // add new object to end of Queue
         LinkedList<T> tail = new LinkedList<>(data, null);
         size++;
@@ -39,6 +40,18 @@ public class Queue<T> implements Iterable<T> {
             this.tail.setNextNode(tail); // current tail points to new tail
             this.tail = tail;  // update tail
         }
+         */
+
+        tail = new LinkedList<>(data, curr);
+        size++;
+
+        if(curr != null){
+            curr.setNextNode(tail);
+        }
+
+        curr = tail;
+
+        if(head == null){ head = tail;}
     }
 
     public void delete() {

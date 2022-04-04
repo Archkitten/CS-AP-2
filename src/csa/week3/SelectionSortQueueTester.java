@@ -16,4 +16,8 @@ public class SelectionSortQueueTester extends Option {
         SortTester sortTester = new SortTester();
         sortTester.queueTester(genericSort);
     }
+
+    public static void main(String[] args){
+        new SelectionSortQueueTester().tester();
+    }
 }

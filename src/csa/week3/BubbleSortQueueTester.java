@@ -16,4 +16,8 @@ public class BubbleSortQueueTester extends Option {
         SortTester sortTester = new SortTester();
         sortTester.queueTester(genericSort);
     }
+
+    public static void main(String[] args){
+        new BubbleSortQueueTester().tester();
+    }
 }

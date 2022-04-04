@@ -49,31 +49,33 @@ public class SelectionSort implements ITemplateSort {
 
     @Override
     public void sort(Queue<Integer> intQueue) {
+        LinkedList<Integer> dummyHead = new LinkedList<>(0, null);
+        dummyHead.setNextNode(intQueue.head);
+        LinkedList<Integer> node1=dummyHead, node2, minTempNode;
 
-    }
-
-    // Swap if needed
-    public void swapIfNeeded(Queue<Integer> queue, int index1, int index2) {
-        // As long as they don't throw a QueueOutOfBoundsException...
-        if (index1 < queue.size && index2 < queue.size) {
-
-            LinkedList<Integer> node1 = queue.head;
-            LinkedList<Integer> node2 = queue.head;
-
-            // Finding node in the right position?
-            for (int i = 0; i < index1; i++) {
-                node1 = node1.getNext();
-            }
-            for (int i = 0; i < index2; i++) {
+        for (int i = 0; i < intQueue.size; i++) {
+            // "i" controls what has already been sorted.
+            node1 = node1.getNext();
+            int min = node1.getData();
+            int minIndex = i;
+            minTempNode = node1;
+            // "j = i" prevents the algorithm from sorting what has already been sorted.
+            // The "+ 1" is because we don't need to compare the minimum with the minimum again.
+            node2 = node1;
+            for (int j = i + 1; j < intQueue.size; j++) {
+                // If the value we get to is less than j, set it as the new minimum.
                 node2 = node2.getNext();
+                if (node2.getData() < min) {
+                    min = node2.getData();
+                    minTempNode = node2;
+                }
             }
-
-            // The actual swap!
-            if (node1.getData() > node2.getData()) {
-                Integer temp = node1.getData();
-                node1.setData(node2.getData());
-                node2.setData(temp);
-            }
+            // Once we've found the minimum, swap the two values.
+            minTempNode.setData(node1.getData());
+            node1.setData(min);
+            // Learning algorithmic strategies from Insertion Sort! Reduce swapping as much as possible!
         }
     }
+
+
 }
