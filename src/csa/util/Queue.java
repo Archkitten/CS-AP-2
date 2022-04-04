@@ -87,10 +87,12 @@ public class Queue<T> implements Iterable<T> {
  */
 class QueueIterator<T> implements Iterator<T> {
     LinkedList<T> current;  // current element in iteration
+    // LinkedList<T> tail;
 
     // QueueIterator is intended to the head of the list for iteration
     public QueueIterator(Queue<T> q) {
         current = q.getHead();
+        // tail = q.getTail();
     }
 
     // hasNext informs if next element exists
@@ -102,6 +104,11 @@ class QueueIterator<T> implements Iterator<T> {
     public T next() {
         T data = current.getData();
         current = current.getNext();
+        /*
+        if (current != tail) {
+            current = current.getNext();
+        }
+        */
         return data;
     }
 }

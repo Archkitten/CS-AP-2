@@ -22,6 +22,48 @@ public class BubbleSort implements ITemplateSort {
 
     @Override
     public void sort(Queue<Integer> intQueue) {
+        QueueIterator<Integer> it = (QueueIterator<Integer>) intQueue.iterator();
+        // System.out.println(it.next());
+        // Example being node 2
+        while (it.hasNext()) {
+            if (it.current.getData() > it.current.getNext().getData()) {
+                // it.current.getPrevious() is node 1, it.current.getNext() is node 3
+                // it.current.getPrevious().setNextNode(it.current.getNext());
+                // it.current.setNextNode(it.current.getPrevious());
+                int temp = it.current.getData();
+                it.current.setData(it.current.getNext().getData());
+                it.current.getNext().setData(temp);
+            }
+            // it.next() moves the pointer forward
+            System.out.println(it.next());
+        }
 
+        /*
+        // System.out.println(it.next());
+            int temp = it.next();
+            // Example being node 2
+            while (it.hasNext()) {
+                if (temp > it.next()) {
+                    // it.current.getPrevious() is node 1, it.current.getNext() is node 3
+                    // it.current.getPrevious().setNextNode(it.current.getNext());
+                    // it.current.setNextNode(it.current.getPrevious());
+                    it.current.getPrevious().setData(it.current.getData());
+                    it.current.setData(temp);
+                }
+            }
+         */
+
+        // Direct Translation, doesn't work.
+        /*
+        for (int j = 1; j < intQueue.size; j++) {
+            for (int i = 0; i < intQueue.size - j; i++) {
+                if (intQueue.getHead().getData() > intQueue.getHead().getNext().getData()) {
+                    int temp = intQueue.getHead().getData();
+                    intQueue.getHead().setData(intQueue.getHead().getNext().getData());
+                    intQueue.getHead().getNext().setData(temp);
+                }
+            }
+        }
+        */
     }
 }
