@@ -656,7 +656,7 @@ InsertionSort.java
     * ~0.0320
   * There was a NullPointerExceptionError that happened.
   * I looked at Mr. Mortensen's custom Queue class again and found that I was missing some code about the curr value.
-  * Adding the code fixed the error. ¯\_(ツ)_/¯
+  * Adding the code fixed the error. ¯\\\_(ツ)_/¯
 
 Code:
 ```
