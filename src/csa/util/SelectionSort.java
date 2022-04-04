@@ -18,10 +18,8 @@ public class SelectionSort implements ITemplateSort {
                 }
             }
             // Once we've found the minimum, swap the two values.
-            if (minIndex != i) {
-                intArray[minIndex] = intArray[i];
-                intArray[i] = min;
-            }
+            intArray[minIndex] = intArray[i];
+            intArray[i] = min;
             // Learning algorithmic strategies from Insertion Sort! Reduce swapping as much as possible!
         }
 
@@ -40,9 +38,11 @@ public class SelectionSort implements ITemplateSort {
                 }
             }
             // Once we've found the minimum, swap the two values.
-            int temp = intArray[minIndex];
-            intArray[minIndex] = intArray[i];
-            intArray[i] = temp;
+            if (minIndex != i) {
+                int temp = intArray[minIndex];
+                intArray[minIndex] = intArray[i];
+                intArray[i] = temp;
+            }
         }
         */
     }
