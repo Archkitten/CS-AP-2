@@ -46,4 +46,9 @@ public class SelectionSort implements ITemplateSort {
         }
         */
     }
+
+    @Override
+    public void sort(Queue<Integer> intQueue) {
+
+    }
 }

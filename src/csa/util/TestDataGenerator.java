@@ -14,4 +14,12 @@ public class TestDataGenerator {
         }
         return intArray;
     }
+
+    public Queue<Integer> createQueueTestData() {
+        Queue<Integer> intQueue = new Queue<>();
+        for (int i = 0; i < size; i++) {
+            intQueue.add((int)(Math.random() * (size + 1)));
+        }
+        return intQueue;
+    }
 }

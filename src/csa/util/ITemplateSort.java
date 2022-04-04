@@ -1,5 +1,6 @@
 package csa.util;
 
 public interface ITemplateSort {
-    public void sort(int[] intArray);
+    void sort(int[] intArray);
+    void sort(Queue<Integer> intQueue);
 }

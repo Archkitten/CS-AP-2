@@ -19,4 +19,9 @@ public class BubbleSort implements ITemplateSort {
             }
         }
     }
+
+    @Override
+    public void sort(Queue<Integer> intQueue) {
+
+    }
 }

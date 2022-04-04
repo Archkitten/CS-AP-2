@@ -13,8 +13,9 @@ public class WeekThree extends Option {
         Option two = new SelectionSortTester();
         Option three = new InsertionSortTester();
         Option four = new MergeSortTester();
+        Option eight = new MergeSortQueueTester();
 
-        Option[] options = new Option[] {one, two, three, four};
+        Option[] options = new Option[] {one, two, three, four, eight};
 
         Menu menu = new Menu();
         menu.run("\n----- WEEK 3 -----", options);

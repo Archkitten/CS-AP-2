@@ -328,7 +328,7 @@ public void sort(int[] intArray) {
     // For the second half of the array, add to arrayTwo.
     // Also, reset the pointer for arrayTwo.
     // Keep the pointer for intArray the same.
-    while (i >= intArrayMidpoint && i < intArrayLength) {
+    while (i < intArrayLength) {
         arrayTwo[j++] = intArray[i++];
     }
 
@@ -340,7 +340,7 @@ public void sort(int[] intArray) {
     merge(intArray, arrayOne, arrayTwo);
 }
 
-public void merge(int[] arrayMerged, int[] arrayOne, int[] arrayTwo) {
+private void merge(int[] arrayMerged, int[] arrayOne, int[] arrayTwo) {
     int i = 0, j = 0, k = 0;
 
     // If both arrays still have elements...
