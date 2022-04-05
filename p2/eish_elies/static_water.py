@@ -4,10 +4,10 @@ import pygame
 
 class StaticWater:
     def __init__(self):
-        self.y = 450
-        self.WIDTH = 40
-        self.y_wave_center = 500
-        self.wave_speed = 0.1
+        self.y = 700
+        self.WIDTH = 15
+        self.y_wave_center = 750
+        self.wave_speed = 0.06
 
         self.water_list = []
         self.DISTANCE = 1
@@ -33,10 +33,18 @@ class Water:
         self.center = center
         self.speed = speed
 
+        self.droplet_y = self.y
+
     def __call__(self, screen):
         self.move()
-        self.circle = (self.x, self.y)
-        pygame.draw.circle(screen, 'Blue', self.circle, self.RADIUS)
+        self.circle = (self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE'])
+        pygame.draw.circle(screen, 'Blue', self.circle, self.RADIUS * data['WIN_SCALE'])
+
+        # This is only for if you want the area under the wave to be filled.
+        while self.droplet_y < 900:
+            self.droplet_y += 20
+            pygame.draw.circle(screen, 'Blue', (self.x * data['WIN_SCALE'], self.droplet_y * data['WIN_SCALE']), self.RADIUS * data['WIN_SCALE'])
+        self.droplet_y = self.y
 
     def move(self):
         if self.y < self.center:
