@@ -32,7 +32,8 @@ class Background:
         self.image = pygame.image.load(image).convert_alpha()
         self.image = pygame.transform.scale(self.image, (1600 * data['WIN_SCALE'], 900 * data['WIN_SCALE']))
 
-    def __call__(self, screen):
+    def __call__(self, screen, opacity):
+        self.image.set_alpha(opacity)
         screen.blit(self.image, (0, 0))
 
 
