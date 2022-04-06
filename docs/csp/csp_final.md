@@ -10,7 +10,7 @@ layout: default
 
 ### Video
 
-[Video - Duration 2 minutes]
+<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1" width="800px" height="450px"></iframe>
 
 ### Coding Review
 
