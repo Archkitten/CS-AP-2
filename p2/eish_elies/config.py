@@ -12,7 +12,7 @@ data = {
     'GAME_TITLE': "Eish Elies",
     'WIN_SCALE': 0.8,
     'FPS': 60,
-    'MUSIC_VOLUME': 1.0
+    'MUSIC_VOLUME': 0.5
 }
 
 # with open('data.txt', 'w') as test_file:
