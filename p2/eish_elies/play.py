@@ -10,9 +10,9 @@ class Play(UIMenu):
         super().__init__()
         self.static_water = StaticWater()
         # Music
-        self.loading_gravity = 0.0
+        self.temporary_volume = 0.0
         self.music = pygame.mixer.Sound('audio/Eish_Elies.ogg')
-        self.music.set_volume(data['MUSIC_VOLUME'] * self.loading_gravity)
+        self.music.set_volume(data['MUSIC_VOLUME'] * self.temporary_volume)
         self.music.play(loops=-1)
         # Background
         self.background_timer = 0
@@ -42,8 +42,8 @@ class Play(UIMenu):
             # Fade in Evening
             self.opacity_evening += 1
             self.bg_evening(self.SCREEN, self.opacity_evening)
-        # Night
-        elif self.background_timer <= 3840:
+        # Night - Ends at 3905
+        elif self.background_timer <= 3905:
             # Remove blur
             self.bg_evening(self.SCREEN, 255)
             # Fade in Night
@@ -62,13 +62,11 @@ class Play(UIMenu):
         # Loading... Background
         if self.timer < 160:
             self.bg_loading(self.SCREEN, 255)
-            # For music
-            self.loading_gravity += 0.01
-            if self.loading_gravity > 1:
-                self.loading_gravity = 1
+            # For fading in music - Volume fades up to 1.007999 so a cap is required.
+            self.temporary_volume += 0.0063
+            if self.temporary_volume > 1:
+                self.temporary_volume = 1
+            self.music.set_volume(data['MUSIC_VOLUME'] * self.temporary_volume)
         elif self.timer < 211:
             self.opacity_loading -= 15
             self.bg_loading(self.SCREEN, self.opacity_loading)
-
-        # Fade in music
-        self.music.set_volume(data['MUSIC_VOLUME'] * self.loading_gravity)
