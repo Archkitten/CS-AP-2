@@ -9,12 +9,31 @@
         display: grid;
         grid-template-columns: auto auto auto;
         padding: 10px;
-        column-gap: 25px;
-        row-gap: 25px;
+        column-gap: 0px;
+        row-gap: 0px;
     }
     .grid-item {
         padding: 20px;
         font-size: 30px;
         text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 </style>
