@@ -1,12 +1,8 @@
 ---
-layout: default
+layout: p2
 ---
 
-# P2
-
-{% include p2_nav.html %}
-
-## Open
+## EE
 
 <table>
     <tr>
