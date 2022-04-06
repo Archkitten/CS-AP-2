@@ -444,6 +444,8 @@ private void merge(int[] arrayMerged, int[] arrayOne, int[] arrayTwo) {
     </tr>
 </table>
 
+Bubble Sort is the slowest, having a O(n^2) complexity AND swapping each element whilst sorting. Selection Sort and Insertion Sort are similar in functionality, just reversed in the direction of sorting. They swap once per nested for loop, making their speed similar. A Merge Sort is the fastest, using recursion to achieve a O(log(n)) complexity and using NO swaps. Compared to the others, it is by far the fastest.
+
 ### Challenge #0: System works with Queues
 SortTester.java
 ```
@@ -720,3 +722,5 @@ If the Bubble Sort was still O(n^3) with the triple nested for loop, it may have
         <td>0</td>
     </tr>
 </table>
+
+Sorting a Queue was slower than sorting the Array, most likely because the Queue is a more complex data structure. The speeds are comparable to the Array, same analysis as Final Judgement: Objective 1.
