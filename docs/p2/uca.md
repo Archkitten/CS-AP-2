@@ -12,7 +12,7 @@ layout: blank
 
 <!-- PAGE CONTENT STARTS HERE -->
 
-<h1 style="color:white; font-size:300%; text-align:center;">Unwind Arcadia</h1>
+<h1 style="color:white; text-align:center;">Unwind Arcadia</h1>
 
 <div class="grid-container">
   <div class="grid-item">
