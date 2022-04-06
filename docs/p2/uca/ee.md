@@ -28,9 +28,9 @@ layout: blank
         </ul>
     </div>
     <div class="column">
-        <iframe src="https://www.youtube.com/embed/sQAuUaaWoz8?autoplay=1&mute=1" width="400px" height="225px"></iframe>
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="400" height="225">
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="400" height="225">
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="400" height="225">
+        <iframe src="https://www.youtube.com/embed/sQAuUaaWoz8?autoplay=1&mute=1" width="384px" height="216px"></iframe>
+        <img src="../../assets/images/Night.png" alt="Image Preview" width="384" height="216">
+        <img src="../../assets/images/Night.png" alt="Image Preview" width="384" height="216">
+        <img src="../../assets/images/Night.png" alt="Image Preview" width="384" height="216">
     </div>
 </div>
