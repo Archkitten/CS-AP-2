@@ -10,7 +10,7 @@ layout: default
 
 ### Video
 
-<iframe src="https://www.youtube.com/embed/sQAuUaaWoz8?autoplay=1&mute=1" width="800px" height="450px"></iframe>
+<iframe src="https://www.youtube.com/embed/sQAuUaaWoz8?autoplay=1" width="800px" height="450px"></iframe>
 
 ### Coding Review
 
