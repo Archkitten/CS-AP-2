@@ -36,13 +36,15 @@ class Options(UIMenu):
             self.resize()
         # Music
         if self.button_decrease(self.SCREEN, 255, self.mx, self.my, self.left_click):
-            data['MUSIC_VOLUME'] -= 0.1
+            if data['MUSIC_VOLUME'] > 0.1:
+                data['MUSIC_VOLUME'] -= 0.1
             self.resize()
         if self.button_volume(self.SCREEN, 255, self.mx, self.my, self.left_click):
             data['MUSIC_VOLUME'] = 0.5
             self.resize()
         if self.button_increase(self.SCREEN, 255, self.mx, self.my, self.left_click):
-            data['MUSIC_VOLUME'] += 0.1
+            if data['MUSIC_VOLUME'] < 0.9:
+                data['MUSIC_VOLUME'] += 0.1
             self.resize()
         # Back
         if self.button_back(self.SCREEN, 255, self.mx, self.my, self.left_click):
@@ -57,7 +59,7 @@ class Options(UIMenu):
         self.button_upscale = Button('img/ButtonPlus.png', 700, 450, 0.2, "", 'Blue', 'pristina', 0)
         # Music
         self.button_decrease = Button('img/ButtonMinus.png', 900, 650, 0.2, "", 'Blue', 'pristina', 0)
-        self.button_volume = Button('img/Button.png', 1150, 650, 0.2, f"Volume: {int(data['MUSIC_VOLUME'] * 10)}", "Blue", "pristina", 70)
+        self.button_volume = Button('img/Button.png', 1150, 650, 0.2, f"Volume: {int(round(data['MUSIC_VOLUME'] * 10))}", "Blue", "pristina", 70)
         self.button_increase = Button('img/ButtonPlus.png', 1400, 650, 0.2, "", 'Blue', 'pristina', 0)
         # Back
         self.button_back = Button('img/Button.png', 200, 800, 0.2, "Back", 'Blue', 'pristina', 70)
