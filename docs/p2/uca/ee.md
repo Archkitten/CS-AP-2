@@ -13,24 +13,24 @@ layout: blank
 <!-- PAGE CONTENT STARTS HERE -->
 
 <div class="row">
-    <div class="column" style="background-color:#aaa;">
-        <h2>EE</h2>
-        <a href="" download="test_file.md" class="btn">Download</a>
-        <h6>This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</h6>
-        <h6>This is a paragraph break.</h6>
-        <h4>EE Header 2 CR</h4>
-        <h6>This is another paragraph.</h6>
-        <h6>It is no longer seperated by a line break.</h6>
-        <h4>EE Header 3 LANG</h4>
+    <div class="column">
+        <h1 style="text-align:center">EE</h1>
+        <a href="./ee" download="ee.txt" class="btn">Download Now</a>
+        <p>This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</p>
+        <p>This is a paragraph break.</p>
+        <h2 style="text-align:center">Credits</h2>
+        <p>This is another paragraph.</p>
+        <p>It is no longer seperated by a line break.</p>
+        <h2 style="text-align:center">Languages</h2>
         <ul>
             <li>English</li>
             <li>I am testing bullet points.</li>
         </ul>
     </div>
-    <div class="column" style="background-color:#bbb;">
-        <iframe src="https://www.youtube.com/embed/sQAuUaaWoz8?autoplay=1&mute=1" width="320px" height="180px"></iframe>
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="320" height="180">
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="320" height="180">
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="320" height="180">
+    <div class="column">
+        <iframe src="https://www.youtube.com/embed/sQAuUaaWoz8?autoplay=1&mute=1" width="400px" height="225px"></iframe>
+        <img src="../../assets/images/Night.png" alt="Image Preview" width="400" height="225">
+        <img src="../../assets/images/Night.png" alt="Image Preview" width="400" height="225">
+        <img src="../../assets/images/Night.png" alt="Image Preview" width="400" height="225">
     </div>
 </div>
