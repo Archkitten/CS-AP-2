@@ -1,6 +1,6 @@
 from config import *
 from ui_menu import UIMenu
-from ui_elements import Background
+from ui_elements import Picture, Background
 from static_water import StaticWater
 import pygame
 
@@ -22,8 +22,11 @@ class Play(UIMenu):
         self.opacity_evening = 0
         self.bg_night = Background('img/Night.png')
         self.opacity_night = 0
-        self.bg_loading = Background('img/Black.png')
+        self.bg_loading = Background('img/Loading.png')
         self.opacity_loading = 255
+        # Fishing Rod
+        self.fishing_rod = Picture('img/FishingRod.png', 800, 450, 1)
+        self.fishing_rod_line = Picture('img/FishingRodLine.png', 800, 450, 1)
 
     def while_loop(self):
         # Background
@@ -56,8 +59,15 @@ class Play(UIMenu):
             self.opacity_night = 0
             self.background_timer = 0
 
+        # Fishing Rod Line
+        if self.left_click:
+            self.fishing_rod_line(self.SCREEN, 255)
+
         # Water
         self.static_water(self.SCREEN, self.timer)
+
+        # Fishing Rod
+        self.fishing_rod(self.SCREEN, 255)
 
         # Loading... Background
         if self.timer < 160:
