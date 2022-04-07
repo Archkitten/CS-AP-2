@@ -6,7 +6,7 @@ layout: blank
 
 <style>
     body {
-        background-image: url('../../assets/images/FlybyFishingBackground.png');
+        background-image: url('../assets/images/FlybyFishingBackground.png');
     }
 </style>
 
@@ -30,10 +30,10 @@ layout: blank
     <div class="column">
         <iframe src="https://www.youtube.com/embed/sQAuUaaWoz8?autoplay=1&mute=1" width="384px" height="216px"></iframe>
         <br><br>
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="384" height="216">
+        <img src="../assets/images/Night.png" alt="Image Preview" width="384" height="216">
         <br><br>
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="384" height="216">
+        <img src="../assets/images/Night.png" alt="Image Preview" width="384" height="216">
         <br><br>
-        <img src="../../assets/images/Night.png" alt="Image Preview" width="384" height="216">
+        <img src="../assets/images/Night.png" alt="Image Preview" width="384" height="216">
     </div>
 </div>
