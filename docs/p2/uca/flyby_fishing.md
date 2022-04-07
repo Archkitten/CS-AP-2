@@ -6,7 +6,7 @@ layout: blank
 
 <style>
     body {
-        background-image: url('../../assets/images/Day.png');
+        background-image: url('../../assets/images/FlybyFishingBackground.png');
     }
 </style>
 
