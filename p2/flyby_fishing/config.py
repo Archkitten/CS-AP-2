@@ -1,4 +1,4 @@
-# GAME_TITLE = "Eish Elies"
+# GAME_TITLE = "Flyby Fishing"
 #
 # WIN_SCALE = 0.8
 #

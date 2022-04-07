@@ -14,13 +14,13 @@ layout: blank
 
 <div class="row">
     <div class="column">
-        <h1>EE</h1>
+        <h1>Flyby Fishing</h1>
         <a href="./ee" download="ee.txt" class="btn">Download Now</a>
         <p>This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</p>
         <p>This is a paragraph break.</p>
         <h2>Credits</h2>
         <p>This is another paragraph.</p>
-        <p>It is no longer seperated by a line break.</p>
+        <p>It is no longer separated by a line break.</p>
         <h2>Languages</h2>
         <ul style="text-align:left">
             <li>English</li>
