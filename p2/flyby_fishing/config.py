@@ -12,7 +12,8 @@ data = {
     'GAME_TITLE': "Flyby Fishing",
     'WIN_SCALE': 0.8,
     'FPS': 60,
-    'MUSIC_VOLUME': 0.5
+    'MUSIC_VOLUME': 0.5,
+    'FISH_COUNT': 0
 }
 
 # with open('data.txt', 'w') as test_file:

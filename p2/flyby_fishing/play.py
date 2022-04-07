@@ -2,7 +2,7 @@ from config import *
 from ui_menu import UIMenu
 from ui_elements import Picture, Button, Background
 from static_water import StaticWater
-from pause import Pause
+from system_fish import SystemFish
 import pygame
 
 
@@ -29,6 +29,7 @@ class Play(UIMenu):
         # Fishing Rod
         self.fishing_rod = Picture('img/FishingRod.png', 800, 450, 1)
         self.fishing_rod_line = Picture('img/FishingRodLine.png', 800, 450, 1)
+        self.system_fish = SystemFish()
 
     def while_loop(self):
         # Background
@@ -74,6 +75,7 @@ class Play(UIMenu):
 
         # Fishing Rod
         self.fishing_rod(self.SCREEN, 255)
+        self.system_fish(self.SCREEN, self.left_click)
 
         # Loading... Background
         if self.timer < 160:
