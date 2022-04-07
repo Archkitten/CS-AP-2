@@ -15,16 +15,25 @@ layout: blank
 <div class="row">
     <div class="column">
         <h1 style="color:white">Flyby Fishing</h1>
-        <a href="./ee" download="ee.txt" class="btn">Download Now</a>
-        <p style="color:lightblue">This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</p>
-        <p style="color:lightblue">This is a paragraph break.</p>
+        <a href="./flyby_fishing" download="ff.txt" class="btn">Download Now</a>
+        <p style="color:lightgray">Fishing, huh…?</p>
+        <p style="color:lightgray">What a boring game. And you’re right! Who likes fishing, anyways?</p>
+        <p style="color:lightgray">But maybe… it might be worth a try. Go ahead and fish, and watch the world go by.</p>
         <h2 style="color:white">Credits</h2>
-        <p style="color:lightblue">This is another paragraph.</p>
-        <p style="color:lightblue">It is no longer separated by a line break.</p>
+        <p style="color:lightgray">Quang - Music</p>
+        <h2 style="color:white">Inspiration</h2>
+        <p style="color:lightgray">Happy Birthday Ethan!</p>
+        <p style="color:lightgray">It's the best I could do in 2 weeks...</p>
         <h2 style="color:white">Languages</h2>
-        <ul style="color:lightblue; text-align:left">
+        <ul style="color:lightgray; text-align:left">
             <li>English</li>
-            <li>I am testing bullet points.</li>
+        </ul>
+        <h2 style="color:white">Compatibility</h2>
+        <ul style="color:lightgray; text-align:left">
+            <li>Windows</li>
+            <li>Linux</li>
+            <li>MacOS</li>
+            <li>Potato</li>
         </ul>
     </div>
     <div class="column">
