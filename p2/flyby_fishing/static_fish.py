@@ -20,7 +20,7 @@ class StaticFish:
                 pass
         for fish in self.fish_list:
             fish(screen, 255)
-            if fish.image_rect.x > 1800 * data['WIN_SCALE'] or fish.image_rect.x < -200 * data['WIN_SCALE']:
+            if fish.image_rect.x > 1800 * Config.data['WIN_SCALE'] or fish.image_rect.x < -200 * Config.data['WIN_SCALE']:
                 self.fish_list.remove(fish)
 
 
@@ -32,7 +32,7 @@ class FishLeft(Picture):
 
     def __call__(self, screen, opacity):
         self.x += self.SPEED
-        self.image_rect = self.image.get_rect(center=(self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE']))
+        self.image_rect = self.image.get_rect(center=(self.x * Config.data['WIN_SCALE'], self.y * Config.data['WIN_SCALE']))
         super().__call__(screen, opacity)
 
 
@@ -43,5 +43,5 @@ class FishRight(Picture):
 
     def __call__(self, screen, opacity):
         self.x -= self.SPEED
-        self.image_rect = self.image.get_rect(center=(self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE']))
+        self.image_rect = self.image.get_rect(center=(self.x * Config.data['WIN_SCALE'], self.y * Config.data['WIN_SCALE']))
         super().__call__(screen, opacity)

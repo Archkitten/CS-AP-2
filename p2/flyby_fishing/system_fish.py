@@ -35,16 +35,16 @@ class SystemFish:
         if self.timer > self.delay + self.opportunity:
             self.randomize()
 
+        # Catch!
         if self.exists and left_click == False:
-            print("Does this even work?")
-            data['FISH_COUNT'] += 1
+            Config.data['FISH_COUNT'] += 1
             self.randomize()
 
     def randomize(self):
         self.timer = 0
         self.exists = False
         # 5 20
-        self.delay = random.randint(2 * 60, 5 * 60)
-        self.opportunity = random.randint(0.5 * 60, 1 * 60)
+        self.delay = random.uniform(1.5, 6) * 60
+        self.opportunity = random.uniform(0.5, 1) * 60
         # Update fish counter
-        self.fish_counter = Text(f"Fish: {str(data['FISH_COUNT'])}", 200, 100, 'Blue', 'pristina', 120)
+        self.fish_counter = Text(f"Fish: {str(Config.data['FISH_COUNT'])}", 200, 100, 'Blue', 'pristina', 120)
