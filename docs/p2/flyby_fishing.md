@@ -21,15 +21,11 @@ layout: blank
         <p style="color:lightgray">But maybe… it might be worth a try. Go ahead and fish, and watch the world go by.</p>
         <h2 style="color:white">Credits</h2>
         <ul style="color:lightgray; text-align:left">
-            <li>[@SaltyRice](https://twitter.com/SaltyRice0) - Music</li>
+            <li><a href="https://twitter.com/SaltyRice0" target="_blank">@Quang</a> - Music</li>
         </ul>
         <h2 style="color:white">Inspiration</h2>
-        <p style="color:lightgray">Happy Birthday Ethan!</p>
+        <p style="color:lightgray">Happy Birthday Nayohn!</p>
         <p style="color:lightgray">It's the best I could do in 2 weeks...</p>
-        <h2 style="color:white">Languages</h2>
-        <ul style="color:lightgray; text-align:left">
-            <li>English</li>
-        </ul>
         <h2 style="color:white">Compatibility</h2>
         <ul style="color:lightgray; text-align:left">
             <li>Windows</li>
