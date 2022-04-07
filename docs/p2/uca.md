@@ -22,27 +22,27 @@ layout: blank
     </div>
     <div class="grid-item">
         <a href="https://archkitten.github.io/CS-AP-2/p2/uca" class="btn">
-            <img src="../assets/images/Question.png" alt="Untitled" width="192" height="108">
+            <img src="../assets/images/Night.png" alt="Untitled" width="192" height="108">
         </a>
     </div>
     <div class="grid-item">
         <a href="https://archkitten.github.io/CS-AP-2/p2/uca" class="btn">
-            <img src="../assets/images/Question.png" alt="Untitled" width="192" height="108">
+            <img src="../assets/images/Night.png" alt="Untitled" width="192" height="108">
         </a>
     </div>
     <div class="grid-item">
         <a href="https://archkitten.github.io/CS-AP-2/p2/uca" class="btn">
-            <img src="../assets/images/Question.png" alt="Untitled" width="192" height="108">
+            <img src="../assets/images/Night.png" alt="Untitled" width="192" height="108">
         </a>
     </div>
     <div class="grid-item">
         <a href="https://archkitten.github.io/CS-AP-2/p2/uca" class="btn">
-            <img src="../assets/images/Question.png" alt="Untitled" width="192" height="108">
+            <img src="../assets/images/Night.png" alt="Untitled" width="192" height="108">
         </a>
     </div>
     <div class="grid-item">
         <a href="https://archkitten.github.io/CS-AP-2/p2/uca" class="btn">
-            <img src="../assets/images/Question.png" alt="Untitled" width="192" height="108">
+            <img src="../assets/images/Night.png" alt="Untitled" width="192" height="108">
         </a>
     </div>
 </div>

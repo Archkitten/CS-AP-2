@@ -17,10 +17,12 @@ layout: blank
         <h1 style="color:white">Flyby Fishing</h1>
         <a href="./flyby_fishing" download="ff.txt" class="btn">Download Now</a>
         <p style="color:lightgray">Fishing, huh…?</p>
-        <p style="color:lightgray">What a boring game. And you’re right! Who likes fishing, anyways?</p>
+        <p style="color:lightgray">What a boring game. And you’re right! Who likes fishing, anyway?</p>
         <p style="color:lightgray">But maybe… it might be worth a try. Go ahead and fish, and watch the world go by.</p>
         <h2 style="color:white">Credits</h2>
-        <p style="color:lightgray">Quang - Music</p>
+        <ul style="color:lightgray; text-align:left">
+            <li>[@SaltyRice](https://twitter.com/SaltyRice0) - Music</li>
+        </ul>
         <h2 style="color:white">Inspiration</h2>
         <p style="color:lightgray">Happy Birthday Ethan!</p>
         <p style="color:lightgray">It's the best I could do in 2 weeks...</p>
