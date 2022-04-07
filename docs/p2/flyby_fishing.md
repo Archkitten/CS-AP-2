@@ -16,13 +16,13 @@ layout: blank
     <div class="column">
         <h1 style="color:white">Flyby Fishing</h1>
         <a href="./ee" download="ee.txt" class="btn">Download Now</a>
-        <p style="color:white">This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</p>
-        <p style="color:white">This is a paragraph break.</p>
+        <p style="color:lightblue">This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</p>
+        <p style="color:lightblue">This is a paragraph break.</p>
         <h2 style="color:white">Credits</h2>
-        <p style="color:white">This is another paragraph.</p>
-        <p style="color:white">It is no longer separated by a line break.</p>
+        <p style="color:lightblue">This is another paragraph.</p>
+        <p style="color:lightblue">It is no longer separated by a line break.</p>
         <h2 style="color:white">Languages</h2>
-        <ul style="color:white; text-align:left">
+        <ul style="color:lightblue; text-align:left">
             <li>English</li>
             <li>I am testing bullet points.</li>
         </ul>
