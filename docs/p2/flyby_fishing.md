@@ -14,15 +14,15 @@ layout: blank
 
 <div class="row">
     <div class="column">
-        <h1>Flyby Fishing</h1>
+        <h1 style="color:white">Flyby Fishing</h1>
         <a href="./ee" download="ee.txt" class="btn">Download Now</a>
-        <p>This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</p>
-        <p>This is a paragraph break.</p>
-        <h2>Credits</h2>
-        <p>This is another paragraph.</p>
-        <p>It is no longer separated by a line break.</p>
-        <h2>Languages</h2>
-        <ul style="text-align:left">
+        <p style="color:white">This is a paragraph. It extends beyond the grid, let's see how it reacts to text wrapping.</p>
+        <p style="color:white">This is a paragraph break.</p>
+        <h2 style="color:white">Credits</h2>
+        <p style="color:white">This is another paragraph.</p>
+        <p style="color:white">It is no longer separated by a line break.</p>
+        <h2 style="color:white">Languages</h2>
+        <ul style="color:white; text-align:left">
             <li>English</li>
             <li>I am testing bullet points.</li>
         </ul>

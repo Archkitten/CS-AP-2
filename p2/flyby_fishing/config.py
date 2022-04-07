@@ -6,7 +6,7 @@
 #
 # MUSIC_VOLUME = 1.0
 
-import json
+# import json
 
 data = {
     'GAME_TITLE': "Flyby Fishing",
@@ -20,3 +20,18 @@ data = {
 #
 # with open('data.txt') as test_file:
 #     data = json.load(test_file)
+
+
+# def load_data():
+#     global data
+#     try:
+#         with open('config.txt') as config_file:
+#             data = json.load(config_file)
+#     except FileNotFoundError:
+#         pass
+
+
+# def save_data():
+#     global data
+#     with open("config.txt", 'w') as config_file:
+#         json.dump(data, config_file)
