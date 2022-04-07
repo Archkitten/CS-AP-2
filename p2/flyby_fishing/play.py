@@ -1,7 +1,8 @@
 from config import *
 from ui_menu import UIMenu
-from ui_elements import Picture, Background
+from ui_elements import Picture, Button, Background
 from static_water import StaticWater
+from pause import Pause
 import pygame
 
 
@@ -9,6 +10,7 @@ class Play(UIMenu):
     def __init__(self):
         super().__init__()
         self.static_water = StaticWater()
+        self.button_quit = Button('img/ButtonCircle.png', 1500, 100, 0.2, "", 'Blue', 'pristina', 0)
         # Music
         self.temporary_volume = 0.0
         self.music = pygame.mixer.Sound('audio/Flyby_Fishing.ogg')
@@ -59,6 +61,10 @@ class Play(UIMenu):
             self.opacity_night = 0
             self.background_timer = 0
 
+        # Button
+        if self.button_quit(self.SCREEN, 255, self.mx, self.my, self.left_click):
+            self.running = False
+
         # Fishing Rod Line
         if self.left_click:
             self.fishing_rod_line(self.SCREEN, 255)
@@ -80,3 +86,22 @@ class Play(UIMenu):
         elif self.timer < 211:
             self.opacity_loading -= 15
             self.bg_loading(self.SCREEN, self.opacity_loading)
+
+    def event_loop(self, event):
+        # X PROGRAM
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        # KEYBOARD PRESSES
+        if event.type == pygame.KEYDOWN:
+            # Escape Key
+            if event.key == pygame.K_ESCAPE:
+                self.music.stop()
+                self.running = False
+        # MOUSE
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                self.left_click = True
+        elif event.type == pygame.MOUSEBUTTONUP:
+            if event.button == 1:
+                self.left_click = False
