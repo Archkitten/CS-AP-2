@@ -42,8 +42,8 @@ class Play(UIMenu):
             # Fade in Evening
             self.opacity_evening += 1
             self.bg_evening(self.SCREEN, self.opacity_evening)
-        # Night - Ends at 3905
-        elif self.background_timer <= 3905:
+        # Night - Ends at 3909
+        elif self.background_timer <= 3910:
             # Remove blur
             self.bg_evening(self.SCREEN, 255)
             # Fade in Night
