@@ -11,7 +11,7 @@ class Play(UIMenu):
         self.static_water = StaticWater()
         # Music
         self.temporary_volume = 0.0
-        self.music = pygame.mixer.Sound('audio/Eish_Elies.ogg')
+        self.music = pygame.mixer.Sound('audio/Flyby_Fishing.ogg')
         self.music.set_volume(data['MUSIC_VOLUME'] * self.temporary_volume)
         self.music.play(loops=-1)
         # Background
