@@ -1,6 +1,8 @@
 package csa.util;
 
 public class MergeSort implements ITemplateSort {
+    private int swaps = 0;
+    private int comparisons = 0;
 
     @Override
     public void sort(int[] intArray) {
@@ -47,6 +49,7 @@ public class MergeSort implements ITemplateSort {
         // If both arrays still have elements...
         while (i < arrayOne.length && j < arrayTwo.length) {
             // If arrayOne is less than arrayTwo, add the element of arrayOne.
+            comparisons++;
             if (arrayOne[i] < arrayTwo[j]) {
                 arrayMerged[k] = arrayOne[i];
                 i++;
@@ -109,6 +112,7 @@ public class MergeSort implements ITemplateSort {
         while (q1.getHead() != null && q2.getHead() != null) {
             // If q1 is less than (or equal to) q2, add the value from q1 into q3.
             // Then delete the head of q1.
+            comparisons++;
             if (q1.getHead().getData() <= q2.getHead().getData()) {
                 qMerged.add(q1.getHead().getData());
                 q1.delete();
@@ -140,5 +144,14 @@ public class MergeSort implements ITemplateSort {
             */
             qMerged.getTail().setNextNode(q1.getHead());
         }
+    }
+    @Override
+    public int getSwaps() {
+        return this.swaps;
+    }
+
+    @Override
+    public int getComparisons() {
+        return this.comparisons;
     }
 }

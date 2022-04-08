@@ -1,6 +1,8 @@
 package csa.util;
 
 public class InsertionSort implements ITemplateSort {
+    private int swaps = 0;
+    private int comparisons = 0;
 
     @Override
     public void sort(int[] intArray) {
@@ -11,6 +13,7 @@ public class InsertionSort implements ITemplateSort {
             int value = intArray[j];
             while (j > 0 && value < intArray[j - 1]) {
                 // Move all values up one until we find the place to insert "value".
+                comparisons++;
                 intArray[j] = intArray[j - 1];
                 j--;
             }
@@ -76,6 +79,7 @@ public class InsertionSort implements ITemplateSort {
             node2 = node1.getPrevious();
             while (j > 0 && value < node2.getData()) {
                 // Move all values up one until we find the place to insert "value".
+                comparisons++;
                 node2.getNext().setData(node2.getData());
                 node2 = node2.getPrevious();
                 j--;
@@ -84,4 +88,13 @@ public class InsertionSort implements ITemplateSort {
         }
     }
 
+    @Override
+    public int getSwaps() {
+        return this.swaps;
+    }
+
+    @Override
+    public int getComparisons() {
+        return this.comparisons;
+    }
 }
