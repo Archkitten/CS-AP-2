@@ -33,8 +33,9 @@ class Options(UIMenu):
             Config.data['WIN_SCALE'] = 0.8
             self.resize()
         if self.button_upscale(self.SCREEN, 255, self.mx, self.my, self.left_click):
-            Config.data['WIN_SCALE'] += 0.1
-            self.resize()
+            if Config.data['WIN_SCALE'] < 1.4:
+                Config.data['WIN_SCALE'] += 0.1
+                self.resize()
         # Music
         if self.button_decrease(self.SCREEN, 255, self.mx, self.my, self.left_click):
             if Config.data['MUSIC_VOLUME'] > 0.1:

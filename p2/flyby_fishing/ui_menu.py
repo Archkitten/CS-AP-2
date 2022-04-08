@@ -38,6 +38,7 @@ class UIMenu:
     def event_loop(self, event):
         # X PROGRAM
         if event.type == pygame.QUIT:
+            Config.save_data()
             pygame.quit()
             sys.exit()
         # KEYBOARD PRESSES
