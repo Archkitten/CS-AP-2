@@ -1,4 +1,4 @@
-from util_menu import Menu
+from util import *
 
 
 class IntroMenu(Menu):
@@ -6,4 +6,4 @@ class IntroMenu(Menu):
         super().__init__()
 
     def while_loop(self):
-        self.screen.fill('Red')
+        self.screen.fill('Black')

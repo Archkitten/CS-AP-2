@@ -1,8 +1,6 @@
-from config import Config
+from util import *
 from intro_menu import IntroMenu
 from main_menu import MainMenu
-import pygame
-import sys
 
 # Load Data
 Config.load_data()

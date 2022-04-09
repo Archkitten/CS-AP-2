@@ -1,6 +1,33 @@
-from config import Config
 import pygame
 import sys
+import json
+
+
+class Config:
+    data = {
+        'GAME_TITLE': "Glowing Cafe 2",
+        'GAME_ICON': 'img/Zap.png',
+        'WIN_SCALE': 0.80,
+        'FPS': 60,
+        'MUSIC_VOLUME': 0.5,
+    }
+
+    @classmethod
+    def load_data(cls):
+        print('Loading disabled')
+        # try:
+        #     with open('config.txt') as config_file:
+        #         Config.data = json.load(config_file)
+        # except FileNotFoundError:
+        #     pass
+        # except:
+        #     pass
+
+    @classmethod
+    def save_data(cls):
+        print('Saving disabled')
+        # with open("config.txt", 'w') as config_file:
+        #     json.dump(Config.data, config_file)
 
 
 class Menu:
@@ -10,10 +37,9 @@ class Menu:
         pygame.init()
         pygame.display.set_caption(Config.data['GAME_TITLE'])
         pygame.display.set_icon(pygame.image.load(Config.data['GAME_ICON']))
-        win_width = 3200 * Config.data['WIN_SCALE']
-        win_height = 1800 * Config.data['WIN_SCALE']
-        self.window = pygame.display.set_mode((win_width, win_height))
-        self.screen = pygame.transform.scale(self.window, (win_width, win_height))
+        win_width = 1600 * Config.data['WIN_SCALE']
+        win_height = 900 * Config.data['WIN_SCALE']
+        self.screen = pygame.display.set_mode((win_width, win_height))
         # Running
         self.running = True
         # Timer
@@ -58,8 +84,17 @@ class Menu:
                 self.left_click = False
 
     def update(self):
-        # Window Resize
-        self.window.blit(self.screen, (0, 0))
-        # Update (Required)
         pygame.display.update()
         self.clock.tick(Config.data['FPS'])
+
+
+class Text:
+    def __init__(self, text, x, y, color, font, font_size):
+        self.x = x
+        self.y = y
+        self.FONT = pygame.font.SysFont(font, int(font_size * Config.data['WIN_SCALE']))
+        self.text_surf = self.FONT.render(text, True, color)
+        self.text_rect = self.text_surf.get_rect(center=(self.x * Config.data['WIN_SCALE'], self.y * Config.data['WIN_SCALE']))
+
+    def __call__(self, screen):
+        screen.blit(self.text_surf, self.text_rect)
