@@ -6,8 +6,6 @@ class Player:
     def __init__(self, x, y, scale):
         self.x = x
         self.y = y
-        self.bx = x
-        self.by = y
         self.scale = scale
         self.speed = 5
         self.health = 4
@@ -25,29 +23,16 @@ class Player:
         self.update()
 
     def __call__(self, screen, tile_map):
-        self.move()
+        # self.move()
         # if colliding:
         self.animate_bobbing()
         # self.jump_count = 2
         # else:
-        self.change_gravity()
+        # self.change_gravity()
         # self.collide(tile_map)
         self.animate()
         self.update()
         screen.blit(self.image_surf, self.image_rect)
-
-    def move(self):
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_a]:
-            self.bx -= self.speed
-        if keys[pygame.K_d]:
-            self.bx += self.speed
-        if keys[pygame.K_SPACE]:
-            self.gravity = -8
-
-    def change_gravity(self):
-        self.gravity += 0.4
-        self.by += self.gravity
 
     def animate_bobbing(self):
         self.bobbing_timer += 1
@@ -76,9 +61,9 @@ class Player:
         self.image_rect = self.image_surf.get_rect(
             center=(self.x * Config.data['WIN_SCALE'], self.y * Config.data['WIN_SCALE'] + self.bobbing))
 
-    def collide(self, tile_map):
-        for i, row in enumerate(tile_map):
-            for j, column in enumerate(row):
-                if column == 'G' or 'D' or 'T':
-                    if self.y > i * Config.data['WIN_SCALE'] * 90 - self.by + 450:
-                        self.by -= self.gravity
+    # def collide(self, tile_map):
+    #     for i, row in enumerate(tile_map):
+    #         for j, column in enumerate(row):
+    #             if column == 'G' or 'D' or 'T':
+    #                 if self.y > i * Config.data['WIN_SCALE'] * 90 - self.by + 450:
+    #                     self.by -= self.gravity
