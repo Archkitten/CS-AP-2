@@ -5,7 +5,7 @@ import json
 
 class Config:
     data = {
-        'GAME_TITLE': "Glowing Cafe 2",
+        'GAME_TITLE': "A Void",
         'GAME_ICON': 'img/Zap.png',
         'WIN_SCALE': 0.80,
         'TPS': 60,
@@ -14,20 +14,18 @@ class Config:
 
     @classmethod
     def load_data(cls):
-        print('Loading disabled')
-        # try:
-        #     with open('config.txt') as config_file:
-        #         Config.data = json.load(config_file)
-        # except FileNotFoundError:
-        #     pass
-        # except:
-        #     pass
+        try:
+            with open('config.txt') as config_file:
+                Config.data = json.load(config_file)
+        except FileNotFoundError:
+            pass
+        except:
+            pass
 
     @classmethod
     def save_data(cls):
-        print('Saving disabled')
-        # with open("config.txt", 'w') as config_file:
-        #     json.dump(Config.data, config_file)
+        with open("config.txt", 'w') as config_file:
+            json.dump(Config.data, config_file)
 
 
 class Menu:
@@ -98,3 +96,29 @@ class Text:
 
     def __call__(self, screen):
         screen.blit(self.text_surf, self.text_rect)
+
+
+class Button:
+    def __init__(self, image, x, y, scale, text, color, font, font_size):
+        self.x = x
+        self.y = y
+        # Picture
+        self.image = pygame.image.load(image).convert_alpha()
+        self.image = pygame.transform.scale(self.image, (self.image.get_width() * Config.data['WIN_SCALE'] * scale, self.image.get_height() * Config.data['WIN_SCALE'] * scale))
+        self.image_rect = self.image.get_rect(center=(self.x * Config.data['WIN_SCALE'], self.y * Config.data['WIN_SCALE']))
+        # Text
+        self.FONT = pygame.font.SysFont(font, int(font_size * Config.data['WIN_SCALE']))
+        self.text = self.FONT.render(text, True, color)
+        self.text_rect = self.text.get_rect(center=(self.x * Config.data['WIN_SCALE'], self.y * Config.data['WIN_SCALE']))
+
+    def __call__(self, screen, opacity, mx, my, click):
+        # I discovered this hover and click opacity system on accident.
+        screen.blit(self.image, self.image_rect)
+        screen.blit(self.text, self.text_rect)
+        if self.image_rect.collidepoint((mx, my)):
+            opacity /= 2
+            if click:
+                return True
+        self.image.set_alpha(opacity)
+        screen.blit(self.image, self.image_rect)
+        screen.blit(self.text, self.text_rect)
