@@ -1,6 +1,5 @@
 import time
 from src_py.util.option import Option
-# from ..util.option import Option
 
 
 ANSI_CLEAR_SCREEN = u"\u001B[2J"
