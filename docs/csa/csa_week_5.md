@@ -30,3 +30,7 @@ public class lol {
     }
 }
 ```
+
+Watch out for super class calls!
+
+Unit 9 MCQ Question 3 is dumb. Review it over and over and over again so I don't get tricked again.
