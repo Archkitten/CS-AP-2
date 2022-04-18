@@ -9,8 +9,8 @@ class UIMenu:
         self.CLOCK = pygame.time.Clock()
         pygame.init()
         pygame.display.set_icon(pygame.image.load('img/Zap.png'))
-        pygame.display.set_caption(data['GAME_TITLE'])
-        self.SCREEN = pygame.display.set_mode((1600 * data['WIN_SCALE'], 900 * data['WIN_SCALE']))
+        pygame.display.set_caption(Config.data['GAME_TITLE'])
+        self.SCREEN = pygame.display.set_mode((1600 * Config.data['WIN_SCALE'], 900 * Config.data['WIN_SCALE']))
         # Running
         self.running = True
         # Timer
@@ -38,6 +38,7 @@ class UIMenu:
     def event_loop(self, event):
         # X PROGRAM
         if event.type == pygame.QUIT:
+            Config.save_data()
             pygame.quit()
             sys.exit()
         # KEYBOARD PRESSES
@@ -56,4 +57,4 @@ class UIMenu:
 
     def update(self):
         pygame.display.update()
-        self.CLOCK.tick(data['FPS'])
+        self.CLOCK.tick(Config.data['FPS'])

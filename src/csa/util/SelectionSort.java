@@ -1,6 +1,8 @@
 package csa.util;
 
 public class SelectionSort implements ITemplateSort {
+    private int swaps = 0;
+    private int comparisons = 0;
 
     @Override
     public void sort(int[] intArray) {
@@ -12,12 +14,14 @@ public class SelectionSort implements ITemplateSort {
             // The "+ 1" is because we don't need to compare the minimum with the minimum again.
             for (int j = i + 1; j < intArray.length; j++) {
                 // If the value we get to is less than j, set it as the new minimum.
+                comparisons++;
                 if (intArray[j] < min) {
                     min = intArray[j];
                     minIndex = j;
                 }
             }
             // Once we've found the minimum, swap the two values.
+            swaps++;
             intArray[minIndex] = intArray[i];
             intArray[i] = min;
             // Learning algorithmic strategies from Insertion Sort! Reduce swapping as much as possible!
@@ -57,7 +61,7 @@ public class SelectionSort implements ITemplateSort {
             // "i" controls what has already been sorted.
             node1 = node1.getNext();
             int min = node1.getData();
-            int minIndex = i;
+            // int minIndex = i;
             minTempNode = node1;
             // "j = i" prevents the algorithm from sorting what has already been sorted.
             // The "+ 1" is because we don't need to compare the minimum with the minimum again.
@@ -65,17 +69,27 @@ public class SelectionSort implements ITemplateSort {
             for (int j = i + 1; j < intQueue.size; j++) {
                 // If the value we get to is less than j, set it as the new minimum.
                 node2 = node2.getNext();
+                comparisons++;
                 if (node2.getData() < min) {
                     min = node2.getData();
                     minTempNode = node2;
                 }
             }
             // Once we've found the minimum, swap the two values.
+            swaps++;
             minTempNode.setData(node1.getData());
             node1.setData(min);
             // Learning algorithmic strategies from Insertion Sort! Reduce swapping as much as possible!
         }
     }
 
+    @Override
+    public int getSwaps() {
+        return this.swaps;
+    }
 
+    @Override
+    public int getComparisons() {
+        return this.comparisons;
+    }
 }

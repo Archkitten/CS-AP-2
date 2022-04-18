@@ -4,6 +4,7 @@ from ui_elements import Picture, Button, Background
 from static_water import StaticWater
 from system_fish import SystemFish
 import pygame
+import sys
 
 
 class Play(UIMenu):
@@ -14,7 +15,7 @@ class Play(UIMenu):
         # Music
         self.temporary_volume = 0.0
         self.music = pygame.mixer.Sound('audio/Flyby_Fishing.ogg')
-        self.music.set_volume(data['MUSIC_VOLUME'] * self.temporary_volume)
+        self.music.set_volume(Config.data['MUSIC_VOLUME'] * self.temporary_volume)
         self.music.play(loops=-1)
         # Background
         self.background_timer = 0
@@ -64,6 +65,7 @@ class Play(UIMenu):
 
         # Button
         if self.button_quit(self.SCREEN, 255, self.mx, self.my, self.left_click):
+            self.music.stop()
             self.running = False
 
         # Fishing Rod Line
@@ -84,7 +86,7 @@ class Play(UIMenu):
             self.temporary_volume += 0.0063
             if self.temporary_volume > 1:
                 self.temporary_volume = 1
-            self.music.set_volume(data['MUSIC_VOLUME'] * self.temporary_volume)
+            self.music.set_volume(Config.data['MUSIC_VOLUME'] * self.temporary_volume)
         elif self.timer < 211:
             self.opacity_loading -= 15
             self.bg_loading(self.SCREEN, self.opacity_loading)
@@ -92,6 +94,7 @@ class Play(UIMenu):
     def event_loop(self, event):
         # X PROGRAM
         if event.type == pygame.QUIT:
+            Config.save_data()
             pygame.quit()
             sys.exit()
         # KEYBOARD PRESSES

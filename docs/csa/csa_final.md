@@ -10,7 +10,7 @@ layout: default
 
 ### Video
 
-[Video - Duration 2 minutes]
+<iframe src="https://www.youtube.com/embed/bRU9ihD2JgA?autoplay=1" width="800px" height="450px"></iframe>
 
 ### Coding Review
 
@@ -30,9 +30,5 @@ layout: default
   * [Calculator.java](https://github.com/Archkitten/CS-AP-2/blob/master/src/csa/week2/Calculator.java)
   * [CalculatorTester.java](https://github.com/Archkitten/CS-AP-2/blob/master/src/csa/week2/CalculatorTester.java)
 * Discuss Sorts and Analysis:
-  * [Tangibles]
+  * [Week 3](https://archkitten.github.io/CS-AP-2/csa/csa_week_3)
 * Anything else that enhances learning from Java?
-
-### Crossover Contribution
-
-[Crossover Contribution]

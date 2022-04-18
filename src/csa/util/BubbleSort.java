@@ -1,6 +1,8 @@
 package csa.util;
 
 public class BubbleSort implements ITemplateSort {
+    private int swaps = 0;
+    private int comparisons = 0;
 
     @Override
     public void sort(int[] intArray) {
@@ -10,8 +12,10 @@ public class BubbleSort implements ITemplateSort {
             // This results in the largest value being bubbled to the top.
             // the "- j" prevents the bubble sort from resorting bubbled values.
             for (int i = 0; i < intArray.length - j; i++) {
+                comparisons++;
                 if (intArray[i] > intArray[i + 1]) {
                     // Swap the two values
+                    swaps++;
                     int temp = intArray[i];
                     intArray[i] = intArray[i + 1];
                     intArray[i + 1] = temp;
@@ -32,7 +36,9 @@ public class BubbleSort implements ITemplateSort {
                 node1 = node1.getNext();
                 node2 = node1.getNext();
 
+                comparisons++;
                 if (node1.getData() > node2.getData()) {
+                    swaps++;
                     Integer temp = node1.getData();
                     node1.setData(node2.getData());
                     node2.setData(temp);
@@ -70,5 +76,15 @@ public class BubbleSort implements ITemplateSort {
             }
         }
         */
+    }
+
+    @Override
+    public int getSwaps() {
+        return this.swaps;
+    }
+
+    @Override
+    public int getComparisons() {
+        return this.comparisons;
     }
 }

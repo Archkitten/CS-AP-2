@@ -37,13 +37,13 @@ class Water:
 
     def __call__(self, screen):
         self.move()
-        self.circle = (self.x * data['WIN_SCALE'], self.y * data['WIN_SCALE'])
-        pygame.draw.circle(screen, 'Blue', self.circle, self.RADIUS * data['WIN_SCALE'])
+        self.circle = (self.x * Config.data['WIN_SCALE'], self.y * Config.data['WIN_SCALE'])
+        pygame.draw.circle(screen, 'Blue', self.circle, self.RADIUS * Config.data['WIN_SCALE'])
 
         # This is only for if you want the area under the wave to be filled.
         while self.droplet_y < 900:
             self.droplet_y += 20
-            pygame.draw.circle(screen, 'Blue', (self.x * data['WIN_SCALE'], self.droplet_y * data['WIN_SCALE']), self.RADIUS * data['WIN_SCALE'])
+            pygame.draw.circle(screen, 'Blue', (self.x * Config.data['WIN_SCALE'], self.droplet_y * Config.data['WIN_SCALE']), self.RADIUS * Config.data['WIN_SCALE'])
         self.droplet_y = self.y
 
     def move(self):
