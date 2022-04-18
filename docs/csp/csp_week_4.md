@@ -6,7 +6,7 @@ layout: default
 
 {% include csp_nav.html %}
 
-## Week 4 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/6)
+## Week 4 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/16)
 
 ### Create Task Guidelines
 
