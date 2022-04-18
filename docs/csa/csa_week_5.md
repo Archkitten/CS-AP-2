@@ -10,4 +10,23 @@ layout: default
 
 ### Plan
 
-Something
+1. Study Java syntax for for-loops.
+2. Review Array and ArrayList syntax differences.
+3. Increase speed for MCQs on conditional, looping, and recursive problems.
+4. Practice writing code on paper.
+
+Syntax Practice
+```java
+public class lol {
+    private int asdf = 0;
+    private String fff = "asdf";
+    
+    public int getAsdf() {
+        return asdf;
+    }
+    
+    public static void main(String[] args) {
+        lol l = new lol();
+    }
+}
+```
