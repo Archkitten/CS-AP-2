@@ -101,7 +101,7 @@ Daily Video 3:
 ### [Tri 3 TT2 Python Classes](https://github.com/nighthawkcoders/nighthawk_csp/wiki/Tri-3-TT2-Python-Classes)
 
 Python Class - the call method
-```
+```python
 def __call__(self):
     # It's like the main(String[] args) method in java!
     # Run it just by calling the Object!
@@ -122,7 +122,7 @@ Challenges
 
 ### Challenge 1: Reorganize
 main_pattern.py
-```
+```python
 from src_py.util.menu import Menu
 from src_py.pattern_menus.animations import Animations
 from src_py.pattern_menus.data_structures import DataStructures
@@ -146,7 +146,7 @@ class MainPattern:
 
 ### Challenge 2: Factorial
 factorial.py
-```
+```python
 from src_py.util.option import Option
 
 
@@ -177,7 +177,7 @@ class FactorialClass:
 
 ### Challenge 4: Palindrome
 palindrome.py
-```
+```python
 from src_py.util.option import Option
 
 
@@ -241,7 +241,7 @@ class NotDatabase:
 
 ### Challenge 3: Custom Math Function
 tri_angle.py
-```
+```python
 from src_py.util.option import Option
 import math
 

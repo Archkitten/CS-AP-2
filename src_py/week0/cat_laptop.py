@@ -7,6 +7,9 @@ ANSI_HOME_CURSOR = u"\u001B[0;0H\u001B[2"
 OCEAN_COLOR = u"\u001B[44m\u001B[2D"
 SHIP_COLOR = u"\u001B[32m\u001B[2D"
 RESET_COLOR = u"\u001B[0m\u001B[2D"
+yellow = "\033[33m"
+blue = "\033[34m"
+white = "\033[37m"
 
 
 class CatLaptop(Option):
@@ -29,17 +32,17 @@ class CatLaptop(Option):
         print(ANSI_HOME_CURSOR)
         print(RESET_COLOR)
         sp = " " * position
-        print(sp + "/|")
-        print(sp + "||")
-        print(sp + "\\|  ᓚᘏᗢ  ")
-        print(SHIP_COLOR, end="")
+        print(sp + "/" + blue + "|" + white)
+        print(sp + "|" + blue + "|" + white)
+        print(sp + "\\" + blue + "|" + yellow + "  ᓚᘏᗢ  "  + white)
+        # print(SHIP_COLOR, end="")
         print(sp + "  \\______/  ")
-        print(RESET_COLOR)
+        # print(RESET_COLOR)
 
     # ship function, iterate into this file
     def ship(self):
         # only need to print ocean once
-        self.ocean_print()
+        # self.ocean_print()
 
         # loop control variables
         start = 0  # start at zero
