@@ -14,6 +14,8 @@ layout: default
 2. Review Array and ArrayList syntax differences.
 3. Increase speed for MCQs on conditional, looping, and recursive problems.
 4. Practice writing code on paper.
+5. Review Truth Tables and De Morgan's Law
+6. Java default libraries like substring()
 
 Syntax Practice
 ```java
@@ -33,4 +35,7 @@ public class lol {
 
 Watch out for super class calls!
 
-Unit 9 MCQ Question 3 is dumb. Review it over and over and over again so I don't get tricked again.
+Unit 9 MCQ Question 3 is tricky. Review it over and over and over again so I don't get tricked again.
+
+
+I will continue adding onto this study plan. I've still got a lot to review and iterate upon, so it's not done yet!
