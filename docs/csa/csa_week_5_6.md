@@ -36,12 +36,13 @@ layout: default
     <tr>
         <td>Tuesday</td>
         <td>
-            5. Review Truth Tables and De Morgan's Law.
+            7. Review Truth Tables and De Morgan's Law.
             <br>
-            6. Memorize how java default libraries like substring() work.
+            8. Memorize how java default libraries like substring() work.
             <br>
-            7. Study how java for each loops work with arrays (2015 MCQ Question 22).
+            9. Study how java for-each loops work with arrays (2015 MCQ Question 22).
             <br>
+            10. Be careful when the inner nested for loop sets it's starting/stopping point based on the value of the outer for loop.
         </td>
         <td>N/A</td>
     </tr>
