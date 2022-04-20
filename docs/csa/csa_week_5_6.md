@@ -49,7 +49,34 @@ layout: default
     <tr>
         <td>Wednesday</td>
         <td>
-            N/A
+            Questions Missed: None!
+            <br>
+            Questions Unanswered: 23, 26 and onwards.
+            <p>
+                Question 23: []
+                <br>
+                []
+            </p>
+            <p>
+                Question 26: E
+                <br>
+                The changeIt() method isn't doing anything because there is no return type. Therefore, the start() method will print out 1 2 3 4 5 6 blackboard.
+            </p>
+            <p>
+                Question 27: B
+                <br>
+                The sort is a selection sort. 1st pass: 6 and 1 get swapped. 2nd pass: 3 and 2 get swapped. 3rd pass: 3 and 5 don't get swapped. End result is 1 2 3 5 4 6.
+            </p>
+            <p>
+                Question 28: B
+                <br>
+                The sort is a selection sort. It'll compare 15 times because 5 + 4 + 3 + 2 + 1. It'll swap 5 times because there are 5 pairs available to swap (5 iterations happen).
+            </p>
+            <p>
+                Question 29: []
+                <br>
+                []
+            </p>
         </td>
         <td>N/A</td>
     </tr>
