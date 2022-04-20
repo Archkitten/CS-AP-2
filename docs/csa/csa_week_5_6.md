@@ -73,7 +73,57 @@ layout: default
                 The sort is a selection sort. It'll compare 15 times because 5 + 4 + 3 + 2 + 1. It'll swap 5 times because there are 5 pairs available to swap (5 iterations happen).
             </p>
             <p>
-                Question 29: []
+                Question 29: A
+                <br>
+                3 returns 1, 40 returns 1+1=2, 100 returns 1+1+1=3, 564 returns 1+1+1=3. It's just the number of digits.
+            </p>
+            <p>
+                Question 30: B
+                <br>
+                (II) only. (I) and (III) always runs the code for 0-4 boxes.
+            </p>
+            <p>
+                Question 31: E
+                <br>
+                The two starting points for X's are (1, 0) and (3, 0). Then keep creating X's one row down and one column over. So from (1, 0) the next X's would be (0, 1), and from (3, 0) the next X's would be (2, 1), (1, 2), and (0, 3).
+            </p>
+            <p>
+                Question 32: B
+                <br>
+                B is the only one that correctly uses getters, treats k as an element and not as an index number, and doesn't have syntax errors.
+            </p>
+            <p>
+                Question 33: []
+                <br>
+                []
+            </p>
+            <p>
+                Question 34: []
+                <br>
+                []
+            </p>
+            <p>
+                Question 35: []
+                <br>
+                []
+            </p>
+            <p>
+                Question 36: []
+                <br>
+                []
+            </p>
+            <p>
+                Question 37: []
+                <br>
+                []
+            </p>
+            <p>
+                Question 38: []
+                <br>
+                []
+            </p>
+            <p>
+                Question 39: []
                 <br>
                 []
             </p>
