@@ -14,7 +14,6 @@ layout: default
     <tr>
         <th>Day</th>
         <td>Things to Review</td>
-        <td>Notes</td>
     </tr>
     <tr>
         <td>Monday</td>
@@ -31,7 +30,6 @@ layout: default
             <br>
             6. Unit 9 MCQ Question 3 is tricky. Review it over and over again, so I don't get tricked in the future.
         </td>
-        <td>N/A</td>
     </tr>
     <tr>
         <td>Tuesday</td>
@@ -44,7 +42,6 @@ layout: default
             <br>
             10. Be careful when the inner nested for loop sets it's starting/stopping point based on the value of the outer for loop.
         </td>
-        <td>N/A</td>
     </tr>
     <tr>
         <td>Wednesday</td>
@@ -88,7 +85,6 @@ layout: default
                 B is the only one that correctly uses getters, treats k as an element and not as an index number, and doesn't have syntax errors.
             </p>
         </td>
-        <td>N/A</td>
     </tr>
     <tr>
         <td>Thursday</td>
@@ -96,7 +92,6 @@ layout: default
             <img src="../assets/images/Week_5_FRQ1.JPG" alt="Image Preview" width="425" height="550">
             <img src="../assets/images/Week_5_FRQ2.JPG" alt="Image Preview" width="425" height="550">
         </td>
-        <td>N/A</td>
     </tr>
     <tr>
         <td>Friday</td>
@@ -170,6 +165,9 @@ layout: default
                 Final Result of (j = 2): 3 4 5 2 1
             </p>
         </td>
-        <td>N/A</td>
     </tr>
 </table>
+
+### Self Study Guide
+
+<a href="https://archkitten.github.io/CS-AP-2/csa/csa_study_guide" class="btn">Study Guide</a>
