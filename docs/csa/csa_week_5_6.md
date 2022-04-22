@@ -53,11 +53,6 @@ layout: default
             <br>
             Questions Unanswered: 23, 26 and onwards.
             <p>
-                Question 23: []
-                <br>
-                []
-            </p>
-            <p>
                 Question 26: E
                 <br>
                 The changeIt() method isn't doing anything because there is no return type. Therefore, the start() method will print out 1 2 3 4 5 6 blackboard.
@@ -92,10 +87,29 @@ layout: default
                 <br>
                 B is the only one that correctly uses getters, treats k as an element and not as an index number, and doesn't have syntax errors.
             </p>
+        </td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td>Thursday</td>
+        <td>
+            <img src="../assets/images/Week_5_FRQ1.JPG" alt="Image Preview" width="425" height="550">
+            <img src="../assets/images/Week_5_FRQ2.JPG" alt="Image Preview" width="425" height="550">
+        </td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td>Friday</td>
+        <td>
             <p>
-                Question 33: []
+                Question 23: []
                 <br>
                 []
+            </p>
+            <p>
+                Question 33: E
+                <br>
+                All three functions work. (I)'s Integer.MIN_VALUE sets the max to the lowest possible value beforehand, and (II) and (III) both set their max to the first index of the array.
             </p>
             <p>
                 Question 34: []
@@ -127,21 +141,6 @@ layout: default
                 <br>
                 []
             </p>
-        </td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td>Thursday</td>
-        <td>
-            <img src="../assets/images/Week_5_FRQ1.JPG" alt="Image Preview" width="425" height="550">
-            <img src="../assets/images/Week_5_FRQ2.JPG" alt="Image Preview" width="425" height="550">
-        </td>
-        <td>N/A</td>
-    </tr>
-    <tr>
-        <td>Friday</td>
-        <td>
-            N/A
         </td>
         <td>N/A</td>
     </tr>
