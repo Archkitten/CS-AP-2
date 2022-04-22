@@ -8,15 +8,6 @@ layout: default
 
 ## Week 5 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/17)
 
-AP Testers
-
-* GH Indi Page and Review Ticket for following...
-  - [x] Start review ticket with study plan and study reflection for week, due EOD Monday
-  - [ ] Finals-Quiz1 score/50 and corrections
-  - [ ] Finals-Quiz2 score/50 and reflections
-  - [ ] Create Task code/runtime and 1 min video are reviewed by another person, you may request Teacher review as time permits
-  - [ ] Review ticket with Crossover Score
-
 ### Study Plan
 
 MCQ1:

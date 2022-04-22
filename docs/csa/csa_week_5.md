@@ -168,6 +168,4 @@ layout: default
     </tr>
 </table>
 
-### Self Study Guide
-
-<a href="https://archkitten.github.io/CS-AP-2/csa/csa_study_guide">Study Guide</a>
+### [Self Study Guide](https://archkitten.github.io/CS-AP-2/csa/csa_study)
