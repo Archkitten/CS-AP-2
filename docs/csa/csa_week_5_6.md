@@ -133,7 +133,8 @@ layout: default
     <tr>
         <td>Thursday</td>
         <td>
-            N/A
+            <img src="../assets/images/Week_5_FRQ1.JPG" alt="Image Preview" width="425" height="550">
+            <img src="../assets/images/Week_5_FRQ2.JPG" alt="Image Preview" width="425" height="550">
         </td>
         <td>N/A</td>
     </tr>
