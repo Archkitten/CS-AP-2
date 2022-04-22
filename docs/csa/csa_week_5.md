@@ -170,4 +170,4 @@ layout: default
 
 ### Self Study Guide
 
-<a href="https://archkitten.github.io/CS-AP-2/csa/csa_study_guide" class="btn">Study Guide</a>
+<a href="https://archkitten.github.io/CS-AP-2/csa/csa_study_guide">Study Guide</a>
