@@ -102,44 +102,72 @@ layout: default
         <td>Friday</td>
         <td>
             <p>
-                Question 23: []
-                <br>
-                []
-            </p>
-            <p>
                 Question 33: E
                 <br>
                 All three functions work. (I)'s Integer.MIN_VALUE sets the max to the lowest possible value beforehand, and (II) and (III) both set their max to the first index of the array.
             </p>
             <p>
-                Question 34: []
+                Question 34: D
                 <br>
-                []
+                A and C's expression use the array length minus one, which is incorrect because the for loop stopping condition is <, not <=. D is correct because the condition is when k is at the end of the array, this makes sense because we don't want to add a comma to the last word.
             </p>
             <p>
-                Question 35: []
+                Question 35: C
                 <br>
-                []
+                Binary search will get 5 as the index value of the first "8" found.
             </p>
             <p>
-                Question 36: []
+                Question 36: D
                 <br>
-                []
+                Binary search 2000 values is 2^11.
             </p>
             <p>
-                Question 37: []
+                Question 37: E
                 <br>
-                []
+                (II) is correct, prints out from the end of the array to 2. (III) reverses the array first, then prints out from front to 2, so it is also correct.
             </p>
             <p>
-                Question 38: []
+                Question 38: C
                 <br>
-                []
+                k is the counter counting the number of times v == nums[numVals - 1].
             </p>
             <p>
-                Question 39: []
+                Question 39: C
                 <br>
-                []
+                Apparently ArrayList's .set() function will return the value that it was trying to replace. So Alice Bob Carl will print out in the first for loop while everything gets set to Alex, so the second for loop prints out Alex Alex Alex.
+            </p>
+            <p>
+                Question 23: C
+                <br>
+                j = 1
+                <br>
+                k j _ _ _
+                <br>
+                Input: 5 4 3 2 1
+                <br>
+                Output: 5 5 3 2 1
+                <br>
+                (k = -1 so while loop breaks out)
+                <br>
+                Final Result of (j = 1): 4 5 3 2 1
+                <br>
+                j = 2
+                <br>
+                _ k j _ _
+                <br>
+                Input: 4 5 3 2 1
+                <br>
+                Output: 4 5 5 2 1
+                <br>
+                k _ j _ _
+                <br>
+                Input: 4 5 5 2 1
+                <br>
+                Output: 4 4 5 2 1
+                <br>
+                (k = -1 so while loop breaks out)
+                <br>
+                Final Result of (j = 2): 3 4 5 2 1
             </p>
         </td>
         <td>N/A</td>
