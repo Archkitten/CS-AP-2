@@ -18,6 +18,11 @@ MCQ1:
 Review Topics:
 * Parallel Processing
 
+Plans:
+* I think I'm ready for the AP Test, but any questions I guess on or get wrong on these MCQs, I'll record the overall topic.
+* This week, the only topic I missed questions on was parallel processing, so I plan to go back to the CollegeBoard videos on specifically parallel processing.
+* Other than that, I think I'm ready.
+
 ### Copy of MCQ 1
 
 Score: 49/50
