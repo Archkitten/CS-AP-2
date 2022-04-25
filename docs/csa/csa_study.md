@@ -42,3 +42,26 @@ for (int i : array) {
     System.out.println(i);
 }
 ```
+
+Java Default Library: substring()
+```
+// Ok Imagine a String:
+// "College Board"
+// And visualize it as an array of characters:
+// | C | o | l | l | e | g | e |   | B | o | a | r | d |
+//   0   1   2   3   4   5   6   7   8   9   10  11  12
+
+String.substring(1, 4)
+
+// Would return: olle
+// Because: | o | l | l | e |
+//            1   2   3   4
+
+// Single Parameter starts from 10th value
+// and prints out everything after it.
+String.substring(10)
+
+// Would return: ard
+// Because: | a | r | d |
+//            10  11  12
+```
