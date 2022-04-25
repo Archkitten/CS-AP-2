@@ -36,3 +36,9 @@ for (int i = 0; i < numberArray.length, i++) {
 ```
 
 For Each Loop + Array
+```
+for (int i : array) {
+    // Print out each element of the array.
+    System.out.println(i);
+}
+```
