@@ -9,6 +9,9 @@ public class FRQ2 extends Option {
     }
 
     public void tester() {
-        System.out.println("Hi!");
+        HiddenWord test = new HiddenWord("APPLE");
+        System.out.println("APPLE");
+        System.out.println("Guessing: AUDIO");
+        System.out.println(test.getHint("AUDIO"));
     }
 }
