@@ -117,7 +117,15 @@ data type of borrower is Person (custom class)
   * I only
 * Correct answer: B
   * II only
-* [Logic]
+* If borrower hasn't been defined yet, using .equals() will return an error despite being a Person data type. Use != instead.
+
+Question 13: Assume that a, b, and c are boolean variables that have been properly declared and initialized. Which of the following boolean expressions is equivalent to !(a && b) || c?
+* I chose: B
+  * a || b || c
+* Correct answer: E
+  * !a || !b || c
+* De Morgan's Law. !(a && b) is equivalent to !a || !b.
+* Ugh. I blame this on time constraints. I used to be so good at these types of problems!
 
 Question 14: The following categories are used by some researchers to categorize zip codes as urban, suburban, or rural based on population density.
 * An urban zip code is a zip code with more than 3,000 people per square mile. 
@@ -169,3 +177,84 @@ return "rural";
   * I and III only
 * III is the most direct answer to the question, returning urban above 3000 density, then returns suburban above 1000 density, and returns rural otherwise.
 * I didn't see the return statements inside III, and thought a variable was being set to urban and suburban. So I concluded it would return rural each time, and dismissed III as a possible correct answer. Oops.
+
+Question 27: Consider the following statement. Assume that a and b are properly declared and initialized boolean variables.
+```
+boolean c = (a && b) || (!a && b);
+```
+Under which of the following conditions will c be assigned the value false?
+* I chose: B
+  * Never
+* Correct answer: E
+  * When b has the value false
+* CollegeBoard response: When b has the value false, both of the expressions (a && b) and (!a && b) evaluate to false, regardless of the value of a. The entire expression evaluates to false || false, or false. When b has the value true, one of the expressions (a && b) or (!a && b) evaluates to true. The entire expression, in this case, is either true || false or false || true, or true. A truth table can be used to summarize these results.
+* Next time I'll use a truth table to use test cases. I blame time pressure part 2.
+
+Question 28: Consider the following method.
+```
+public static String abMethod(String a, String b) {
+    int x = a.indexOf(b);
+    while (x >= 0) {
+        a = a.substring(0, x) + a.substring(x + b.length());
+        x = a.indexOf(b);
+    }
+    return a;
+}
+```
+What, if anything, is returned by the method call abMethod("sing the song", "ng")?
+* I chose: C
+  * "si the song"
+* Correct answer: B
+  * "si the so"
+* The method will take the first parameter as a string and remove any instances of the second parameter from the string.
+* I was originally going to pick B, and I can't remember the reason why I switched to C.
+
+Question 31: Consider an integer array nums, which has been properly declared and initialized with one or more values. Which of the following code segments counts the number of negative values found in nums and stores the count in counter?
+
+I.
+```
+int counter = 0;
+int i = -1;
+while (i <= nums.length - 2)
+{
+   i++;
+   if (nums[i] < 0)
+   {
+      counter++;
+   }
+}
+```
+
+II.
+```
+int counter = 0;
+for (int i = 1; i < nums.length; i++)
+{
+   if (nums[i] < 0)
+   {
+      counter++;
+   }
+}
+```
+
+III.
+```
+int counter = 0;
+for (int i : nums)
+{
+   if (nums[i] < 0)
+   {
+      counter++;
+   }
+}
+```
+
+* I chose: E
+  * I, II, and III
+* Correct answer: A
+  * I only
+* II is wrong because the for loop starts at i = 1, causing the 0th element of the array (nums[0]) to be skipped.
+* III is wrong because a for each loop measures the element itself, not the index number. No need to call the array again.
+* I'm such an idiot! I even knew about III's critical concept, reviewed it the night prior, AND put it in the study guide! I must have chosen E out of time pressure, or I didn't read the code carefully enough.
+
+Question 33: Consider the following code segment.
