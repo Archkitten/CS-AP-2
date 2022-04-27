@@ -259,9 +259,10 @@ for (int i : nums)
 
 Question 33: Consider the following code segment.
 ```
-String[][] letters = {{"A", "B", "C", "D"}, 
-        {"E", "F", "G", "H"}, 
-        {"I", "J", "K", "L"}};
+String[][] letters = /* array implementation not shown */;
+// A B C D
+// E F G H
+// I J K L
 
 for (int col = 1; col < letters[0].length; col++) {
     for (int row = 1; row < letters.length; row++) {
