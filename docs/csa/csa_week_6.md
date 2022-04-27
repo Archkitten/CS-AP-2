@@ -187,7 +187,7 @@ Under which of the following conditions will c be assigned the value false?
   * Never
 * Correct answer: E
   * When b has the value false
-* CollegeBoard response: When b has the value false, both of the expressions (a && b) and (!a && b) evaluate to false, regardless of the value of a. The entire expression evaluates to false || false, or false. When b has the value true, one of the expressions (a && b) or (!a && b) evaluates to true. The entire expression, in this case, is either true || false or false || true, or true. A truth table can be used to summarize these results.
+* CollegeBoard response: When b has the value false, both of the expressions (a && b) and (!a && b) evaluate to false, regardless of the value of a. The entire expression evaluates to false \|| false, or false. When b has the value true, one of the expressions (a && b) or (!a && b) evaluates to true. The entire expression, in this case, is either true \|| false or false \|| true, or true. A truth table can be used to summarize these results.
 * Next time I'll use a truth table to use test cases. I blame time pressure part 2.
 
 Question 28: Consider the following method.
@@ -258,3 +258,27 @@ for (int i : nums)
 * I'm such an idiot! I even knew about III's critical concept, reviewed it the night prior, AND put it in the study guide! I must have chosen E out of time pressure, or I didn't read the code carefully enough.
 
 Question 33: Consider the following code segment.
+```
+String[][] letters = {{"A", "B", "C", "D"}, 
+        {"E", "F", "G", "H"}, 
+        {"I", "J", "K", "L"}};
+
+for (int col = 1; col < letters[0].length; col++) {
+    for (int row = 1; row < letters.length; row++) {
+        System.out.print(letters[row][col] + " ");
+    }
+    System.out.println();
+}
+```
+What is printed as a result of executing this code segment?
+* I chose: D
+  * F G H
+  * J K L
+* Correct answer: E
+  * F J
+  * G K
+  * H L
+* They switched up the normal row-column nested for loop for a column-row one! \>:(
+
+Question 38 - 40:
+* Out of time, guessed B on all of them and got none right.
