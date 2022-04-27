@@ -121,10 +121,10 @@ data type of borrower is Person (custom class)
 
 Question 13: Assume that a, b, and c are boolean variables that have been properly declared and initialized. Which of the following boolean expressions is equivalent to !(a && b) || c?
 * I chose: B
-  * a || b || c
+  * a \|\| b \|\| c
 * Correct answer: E
-  * !a || !b || c
-* De Morgan's Law. !(a && b) is equivalent to !a || !b.
+  * !a \|\| !b \|\| c
+* De Morgan's Law. !(a && b) is equivalent to !a \|\| !b.
 * Ugh. I blame this on time constraints. I used to be so good at these types of problems!
 
 Question 14: The following categories are used by some researchers to categorize zip codes as urban, suburban, or rural based on population density.
@@ -187,7 +187,7 @@ Under which of the following conditions will c be assigned the value false?
   * Never
 * Correct answer: E
   * When b has the value false
-* CollegeBoard response: When b has the value false, both of the expressions (a && b) and (!a && b) evaluate to false, regardless of the value of a. The entire expression evaluates to false \|| false, or false. When b has the value true, one of the expressions (a && b) or (!a && b) evaluates to true. The entire expression, in this case, is either true \|| false or false \|| true, or true. A truth table can be used to summarize these results.
+* CollegeBoard response: When b has the value false, both of the expressions (a && b) and (!a && b) evaluate to false, regardless of the value of a. The entire expression evaluates to false \|\| false, or false. When b has the value true, one of the expressions (a && b) or (!a && b) evaluates to true. The entire expression, in this case, is either true \|\| false or false \|\| true, or true. A truth table can be used to summarize these results.
 * Next time I'll use a truth table to use test cases. I blame time pressure part 2.
 
 Question 28: Consider the following method.
