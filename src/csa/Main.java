@@ -18,7 +18,7 @@ public class Main {
         Option five = new WeekFive();
         Option six = new WeekSix();
 
-        Option[] options = new Option[] {one, two, three, four, five};
+        Option[] options = new Option[] {one, two, three, four, five, six};
 
         Menu menu = new Menu();
         menu.run("\n----- MAIN MENU -----", options);

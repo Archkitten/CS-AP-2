@@ -5,7 +5,7 @@ import csa.util.Option;
 public class WeekSix extends Option {
 
     public WeekSix() {
-        optionName = "Week 5";
+        optionName = "Week 6";
     }
 
     public void tester() {

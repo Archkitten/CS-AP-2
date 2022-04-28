@@ -8,6 +8,19 @@ public class FRQ2 extends Option {
     }
 
     public void tester() {
-
+        GameSpinner g = new GameSpinner(4);
+        System.out.println("Current Run:" + g.currentRun());
+        System.out.println("Spin:" + g.spin());
+        System.out.println("Current Run:" + g.currentRun());
+        System.out.println("Spin:" + g.spin());
+        System.out.println("Current Run:" + g.currentRun());
+        System.out.println("Spin:" + g.spin());
+        System.out.println("Current Run:" + g.currentRun());
+        System.out.println("Spin:" + g.spin());
+        System.out.println("Current Run:" + g.currentRun());
+        System.out.println("Spin:" + g.spin());
+        System.out.println("Spin:" + g.spin());
+        System.out.println("Spin:" + g.spin());
+        System.out.println("Current Run:" + g.currentRun());
     }
 }
