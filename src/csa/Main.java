@@ -6,6 +6,7 @@ import csa.week1.WeekOne;
 import csa.week2.WeekTwo;
 import csa.week3.WeekThree;
 import csa.week5.WeekFive;
+import csa.week6.WeekSix;
 
 public class Main {
 
@@ -15,6 +16,7 @@ public class Main {
         Option three = new WeekTwo();
         Option four = new WeekThree();
         Option five = new WeekFive();
+        Option six = new WeekSix();
 
         Option[] options = new Option[] {one, two, three, four, five};
 
