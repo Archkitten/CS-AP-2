@@ -6,7 +6,7 @@ layout: default
 
 {% include csp_nav.html %}
 
-## Week 6 - [Ticket]
+## Week 6 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/19)
 
 ### MCQ 1
 

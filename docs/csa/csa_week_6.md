@@ -6,7 +6,7 @@ layout: default
 
 {% include csa_nav.html %}
 
-## Week 6 - [Ticket]
+## Week 6 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/18)
 
 ### 2020 Practice Exam 1 MCQ
 
