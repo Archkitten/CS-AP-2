@@ -14,7 +14,7 @@ public class WeekSix extends Option {
         Option three = new FRQ3();
         Option four = new FRQ4();
 
-        Option[] options = new Option[] {one, two, three, four};
+        Option[] options = new Option[] {two, four};
 
         Menu menu = new Menu();
         menu.run("\n----- WEEK 6 -----", options);
