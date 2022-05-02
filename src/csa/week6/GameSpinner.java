@@ -2,7 +2,7 @@ package csa.week6;
 
 public class GameSpinner {
     private int sectors;
-    private int run = 0;
+    private static int run = 0;
     private int previousResult = 0;
 
     public GameSpinner(int sectors) {
