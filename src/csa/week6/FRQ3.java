@@ -8,7 +8,7 @@ public class FRQ3 extends Option {
     }
 
     public void tester() {
-
+        System.out.println("ProductReview and ReviewCollector classes");
     }
 
 }
