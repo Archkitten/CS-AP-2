@@ -9,15 +9,15 @@ public class FRQ2 extends Option {
     }
 
     public void tester() {
-        HiddenWord test = new HiddenWord("APPLE");
-        System.out.println("APPLE");
-        System.out.println("Guessing: AUDIO");
-        System.out.println(test.getHint("AUDIO"));
-
-        System.out.println("Guessing: APPLY");
-        System.out.println(test.getHint("APPLY"));
-
-        System.out.println("Guessing: LOSER");
-        System.out.println(test.getHint("LOSER"));
+        System.out.println("Answer: TRASH");
+        HiddenWord hw = new HiddenWord("TRASH");
+        System.out.println("Guess: AUDIO");
+        System.out.println(hw.getHint("AUDIO"));
+        System.out.println("Guess: TRACK");
+        System.out.println(hw.getHint("TRACK"));
+        System.out.println("Guess: TRAPS");
+        System.out.println(hw.getHint("TRAPS"));
+        System.out.println("Guess: TRASH");
+        System.out.println(hw.getHint("TRASH"));
     }
 }

@@ -1,68 +1,64 @@
 package csa.week5;
 
+import java.util.Arrays;
+
 public class HiddenWord {
 
-    private String hiddenWord;
+    private String answer;
+    private char[] answerArray;
 
-    public HiddenWord(String hiddenWord) {
-        this.hiddenWord = hiddenWord;
+    public HiddenWord(String answer) {
+        this.answer = answer;
+        answerArray = this.answer.toCharArray();
     }
 
     public String getHint(String guess) {
-        String s = "";
-        Boolean found = false;
-        for (int g = 0; g < guess.length(); g++) {
-            // Stupid
-            // System.out.println("G: " + g);
-            for (int h = 0; h < hiddenWord.length(); h++) {
-                // Stupid
-                // System.out.println("H: " + h + guess.charAt(g) + hiddenWord.charAt(h));
-                if (guess.charAt(g) == hiddenWord.charAt(h)) {
-                    if (g == h) {
-                        s += guess.charAt(g);
-                        // Stupid
-                        // System.out.println("S1: " + s);
-                    }
-                    else {
-                        s += "+";
-                        // Stupid
-                        // System.out.println("S2: " + s);
-                    }
-                    found = true;
-                    // Stupid
-                    // System.out.println("Found1: " + found);
-                    break;
-                }
-                else {
-                    found = false;
-                    // Stupid
-                    // System.out.println("Found2: " + found);
-                }
+        // guessArray and hintArray
+        char[] guessArray = guess.toCharArray();
+        char[] hintArray = new char[guess.length()];
+
+        // Fill everything in hintArray to * by default
+        /*
+        for (int i = 0; i < hintArray.length; i++) {
+            hintArray[i] = '*';
+        }
+        */
+        Arrays.fill(hintArray, '*');
+
+        // Word-le Detection
+        for (int i = 0; i < answerArray.length; i++) {
+            // Correct, same position
+            if (guessArray[i] == answerArray[i]) {
+                hintArray[i] = answerArray[i];
+//                System.out.println("i / hintArray[i]: " + i + "/" + hintArray[i]);
             }
-            if (!found) {
-                s += "*";
-                // Stupid
-                // System.out.println("S5: " + s);
+            // Correct, different position
+            else {
+                for (int j = 0; j < answerArray.length; j++) {
+                    if (guessArray[i] == answerArray[j]) {
+                        hintArray[i] = '+';
+                        break;
+                    }
+                }
             }
         }
-        return s;
+
+        // Turn hintArray back into a String and return it
+        String hint = new String(hintArray);
+
+        return hint;
     }
 
     public static void main(String[] args) {
-        HiddenWord test = new HiddenWord("APPLE");
-        System.out.println("APPLE");
-
-        System.out.println("Guessing: APPLE");
-        System.out.println(test.getHint("APPLE"));
-
-
-//        System.out.println("Guessing: AUDIO");
-//        System.out.println(test.getHint("AUDIO"));
-
-//        System.out.println("Guessing: APPLY");
-//        System.out.println(test.getHint("APPLY"));
-//
-//        System.out.println("Guessing: LOSER");
-//        System.out.println(test.getHint("LOSER"));
+        System.out.println("Answer: TRASH");
+        HiddenWord hw = new HiddenWord("TRASH");
+        System.out.println("Guess: AUDIO");
+        System.out.println(hw.getHint("AUDIO"));
+        System.out.println("Guess: TRACK");
+        System.out.println(hw.getHint("TRACK"));
+        System.out.println("Guess: TRAPS");
+        System.out.println(hw.getHint("TRAPS"));
+        System.out.println("Guess: TRASH");
+        System.out.println(hw.getHint("TRASH"));
     }
 }

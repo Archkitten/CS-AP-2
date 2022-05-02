@@ -8,7 +8,7 @@ public class FRQ4 extends Option {
     }
 
     public void tester() {
-
+        System.out.println("Seat and Theatre classes");
     }
 
 }
