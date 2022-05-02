@@ -15,13 +15,13 @@ public class GameSpinner {
 
     public int spin() {
         int result = (int)(Math.random() * sectors + 1);
-        if (previousResult == 0 || result == previousResult) {
+        if (result == previousResult) {
             run += 1;
         }
         else {
             run = 1;
+            previousResult = result;
         }
-        previousResult = result;
         return result;
     }
 }
