@@ -7,9 +7,13 @@ public class FRQ4 extends Option {
     }
 
     public void tester() {
+        System.out.println("NumberGroup range1 = new Range(-3, 2);");
         NumberGroup range1 = new Range(-3, 2);
-        range1.contains(-5);
-        range1.contains(0);
-        range1.contains(4);
+        System.out.println("range1.contains(-5);");
+        System.out.println(range1.contains(-5));
+        System.out.println("range1.contains(0);");
+        System.out.println(range1.contains(0));
+        System.out.println("range1.contains(4);");
+        System.out.println(range1.contains(4));
     }
 }
