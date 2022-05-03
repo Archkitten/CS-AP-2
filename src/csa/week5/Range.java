@@ -2,27 +2,15 @@ package csa.week5;
 
 public class Range implements NumberGroup {
 
-    private int[] range;
+    private int minimum;
+    private int maximum;
 
-    public Range(int a, int b) {
-        range = new int[b - a];
-
-        for (int i = 0; i < range.length; i++) {
-            range[i] = a + i;
-        }
+    public Range(int minimum, int maximum) {
+        this.minimum = minimum;
+        this.maximum = maximum;
     }
 
-    // Delete this later, used for checking
-    public int[] getRange() {
-        return range;
-    }
-
-    @Override
-    public boolean isInGroup() {
-        return false;
-    }
-
-    public static void main(String[] args) {
-
+    public boolean contains(int n) {
+        return n >= minimum && n <= maximum;
     }
 }

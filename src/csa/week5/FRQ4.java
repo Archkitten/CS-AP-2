@@ -8,10 +8,8 @@ public class FRQ4 extends Option {
 
     public void tester() {
         NumberGroup range1 = new Range(-3, 2);
-
-        // Delete this later, used for checking
-        for (int i : ((Range)range1).getRange()) {
-            System.out.println(i);
-        }
+        range1.contains(-5);
+        range1.contains(0);
+        range1.contains(4);
     }
 }
