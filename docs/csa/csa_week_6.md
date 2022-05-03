@@ -292,12 +292,12 @@ Question 38 - 40:
         <th>FRQ2</th>
     </tr>
     <tr>
-        <td><img src="../assets/images/Week_6_FRQ2.png" alt="Image Preview" width="850" height="1100"></td>
+        <td><img src="../assets/images/Week_6_FRQ2.JPG" alt="Image Preview" width="850" height="1100"></td>
     </tr>
     <tr>
         <th>FR4</th>
     </tr>
     <tr>
-        <td><img src="../assets/images/Week_6_FRQ4.png" alt="Image Preview" width="850" height="1100"></td>
+        <td><img src="../assets/images/Week_6_FRQ4.JPG" alt="Image Preview" width="850" height="1100"></td>
     </tr>
 </table>
