@@ -9,6 +9,7 @@ layout: default
 ## Week 6 - [Ticket](https://github.com/Archkitten/CS-AP-2/issues/18)
 
 ### 2020 Practice Exam 1 MCQ
+**Overall Score: 26/40**
 
 Question 6: Which of the following expressions evaluate to 3.5 ?
 1. (double) 2 / 4 + 3
